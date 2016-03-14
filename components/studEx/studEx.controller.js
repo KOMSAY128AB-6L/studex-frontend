@@ -1,12 +1,13 @@
 'use strict';
 
 (function () {
-	angular
-		.module('studEx')
-		.controller('studExCtrl', studExCtrlFunc);
+	var app = angular.module('studEx');
+	app.controller('studExCtrl', studExCtrlFunc);
 
 	studExCtrlFunc.$inject = ['$scope'];
 	
+	
+
 	function studExCtrlFunc($scope) {
 		$scope.firstName = 'Gianni';
 		$scope.lastName = 'Padernos';
@@ -14,5 +15,7 @@
 			return 'Hello ' + $scope.firstName + ' ' + $scope.lastName;
 		}
 	}
-	
+
+
+
 })();

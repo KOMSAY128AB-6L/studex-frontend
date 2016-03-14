@@ -1,12 +1,13 @@
 'use strict';
 
 (function () {
-	angular
-		.module('studEx', ['ngRoute'])
-		.config(configFunc);
+	var app = angular.module('studEx', ['ngRoute']);
+	app.config(configFunc);
 
 	configFunc.$inject=['$routeProvider'];
 	
+	
+
 	function configFunc($routeProvider) {
 		$routeProvider
 			.when('/', {
@@ -15,5 +16,7 @@
 			})
 			.otherwise({'redirectTo': '/'})
 	}
+
+
 
 })();
