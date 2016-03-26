@@ -13,8 +13,8 @@
 		$scope.lastName = 'Padernos';
 		$scope.hello = function () {
 			return 'Hello ' + $scope.firstName + ' ' + $scope.lastName;
-		}
-	}
+		};
+	};
 
 
 
