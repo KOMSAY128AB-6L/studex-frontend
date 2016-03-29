@@ -8,6 +8,10 @@
     src: url(../../assets/fonts/REVOLUTION.ttf);
 }
 
+* {
+	outline: none;
+}
+
 body, .main {
 	height: 100%;
 }
@@ -31,18 +35,4 @@ body, .main {
 .main * {
 	font-family: quicksand;
 	font-weight: bold;
-}
-
-#circle {
-	width: 250px;
-	height: 250px;
-	background: #303030;
-	-moz-border-radius: 50%;
-	-webkit-border-radius: 50%;
-	border-radius: 50%;
-	color: #DEDEDE;
-	margin: 0 auto;
-	display: block;
-	font-size: 15px;
-	margin-bottom: 8vh;
 }

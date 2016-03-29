@@ -9,11 +9,8 @@
 	
 
 	function studExCtrlFunc($scope) {
-		$scope.firstName = 'Gianni';
-		$scope.lastName = 'Padernos';
-		$scope.hello = function () {
-			return 'Hello ' + $scope.firstName + ' ' + $scope.lastName;
-		};
+		$scope.form = 'choice';
+		$scope.user = {};
 	};
 
 
