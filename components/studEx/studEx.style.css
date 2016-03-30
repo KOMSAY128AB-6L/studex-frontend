@@ -33,11 +33,12 @@ body {
 }
 
 .circle-container {
+	position: relative;
 	width: 100%;
 	height: 100%;
 }
 
-.circle-container > div {
+.circle-container > div, form {
 	height: 50%;
 	vertical-align: middle;
 	border-width: 0.5px;
@@ -71,4 +72,33 @@ body {
 	font-style: italic;
 	color: #303030;
 	cursor: pointer;
+}
+
+button {
+	max-height: 40px;
+	max-width: 40px;
+}
+
+button > span {
+	top: -5px;
+	position: relative;
+	color: #303030;
+	font-size: 15px;
+	font-weight: 10px;
+}
+
+#white-1 {
+	position: absolute;
+	left: 50%;
+	top: 86%;
+	margin-left: -20px;
+	background-color: #DEDEDE;
+}
+
+#white-2 {
+	position: absolute;
+	left: 50%;
+	top: 90%;
+	margin-left: -20px;
+	background-color: #DEDEDE;
 }
