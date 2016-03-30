@@ -1,7 +1,5 @@
 'use strict';
 
-var config
-
 (function () {
 	var app = angular.module('studEx');
 	app.controller('studExCtrl', studExCtrlFunc);
