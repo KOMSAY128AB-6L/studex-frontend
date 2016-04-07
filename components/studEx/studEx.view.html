@@ -8,14 +8,14 @@
 		<div id="circle" ng-switch on="form">
 			<div class="circle-container" ng-switch-when="login">
 				<span class="form-header">- LOG IN -</span>
-				<form ng-submit="login()" class="form-2">
+				<form id="white-form" ng-submit="login()" class="form-2">
 						<md-input-container>
-							<label>e-mail address</label>
-							<input class="ng-pristine ng-valid md-input ng-touched" ng-model="user.email" >
+							<label class="md-primary md-hue-2">e-mail address</label>
+							<input type="email" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.email" >
 						</md-input-container>
 						<md-input-container>
 							<label>password</label>
-							<input class="ng-pristine ng-valid md-input ng-touched" ng-model="user.password" >
+							<input type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.password" >
 						</md-input-container>
 						<md-button id="white-1" class="md-fab" type="submit">
 							<span>&gt;</span>
@@ -27,7 +27,7 @@
 
 			<div class="circle-container" ng-switch-when="register">
 				<span class="form-header">- REGISTER -</span>
-				<form class="form-3">
+				<form id="white-form" class="form-3">
 					<md-input-container>
 						<label>first name</label>
 						<input class="ng-pristine ng-valid md-input ng-touched" ng-model="user.first_name" >
@@ -50,14 +50,14 @@
 
 			<div class="circle-container" ng-switch-when="register2">
 				<span class="form-header">- REGISTER -</span>
-				<form ng-submit="register()" class="form-2">
+				<form id="white-form" ng-submit="register()" class="form-2">
 					<md-input-container>
 						<label>e-mail address</label>
-						<input class="ng-pristine ng-valid md-input ng-touched" ng-model="user.email" >
+						<input type="email" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.email" >
 					</md-input-container>
 					<md-input-container>
 						<label>password</label>
-						<input class="ng-pristine ng-valid md-input ng-touched" ng-model="user.password" >
+						<input type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.password" >
 					</md-input-container>
 					<md-button id="white-1" class="md-fab" type="submit">
 						<span>&gt;</span>
