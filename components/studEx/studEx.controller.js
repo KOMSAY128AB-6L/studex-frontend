@@ -3,9 +3,18 @@
 (function () {
 	var app = angular.module('studEx');
 	app.controller('studExCtrl', studExCtrlFunc);
-	app.config(function($mdThemingProvider) {
-		$mdThemingProvider.theme('default').dark();
-	});
+	app.config(configFunc);
+
+	
+
+	configFunc.$inject = ['$mdThemingProvider'];
+
+	function configFunc($mdThemingProvider) {
+		$mdThemingProvider.theme('default')
+						.dark();
+	};
+
+	
 
 	studExCtrlFunc.$inject = ['$scope', '$http', '$location', '$mdToast'];
 	
