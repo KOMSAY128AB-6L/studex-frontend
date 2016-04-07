@@ -14,6 +14,10 @@
 				'templateUrl': './components/studEx/studEx.view.html',
 				'controller' : 'studExCtrl'
 			})
+			.when('/', {
+				'templateUrl': './components/account/account.view.html',
+				'controller' : 'accountCtrl'
+			})
 			.otherwise({'redirectTo': '/'})
 	}
 
