@@ -11,7 +11,12 @@
 		$scope.user = {};
 
 		$scope.register = function () {
-			$http.post(config.backend_url + '/user', $scope.user).then(success, error);
+			$http({
+				method: 'POST',
+				url: config.backend_url + '/user',
+				data: $scope.user,
+				withCredentials:true
+			}).then(success, error);
 
 			function success (response) {
 				console.log(response);
