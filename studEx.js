@@ -14,7 +14,7 @@
 				'templateUrl': './components/studEx/studEx.view.html',
 				'controller' : 'studExCtrl'
 			})
-			.when('/', {
+			.when('/account', {
 				'templateUrl': './components/account/account.view.html',
 				'controller' : 'accountCtrl'
 			})
