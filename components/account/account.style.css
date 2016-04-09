@@ -1,1 +1,25 @@
+md-toolbar {
+  min-height: 20px;
+}
 
+#slantedContainer {
+  overflow: hidden;
+}
+
+#slanted {
+  margin-top: 3px;
+  background-color: #303030;
+  color: #DEDEDE;
+  font-weight: 1000;
+  font-size: 25px;
+  line-height: 50px;
+  -webkit-transform: skew(30deg) translate(15px);
+  -moz-transform: skew(30deg);
+  -o-transform: skew(30deg);
+}
+
+#slantedText {
+  -webkit-transform: skew(-30deg);
+  -moz-transform: skew(-30deg);
+  -o-transform: skew(-30deg);
+}
