@@ -23,3 +23,23 @@ md-toolbar {
   -moz-transform: skew(-30deg);
   -o-transform: skew(-30deg);
 }
+
+#circle {
+  margin:auto;
+  height: 130px;
+  width: 130px;
+  border: 18px solid #303030;
+  -webkit-border-radius: 200px;
+  -moz-border-radius: 200px;
+  -o-border-radius: 200px;
+}
+
+#circle > *{
+  color: #303030;
+  height: 130px;
+  width: 130px;
+  background-color: #DEDEDE;
+  -webkit-border-radius: 200px;
+  -moz-border-radius: 200px;
+  -o-border-radius: 200px;
+}
