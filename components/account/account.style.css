@@ -12,7 +12,7 @@
 }
 
 #slantedText > * {
-  font-size: 25px;
+  font-size: 23px;
   font-weight: 900;
   line-height: 50px;
   margin: 0px;
@@ -59,6 +59,7 @@
 
 #accountButtons > .md-button {
   min-width: 100%;
+  max-height: 30px;
   background-color: #303030;
   letter-spacing: 5px;
   -webkit-border-radius: 0px;
@@ -71,6 +72,7 @@
   color: #DEDEDE;
   position: relative;
 	font-size: 15px;
+  font-weight: normal;
 }
 
 #copyBtmRight > h1{
