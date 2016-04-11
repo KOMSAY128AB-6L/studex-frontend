@@ -18,6 +18,10 @@
 				'templateUrl': './components/account/account.view.html',
 				'controller' : 'accountCtrl'
 			})
+			.when('/history', {
+				'templateUrl': './components/history/history.view.html',
+				'controller' : 'historyCtrl'
+			})
 			.otherwise({'redirectTo': '/'})
 	}
 
