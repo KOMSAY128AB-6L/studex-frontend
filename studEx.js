@@ -5,8 +5,8 @@
 	app.config(configFunc);
 
 	configFunc.$inject=['$routeProvider'];
-	
-	
+
+
 
 	function configFunc($routeProvider) {
 		$routeProvider
