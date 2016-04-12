@@ -43,6 +43,8 @@
 }
 
 #nameContainer > h2 {
+  font-family: quicksand;
+  font-size: 25px;
   font-weight: 900;
   letter-spacing: 3px;
   margin-bottom: 0px;
