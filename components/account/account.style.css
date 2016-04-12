@@ -7,6 +7,19 @@
   -o-transform: skew(30deg);
 }
 
+#slantedContainer {
+  overflow: hidden;
+}
+
+#slanted {
+  margin-top: 3px;
+  background-color: #303030;
+  color: #DEDEDE;
+  -webkit-transform: skew(30deg) translate(15px);
+  -moz-transform: skew(30deg);
+  -o-transform: skew(30deg);
+}
+
 #slantedText > * {
   margin: 0px;
   font-size: 20px;
