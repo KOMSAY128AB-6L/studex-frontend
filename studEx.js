@@ -14,16 +14,16 @@
 				'templateUrl': './components/studEx/studEx.view.html',
 				'controller' : 'studExCtrl'
 			})
-			.when('/logout', {
-				'templateUrl': './components/studEx/studEx.view.html',
-				'controller' : 'studExCtrl'
-			})
 			.when('/account', {
 				'templateUrl': './components/account/account.view.html',
 				'controller' : 'accountCtrl'
 			})
 			.when('/history', {
 				'templateUrl': './components/history/history.view.html',
+				'controller' : 'historyCtrl'
+			})
+			.when('/logout', {
+				'templateUrl': './components/studEx/studEx.view.html',
 				'controller' : 'historyCtrl'
 			})
 			.otherwise({'redirectTo': '/'})
