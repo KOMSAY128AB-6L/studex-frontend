@@ -101,3 +101,7 @@ button > span {
 	margin-left: -20px;
 	background-color: #DEDEDE;
 }
+
+#white-form label {
+	color: #DEDEDE;
+}
