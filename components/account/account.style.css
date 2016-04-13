@@ -53,13 +53,18 @@
 
 #nameContainer > h2 {
   font-family: quicksand;
-  font-size: 25px;
+  font-size: 5vw;
   font-weight: 900;
   letter-spacing: 3px;
   margin-bottom: 0px;
 }
 
+#nameContainer > h3 {
+  font-size: 4.5vw;
+}
+
 #accountInfo * {
+  font-size: 3.7vw;
   margin: 0px;
   margin-bottom: 5px;
 }

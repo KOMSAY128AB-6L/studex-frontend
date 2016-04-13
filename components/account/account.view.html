@@ -15,16 +15,17 @@
       <span flex="10"></span>
       <div flex="45">
         <div id="displayPic" layout-align="center center">
-          <img src="#" alt="Profile pic">
+          <img alt="Profile pic" ng-hide="$null_picture" src="//gettingreal2014.com/wp-content/uploads/2014/07/default-avatar.png">
         </div>
       </div>
 
       <span flex="5"></span>
 
       <div flex id="nameContainer" layout="column" layout-align="center start">
-        <h2>JOSEPH</h2>
-        <h3>TYLER D</h3>
+        <h2>{{user.last_name | uppercase}}</h2>
+        <h3>{{user.first_name + " " + user.middle_initial | uppercase}}</h3>
       </div>
+      <span flex="5"></span>
     </div>
 
     <div flex="20" layout="row">
@@ -32,11 +33,11 @@
       <div flex id="accountInfo" layout="column" layout-align="center start">
         <div layout="row">
           <h4>TEACHER ID#</h4>
-          <h4>001</h4>
+          <h4>{{user.teacher_id}}</h4>
         </div>
         <div layout="row">
           <h4>E-MAIL ADDRESS</h4>
-          <h4>tdjoseph@up.edu.ph</h4>
+          <h4>{{user.email}}</h4>
         </div>
       </div>
       <!--Optional for preferrence-->
