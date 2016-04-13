@@ -5,7 +5,7 @@
 	app.controller('studExCtrl', studExCtrlFunc);
 	app.config(configFunc);
 
-	
+
 
 	configFunc.$inject = ['$mdThemingProvider'];
 
@@ -14,10 +14,10 @@
 						.dark();
 	};
 
-	
+
 
 	studExCtrlFunc.$inject = ['$scope', '$http', '$location', '$mdToast'];
-	
+
 	function studExCtrlFunc($scope, $http, $location, $mdToast) {
 		$scope.form = 'choice';
 		$scope.user = {};
@@ -33,7 +33,7 @@
 			function success (response) {
 				$mdToast.show(
 					$mdToast.simple()
-						.textContent('Successfully registered!')                       
+						.textContent('Successfully registered!')
 						.hideDelay(1000)
                 );
 			};
@@ -41,7 +41,7 @@
 			function error (response) {
 				$mdToast.show(
 					$mdToast.simple()
-						.textContent(response.status)                       
+						.textContent(response.status)
 						.hideDelay(1000)
                 );
 			}
@@ -62,7 +62,7 @@
 			function error (response) {
 				$mdToast.show(
 					$mdToast.simple()
-						.textContent(response.status)                       
+						.textContent(response.status)
 						.hideDelay(1000)
                 );
 			}
