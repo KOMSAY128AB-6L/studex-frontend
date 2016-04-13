@@ -14,6 +14,10 @@
 				'templateUrl': './components/studEx/studEx.view.html',
 				'controller' : 'studExCtrl'
 			})
+			.when('/logout', {
+				'templateUrl': './components/studEx/studEx.view.html',
+				'controller' : 'studExCtrl'
+			})
 			.when('/account', {
 				'templateUrl': './components/account/account.view.html',
 				'controller' : 'accountCtrl'
