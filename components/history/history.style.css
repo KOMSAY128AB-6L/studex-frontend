@@ -16,11 +16,13 @@
 }
 
 #skewText {
+
 	font-family:quicksand;
 	color: #FFFFFF;
 	font-size: 15px;
 	letter-spacing: 1px;
 	margin-top:15px;
+
 
     -ms-transform: skew(-30deg);
     -webkit-transform: skew(-30deg, 0deg);
