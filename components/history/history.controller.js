@@ -10,7 +10,7 @@
 
 		$scope.logout = function () {
 			$http({
-				method: 'GET',
+				method: 'POST',
 				url: 'http://' + config.backend_url + '/logout',
 				withCredentials:true
 			}).then(success, error);
