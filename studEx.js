@@ -22,10 +22,6 @@
 				'templateUrl': './components/history/history.view.html',
 				'controller' : 'historyCtrl'
 			})
-			.when('/logout', {
-				'templateUrl': './components/studEx/studEx.view.html',
-				'controller' : 'historyCtrl'
-			})
 			.otherwise({'redirectTo': '/'})
 	}
 
