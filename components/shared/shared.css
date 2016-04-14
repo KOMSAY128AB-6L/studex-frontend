@@ -1,0 +1,38 @@
+@font-face {
+    font-family: quicksand;
+    src: url(../../assets/fonts/Quicksand_Book.otf);
+}
+
+@font-face {
+    font-family: revolution;
+    src: url(../../assets/fonts/REVOLUTION.ttf);
+}
+
+* {
+	outline: none;
+}
+
+body, .main {
+	height: 100%;
+}
+
+.main > * {
+	color: #303030;
+	text-align: center;
+}
+
+.main h1 {
+	font-family: revolution;
+	font-size: 50px;
+	letter-spacing: 5px;
+	margin-top: 0;
+}
+
+.main p {
+	font-size: 15px;
+}
+
+.main * {
+	font-family: quicksand;
+	font-weight: bold;
+}

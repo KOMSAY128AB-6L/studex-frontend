@@ -1,0 +1,52 @@
+#toolbar-main {
+	background-color: rgb(48,48,48);
+	min-height: 40px;
+	max-height: 40px;
+}
+
+#skew {
+	margin-top:5px;
+	min-height: 45px;
+	max-height: 45px;
+	background: rgb(48,48,48);
+	
+    -ms-transform: skew(30deg);
+    -webkit-transform: skew(30deg, 0deg);
+    transform: skew(30deg, 0deg);
+}
+
+#skewText {
+	font-family:quicksand;
+	color: #FFFFFF;
+	font-size: 15px;
+	letter-spacing: 1px;
+	margin-top:15px;
+
+    -ms-transform: skew(-30deg);
+    -webkit-transform: skew(-30deg, 0deg);
+    transform: skew(-30deg, 0deg);
+
+}
+
+#main-history h2 {
+	font-family: revolution;
+	font-size: 30px;
+	letter-spacing: 10px;
+	margin-top: 0;
+}
+
+#history-buttons span {
+	color: #FFFFFF;
+	font-size:10px;
+}
+
+#history-buttons a {
+	min-width:100%;
+	background-color: rgb(48,48,48);
+}
+
+#copyright {
+	position:absolute;
+	bottom: 0;
+	right: 0;
+}
