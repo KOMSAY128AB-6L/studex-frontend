@@ -38,7 +38,6 @@
 		}).then(success, error);
 
 		function success (response) {
-			console.log(response);
 			$scope.user = response.data;
 			$scope.null_picture = ($scope.user.picture == null);
 		};
