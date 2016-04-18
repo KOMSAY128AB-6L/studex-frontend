@@ -41,3 +41,8 @@ body, .main {
 	font-family: quicksand;
 	font-weight: bold;
 }
+
+md-toolbar h2 {
+	font-family: revolution;
+	letter-spacing: 5px;
+}
