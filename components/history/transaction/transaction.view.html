@@ -1,0 +1,47 @@
+<md-toolbar layout="row" layout-align="center center">
+  <h2>STUDEX</h2>
+</md-toolbar>
+
+<div flex class="main" id="main-transaction" ng-controller="transactionCtrl">
+
+	<div layout="row">
+		<div flex="20" flex-gt-sm="75"></div>
+		<div id="skew" flex="" flex layout="column">
+			<h3 id="skewText">TRANSACTIONS</h3>
+		</div>
+	</div>
+	
+	<div layout="column">
+
+		<div layout="row" id="content-header">
+			<div flex="50">
+				<h5>TRANSACTION</h5>
+			</div>
+			<div flex="50">
+				<h5>TIMESTAMP</h5>
+			</div>
+		</div>
+
+		<div layout="row"><span flex="5"></span><hr flex style="border-color:rgb(48,48,48)"><span flex="5"> </span> </div>
+
+		<md-content id="content-transaction">
+			<md-list flex>
+
+				<md-list-item class="md-3-line content-transaction-item" ng-repeat="transaction in transactions">
+					<div class="md-list-item-text" layout="row">
+						<div flex="50">
+							<h4>{{ transaction.transaction }}</h4>
+						</div>
+						<div flex="50">
+							<h4>{{ transaction.transaction_date }}</h4>
+						</div>
+					</div>
+				</md-list-item>
+				
+			</md-list>
+		</md-content>
+
+	</div>
+</div>
+<md-toolbar layout="row" layout-align="end center" style="min-height: 40px">
+</md-toolbar>
