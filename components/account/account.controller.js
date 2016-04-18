@@ -49,7 +49,11 @@
 					.hideDelay(1000)
 							);
 		}
-		
+
+		function hey () {
+			console.log("wow");
+		}
+
   };
 
 })();
