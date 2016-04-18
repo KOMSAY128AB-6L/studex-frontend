@@ -7,7 +7,7 @@
 	volunteerCtrlFunc.$inject = ['$scope', '$http'];
 	
 	function volunteerCtrlFunc($scope, $http) {
-		/*
+		
 		$http({
 			method: 'GET',
 			url: 'http://' + config.backend_url + '/student_logs',
@@ -15,31 +15,13 @@
 		}).then(success, error)
 
 		function success (response) {
-			$scope.volunteers = response.data;
+			$scope.volunteers = response.data.data.items;
 		};
 
 		function error (response) {
-			console.log(response);
+			console.log("error:"+response);
 		};
-		*/
-
-		//for testing purposes
-		$scope.volunteers = [
-			{
-				first_name : 'Joseph',
-				middle_initial: 'D.',
-				last_name: 'Tyler',
-				volunteer_date : '07/30/1997'
-			},
-			{
-				first_name : 'Joseph',
-				middle_initial: 'D.',
-				last_name: 'Tyler',
-				volunteer_date : '07/30/1997'
-			},
-
-
-		];
+		
 	};
 
 })();

@@ -29,10 +29,12 @@
 
 			<md-list flex>
 				<md-list-item class="md-3-line content-volunteer-item" ng-repeat="volunteer in volunteers">
+					
 					<img src="" class="md-avatar"/>
+
 					<div class="md-list-item-text" layout="row">
 						<div flex="50">
-							<h4>{{ volunteer.last_name + ", " + volunteer.first_name + " " + volunteer.middle_initial}}</h4>
+							<h4>{{ volunteer.STUDENT}}</h4>
 						</div>
 						<div flex="50">
 							<h4>{{ volunteer.volunteer_date }}</h4>
@@ -43,7 +45,9 @@
 			</md-list>
 		</md-content>
 
+		<md-toolbar layout="row" layout-align="end center" style="min-height: 40px">
+		</md-toolbar>
+
 	</div>
 </div>
-<md-toolbar layout="row" layout-align="end center" style="min-height: 40px">
-</md-toolbar>
+
