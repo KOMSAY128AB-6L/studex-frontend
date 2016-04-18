@@ -22,6 +22,10 @@
 				'templateUrl': './components/history/history.view.html',
 				'controller' : 'historyCtrl'
 			})
+			.when('/sections', {
+				'templateUrl': './components/sections/sections.view.html',
+				'controller' : 'sectionsCtrl'
+			})
 			.when('/history/volunteer', {
 				'templateUrl': './components/volunteer/volunteer.view.html',
 				'controller' : 'volunteerCtrl'

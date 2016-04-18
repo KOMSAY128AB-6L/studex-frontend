@@ -60,6 +60,7 @@
 			};
 
 			function error (response) {
+				console.log(response);
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent(response.status)
