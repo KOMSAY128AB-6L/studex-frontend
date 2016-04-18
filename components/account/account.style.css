@@ -21,9 +21,9 @@
 }
 
 #slantedText > * {
+  font-family: quicksand_bold;
   margin: 0px;
   font-size: 20px;
-  font-weight: 900;
   line-height: 40px;
   letter-spacing: 2px;
   -webkit-transform: skew(-30deg);
@@ -52,26 +52,29 @@
 }
 
 #nameContainer > h2 {
-  font-family: quicksand;
-  font-size: 5vw;
-  font-weight: 900;
-  letter-spacing: 3px;
+  font-family: quicksand_bold;
+  font-size: 23px;
   margin-bottom: 0px;
 }
 
 #nameContainer > h3 {
-  font-size: 4.5vw;
+  font-family: quicksand_bold;
+  text-align: left;
+  font-size: 20px;
+  margin-top: 0px;
 }
 
 #accountInfo * {
-  font-size: 3.7vw;
+  font-family: quicksand_bold;
+  font-size: 15px;
   margin: 0px;
   margin-bottom: 5px;
+  text-align: left;
 }
 
 #accountInfo h4:nth-child(2) {
+  font-family: quicksand;
   margin-left: 10px;
-  font-weight: normal;
 }
 
 #accountButtons > .md-button {
@@ -89,7 +92,6 @@
   color: #DEDEDE;
   position: relative;
 	font-size: 15px;
-  font-weight: normal;
 }
 
 #copyBtmRight > h1{
@@ -103,6 +105,5 @@
 #copyBtmRight > span{
   text-align: right;
   font-size: 12px;
-  font-weight: bold;
   margin-bottom: 5px;
 }
