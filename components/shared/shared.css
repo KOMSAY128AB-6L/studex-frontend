@@ -8,6 +8,11 @@
     src: url(../../assets/fonts/REVOLUTION.ttf);
 }
 
+@font-face {
+	font-family: quicksand;
+	src: url(../../assets/fonts/Quicksand_Bold.otf);
+}
+
 * {
 	outline: none;
 }
