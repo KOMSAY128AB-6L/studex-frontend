@@ -50,10 +50,6 @@
 							);
 		}
 
-		function hey () {
-			console.log("wow");
-		}
-
   };
 
 })();
