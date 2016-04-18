@@ -30,9 +30,6 @@
 				'templateUrl': './components/transaction/transaction.view.html',
 				'controller' : 'transactionCtrl'
 			})
-			.when('/profile', {
-				'templateUrl': './components/profile/profile.view.html'
-			})
 			.otherwise({'redirectTo': '/'})
 	}
 
