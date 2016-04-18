@@ -1,79 +1,52 @@
 <md-toolbar id="toolbar-main">
 	<div layout="row">
 		<div flex="90" flex-gt-sm="95"></div>
-		<md-button class="md-icon-button" aria-label="Expand">
+
+		<md-button class="md-icon-button" aria-label="Expand" ng-click="logout()">
+
 			<md-icon class="material-icons">expand_more</md-icon>
 		</md-button>
 	</div>
 </md-toolbar>
 
-
-
-<div flex class="main" id="main-history">
-	<div ng-app="" ng-controller="historyCtrl">
-
-	<div layout="row">
-		<div flex="55" flex-gt-sm="85"></div>
-		<div id="skew" flex="" flex layout="column">
-			<h3 id="skewText">History</h3>
-		</div>
-	</div>
+<div layout="row">
 	
-	<div layout="column" layout-align="">
+	<div flex="20" flex-gt-sm="75"></div>
+	<div id="skew" flex="" flex layout="column" layout-align="center center">
+		<h3 id="skewText">HISTORY</h3>
+	</div>
+</div>
+
+<div flex class="main" id="main-history" layout="column" layout-align="center">
 
 
+	<div layout="column">
 
-		<md-content id="content-history">
-			<md-list flex>
+		<div layout="row" id="history-buttons">
+			<div flex="20"></div>
+			
+			<div flex="" layout="column" >	
+				<div flex>
+					<md-button href="#/history/transaction">LOG OF TRANSACTIONS</md-button>
+				</div>
+				<div>
+					<md-button href="#/history/volunteer">LOG OF VOLUNTEERED STUDENTS</md-button>
+				</div>
+			</div>
 
-				<md-list-item class="md-3-line" ng-click="">
-					<img src="" class="md-avatar"/>
-					<div class="md-list-item-text" layout="column">
-						<h3>Name</h3>
-						<h4>Class</h4>
-					</div>
-				</md-list-item>
+			<div flex="20"></div>
+		</div>
 
-				<md-list-item class="md-3-line" ng-click="">
-					<img src="" class="md-avatar"/>
-					<div class="md-list-item-text" layout="column">
-						<h3>Name</h3>
-						<h4>Class</h4>
-					</div>
-				</md-list-item>
-				
-				<md-list-item class="md-3-line" ng-click="">
-					<img src="" class="md-avatar"/>
-					<div class="md-list-item-text" layout="column">
-						<h3>Name</h3>
-						<h4>Class</h4>
-					</div>
-				</md-list-item>
-
-				<md-list-item class="md-3-line" ng-click="">
-					<img src="" class="md-avatar"/>
-					<div class="md-list-item-text" layout="column">
-						<h3>Name</h3>
-						<h4>Class</h4>
-					</div>
-				</md-list-item>
-				
-			</md-list>
-		</md-content>
-
-
-
-		<div layout="row" layout-align="end end">
+		<div layout="row" layout-align="end end" id="copyright">
 			<div>
 				<div layout="row" layout-align="end end">
-					<h2>STUDEX</h2>
+					<h2 style="margin-bottom:0px">STUDEX</h2>
 				</div>
 				<div>
 					&copy;AB-6L 2016 All Rights Reserved
 				</div>
 			</div>
 		</div>
-
 	</div>
 </div>
 
