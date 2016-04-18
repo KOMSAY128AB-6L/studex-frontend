@@ -21,15 +21,16 @@
 
       <span flex="5"></span>
 
-      <div flex id="nameContainer" layout="column" layout-align="center start">
+      <div id="nameContainer" layout="column" layout-align="center start">
         <h2>{{user.last_name | uppercase}}</h2>
-        <h3>{{user.first_name + " " + user.middle_initial | uppercase}}</h3>
+        <h3>{{user.first_name+" "+user.middle_initial | uppercase}}</h3>
       </div>
       <span flex="5"></span>
     </div>
 
     <div flex="20" layout="row">
       <span flex-xs="10" flex-gt-xs="20"></span>
+      
       <div flex id="accountInfo" layout="column" layout-align="center start">
         <div layout="row">
           <h4>TEACHER ID#</h4>
@@ -40,9 +41,8 @@
           <h4>{{user.email}}</h4>
         </div>
       </div>
-      <!--Optional for preferrence-->
-      <!--span flex-xs="15" flex-gt-xs="20" flex-order="3"></span-->
-      <!--                        -->
+
+      <span flex-xs="10" flex-gt-xs="20" flex-order="3"></span>
     </div>
 
     <div flex="20" layout="row">
