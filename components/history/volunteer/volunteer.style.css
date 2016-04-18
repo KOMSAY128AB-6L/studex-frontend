@@ -27,6 +27,10 @@
 
 }
 
+#main-volunteer {
+	max-height:100%;
+}
+
 #main-volunteer h2 {
 	font-family: revolution;
 	font-size: 30px;
@@ -39,10 +43,16 @@
 }
 
 #content-volunteer {
+	height: 50vh;
+	overflow: auto;
+}
+
+#content-volunteer md-content {
 	margin-top:0px;
 
 	color: rgb(48,48,48);
 	background-color: transparent;
+
 }
 
 #content-volunteer h4 {

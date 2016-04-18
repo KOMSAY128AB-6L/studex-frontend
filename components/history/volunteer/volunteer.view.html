@@ -4,12 +4,12 @@
 
 <div flex class="main" id="main-volunteer" ng-controller="volunteerCtrl">
 
-	<div layout="row">
-		<div flex="20" flex-gt-sm="75"></div>
-		<div id="skew" flex="" flex layout="column">
-			<h3 id="skewText">VOLUNTEERED STUDENTS</h3>
-		</div>
-	</div>
+    <div layout="row">
+      <span flex-xs="40" flex-gt-xs="60"></span>
+      <div flex id="slantedContainer">
+        <div id="slanted"><div id="slantedText"><p>VOLUNTEERED STUDENTS</p></div></div>
+      </div>
+    </div>
 	
 	<div layout="column">
 
@@ -24,30 +24,30 @@
 		</div>
 
 		<div layout="row"><span flex="5"></span><hr flex style="border-color:rgb(48,48,48)"><span flex="5"> </span> </div>
+		<div layout="column" id="content-volunteer">
+			<md-content >
+				<md-list flex>
+					<md-list-item class="md-3-line content-volunteer-item" ng-repeat="volunteer in volunteers">
+						
+						<img src="" class="md-avatar"/>
 
-		<md-content id="content-volunteer">
-
-			<md-list flex>
-				<md-list-item class="md-3-line content-volunteer-item" ng-repeat="volunteer in volunteers">
+						<div class="md-list-item-text" layout="row">
+							<div flex="50">
+								<h4>{{ volunteer.STUDENT}}</h4>
+							</div>
+							<div flex="50">
+								<h4>{{ volunteer.volunteer_date }}</h4>
+							</div>
+						</div>
+					</md-list-item>
 					
-					<img src="" class="md-avatar"/>
-
-					<div class="md-list-item-text" layout="row">
-						<div flex="50">
-							<h4>{{ volunteer.STUDENT}}</h4>
-						</div>
-						<div flex="50">
-							<h4>{{ volunteer.volunteer_date }}</h4>
-						</div>
-					</div>
-				</md-list-item>
-				
-			</md-list>
-		</md-content>
-
-		<md-toolbar layout="row" layout-align="end center" style="min-height: 40px">
-		</md-toolbar>
-
+				</md-list>
+			</md-content>
+		</div>
 	</div>
 </div>
+
+
+<md-toolbar layout="row" layout-align="end center" style="min-height: 40px">
+</md-toolbar>
 
