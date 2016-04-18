@@ -31,27 +31,6 @@
   -o-transform: skew(-30deg);
 }
 
-#displayPic {
-  margin:auto;
-  height: 120px;
-  width: 120px;
-  border: 12px solid #303030;
-  -webkit-border-radius: 200px;
-  -moz-border-radius: 200px;
-  -o-border-radius: 200px;
-}
-
-#displayPic > * {
-  color: #303030;
-  height: 120px;
-  width: 120px;
-  background-color: #DEDEDE;
-  -webkit-border-radius: 200px;
-  -moz-border-radius: 200px;
-  -o-border-radius: 200px;
-}
-
-
 #copyBtmRight > span{
   text-align: right;
   font-size: 12px;
@@ -103,8 +82,6 @@
 }
 
 
-
-
 .inset{
 
   margin-left: auto;
@@ -132,14 +109,6 @@
   opacity:1
 }
 
-/*
-@media screen and (max-width: 600px) {
-  .inset {
-    width: 1em;
-    height: 1em;
-    border-radius: 50px;
-  }
-}*/
 
 
 
