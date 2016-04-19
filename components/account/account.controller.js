@@ -29,6 +29,7 @@
 	};
 
   function accountCtrlFunc($scope, $http) {
+  		$scope.title = 'MY ACCOUNT';
 		$scope.null_picture = false;
 
 		$http({
@@ -45,9 +46,9 @@
 		function error (response) {
 			$mdToast.show(
 				$mdToast.simple()
-					.textContent(response.status)
+					.textContent(response.data.errors[0].message)
 					.hideDelay(1000)
-							);
+			);
 		}
 
   };
