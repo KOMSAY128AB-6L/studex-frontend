@@ -2,7 +2,7 @@
 	<h2>STUDEX</h2>
 </md-toolbar>
 
-<div flex class="main" id="main-volunteer" ng-controller="volunteerCtrl">
+<div flex class="main" layout="column" id="main-volunteer" ng-controller="volunteerCtrl">
 
     <div layout="row">
       <span flex-xs="40" flex-gt-xs="60"></span>
@@ -10,25 +10,26 @@
         <div id="slanted"><div id="slantedText"><p>VOLUNTEERED STUDENTS</p></div></div>
       </div>
     </div>
-	
+
 	<div layout="column">
-
-		<div layout="row" id="content-header">
-			<div flex="10"></div>
-			<div flex="50" flex-gt-sm="40">
-				<h5>NAME</h5>
+		
+			<div layout="row" id="content-header">
+				<div flex="10"></div>
+				<div flex="50" flex-gt-sm="40">
+					<h5>NAME</h5>
+				</div>
+				<div flex="40" flex-gt-sm="50">
+					<h5>DATE AND TIME</h5>
+				</div>
 			</div>
-			<div flex="40" flex-gt-sm="50">
-				<h5>DATE AND TIME</h5>
-			</div>
-		</div>
+			<div layout="row"><span flex="5"></span><hr flex style="border-color:rgb(48,48,48)"><span flex="5"> </span> </div>
 
-		<div layout="row"><span flex="5"></span><hr flex style="border-color:rgb(48,48,48)"><span flex="5"> </span> </div>
 		<div layout="column" id="content-volunteer">
+			<span flex="20"></span>
 			<md-content >
 				<md-list flex>
-					<md-list-item class="md-3-line content-volunteer-item" ng-repeat="volunteer in volunteers">
-						
+					
+					<md-list-item class="md-3-line content-volunteer-item" ng-repeat="volunteer in volunteers">	
 						<img src="" class="md-avatar"/>
 
 						<div class="md-list-item-text" layout="row">
@@ -45,6 +46,7 @@
 			</md-content>
 		</div>
 	</div>
+
 </div>
 
 

@@ -2,16 +2,18 @@
   <h2>STUDEX</h2>
 </md-toolbar>
 
-<div layout="row">
-	
-	<div flex="20" flex-gt-sm="7	5"></div>
-	<div id="skew" flex="" flex layout="column" layout-align="center center">
-		<h3 id="skewText">HISTORY</h3>
-	</div>
-</div>
 
-<div flex class="main" id="main-history" layout="column" layout-align="center">
 
+<div flex class="main" id="main-history" layout="column">
+
+	<div layout="row">
+    	<span flex-xs="40" flex-gt-xs="60"></span>
+    	<div flex id="slantedContainer">
+   			<div id="slanted"><div id="slantedText"><p>HISTORY</p></div></div>
+    	</div>
+    </div>
+
+    <span flex="20"></span>
 
 	<div layout="column">
 
@@ -30,6 +32,8 @@
 			<div flex="20"></div>
 		</div>
 	</div>
+
+	<span flex="10"></span>
 </div>
 <md-toolbar layout="row" layout-align="end center" style="min-height: 40px">
 </md-toolbar>
