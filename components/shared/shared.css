@@ -46,3 +46,9 @@ md-toolbar h2 {
 	font-family: revolution;
 	letter-spacing: 5px;
 }
+
+md-toolbar #navbar{
+	position: fixed;
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
