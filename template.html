@@ -1,15 +1,11 @@
-<md-toolbar layout="row" layout-align="center center">
-	<h2>STUDEX</h2>
-</md-toolbar>
-
-<div flex class="main">
-	<div layout="row">
-      <span flex-xs="40" flex-gt-xs="60"></span>
-      <div flex id="slantedContainer">
-        <div id="slanted"><div id="slantedText"><p>LOREM IPSUM</p></div></div>
-      </div>
+<div ng-include="'components/shared/templates/header.html'">
+</div>
+<div layout="column" class="main">
+    <div layout="row" ng-include="'components/shared/templates/flag.html'">
     </div>
 
+    <!--INSERT CODE HERE-->
+
 </div>
-<md-toolbar layout="row" layout-align="end center" style="min-height: 40px">
-</md-toolbar>
+<div ng-include="'components/shared/templates/nav.html'">
+</div>
