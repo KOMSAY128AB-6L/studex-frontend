@@ -29,6 +29,7 @@
 	};
 
   function accountCtrlFunc($scope, $http) {
+  		$scope.title = 'MY ACCOUNT';
 		$scope.null_picture = false;
 
 		$http({
