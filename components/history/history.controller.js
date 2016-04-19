@@ -29,6 +29,38 @@
 			}
 		};
 
+		$scope.volunteer_log = function () {
+			$http({
+				method: 'GET',
+				url: 'http://' + config.backend_url + '/student_logs',
+				withCredentials: true
+			}).then(success, error);
+
+			function success (response) {
+				$scope.volunteers = response.data.data.items;
+			};
+
+			function error (response) {
+
+			}
+		};
+
+
+		$scope.transaction_log = function () {
+			$scope.transactions= [
+				{
+					transaction : 'Transaction',
+					transaction_date : '07/30/1997'
+				},
+				{
+					transaction : 'Transaction',
+					transaction_date : '07/30/1997'
+				},
+
+			];
+		};
+
+
 	};
 
 })();

@@ -2,38 +2,123 @@
   <h2>STUDEX</h2>
 </md-toolbar>
 
+<div flex class="main" layout="column" ng-switch on="form">
 
+	<div id="main-history" layout="column" ng-switch-default>
+		<div layout="row">
+	    	<span flex-xs="40" flex-gt-xs="60"></span>
+	    	<div flex id="slantedContainer">
+	   			<div id="slanted"><div id="slantedText"><p>HISTORY</p></div></div>
+	    	</div>
+	    </div>
 
-<div flex class="main" id="main-history" layout="column">
+		<div layout="column" layout-align="center" id="history-buttonContainer">
 
-	<div layout="row">
-    	<span flex-xs="40" flex-gt-xs="60"></span>
-    	<div flex id="slantedContainer">
-   			<div id="slanted"><div id="slantedText"><p>HISTORY</p></div></div>
-    	</div>
-    </div>
-
-    <span flex="20"></span>
-
-	<div layout="column">
-
-		<div layout="row" id="history-buttons">
-			<div flex="20"></div>
-			
-			<div flex="" layout="column" >	
-				<div flex>
-					<md-button href="#/history/transaction">LOG OF TRANSACTIONS</md-button>
+			<div layout="row" id="history-buttons">
+				<div flex="20"></div>
+				
+				<div flex="" layout="column" >	
+					<div flex>
+						<md-button ng-click="$parent.form='transactions' ; transaction_log()">LOG OF TRANSACTIONS</md-button>
+					</div>
+					<div flex>
+						<md-button ng-click="$parent.form='volunteers' ; volunteer_log()">LOG OF VOLUNTEERED STUDENTS</md-button>
+					</div>
 				</div>
-				<div flex>
-					<md-button href="#/history/volunteer">LOG OF VOLUNTEERED STUDENTS</md-button>
-				</div>
+
+				<div flex="20"></div>
 			</div>
-
-			<div flex="20"></div>
 		</div>
 	</div>
 
-	<span flex="10"></span>
+	<div id="main-transaction" layout="column" ng-switch-when="transactions">
+		<div layout="row">
+    		<span flex-xs="40" flex-gt-xs="60"></span>
+    		<div flex id="slantedContainer">
+        		<div id="slanted"><div id="slantedText"><p>TRANSACTIONS</p></div></div>
+      		</div>
+    	</div>
+
+		<div layout="column">
+
+			<div layout="row" id="content-header">
+				<div flex="50">
+					<h5>TRANSACTION</h5>
+				</div>
+				<div flex="50">
+					<h5>TIMESTAMP</h5>
+				</div>
+			</div>
+			<div layout="row"><span flex="5"></span><hr flex style="border-color:rgb(48,48,48)"><span flex="5"> </span> </div>
+
+			<div layout="column" id="content-transction">
+				<md-content id="content-transaction">
+					<md-list flex>
+
+						<md-list-item class="md-3-line content-transaction-item" ng-repeat="transaction in transactions">
+							<div class="md-list-item-text" layout="row">
+								<div flex="50">
+									<h4>{{ transaction.transaction }}</h4>
+								</div>
+								<div flex="50">
+									<h4>{{ transaction.transaction_date }}</h4>
+								</div>
+							</div>
+						</md-list-item>
+						
+					</md-list>
+				</md-content>
+			</div>
+
+		</div>
+	</div>
+
+	<div id="main-volunteer" layout="column" ng-switch-when="volunteers">
+		<div layout="row">
+			<span flex-xs="40" flex-gt-xs="60"></span>
+			<div flex id="slantedContainer">
+				<div id="slanted"><div id="slantedText"><p>VOLUNTEERED STUDENTS</p></div></div>
+			</div>
+		</div>
+
+		<div layout="column">
+			
+				<div layout="row" id="content-header">
+					<div flex="10"></div>
+					<div flex="50" flex-gt-sm="40">
+						<h5>NAME</h5>
+					</div>
+					<div flex="40" flex-gt-sm="50">
+						<h5>DATE AND TIME</h5>
+					</div>
+				</div>
+				<div layout="row"><span flex="5"></span><hr flex style="border-color:rgb(48,48,48)"><span flex="5"> </span> </div>
+
+			<div layout="column" id="content-volunteer">
+				<span flex="20"></span>
+				<md-content >
+					<md-list flex>
+						
+						<md-list-item class="md-3-line content-volunteer-item" ng-repeat="volunteer in volunteers">	
+							<img src="" class="md-avatar"/>
+
+							<div class="md-list-item-text" layout="row">
+								<div flex="50">
+									<h4>{{ volunteer.STUDENT}}</h4>
+								</div>
+								<div flex="50">
+									<h4>{{ volunteer.volunteer_date }}</h4>
+								</div>
+							</div>
+						</md-list-item>
+						
+					</md-list>
+				</md-content>
+			</div>
+		</div>
+	</div>
+
+
 </div>
 <md-toolbar layout="row" layout-align="end center" style="min-height: 40px">
 </md-toolbar>
