@@ -46,9 +46,9 @@
 		function error (response) {
 			$mdToast.show(
 				$mdToast.simple()
-					.textContent(response.status)
+					.textContent(response.data.errors[0].message)
 					.hideDelay(1000)
-							);
+			);
 		}
 
   };
