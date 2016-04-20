@@ -6,6 +6,9 @@
 
 	app.config(customTheme);
 
+	accountCtrlFunc.$inject = ['$scope', '$http', '$mdToast'];
+	customTheme.$inject = ['$mdThemingProvider'];
+
 	function customTheme($mdThemingProvider) {
     $mdThemingProvider.definePalette('customPrimary', {
 			'50': '#737373',
@@ -29,7 +32,7 @@
 	};
 
   function accountCtrlFunc($scope, $http) {
-  		$scope.title = 'MY ACCOUNT';
+		$scope.title = 'MY ACCOUNT';
 		$scope.null_picture = false;
 
 		$http({
@@ -49,8 +52,14 @@
 					.textContent(response.data.errors[0].message)
 					.hideDelay(1000)
 			);
-		}
+		};
 
+		$scope.password = function () {
+			$scope.accountView = 'password';
+			$scope.title = 'CHANGE PASSWORD';
+		}
   };
+
+
 
 })();
