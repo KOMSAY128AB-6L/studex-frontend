@@ -6,7 +6,7 @@
 
 	app.config(customTheme);
 
-	accountCtrlFunc.$inject = ['$scope', '$http', '$mdToast'];
+	accountCtrlFunc.$inject = ['$scope', '$http', '$mdToast', '$filter'];
 	customTheme.$inject = ['$mdThemingProvider'];
 
 	function customTheme($mdThemingProvider) {
@@ -31,7 +31,7 @@
 			.primaryPalette('customPrimary')
 	};
 
-  function accountCtrlFunc($scope, $http) {
+  function accountCtrlFunc($scope, $http, $mdToast, $filter) {
 		$scope.title = 'MY ACCOUNT';
 		$scope.null_picture = false;
 
@@ -54,12 +54,63 @@
 			);
 		};
 
-		$scope.password = function () {
+		$scope.changePass = function () {
 			$scope.accountView = 'password';
 			$scope.title = 'CHANGE PASSWORD';
-		}
+		};
+
+		$scope.savePass = function() {
+			$scope.title = 'MY ACCOUNT';
+			$scope.accountView = 'home';
+			$scope.old_password = "";
+			$scope.new_password = "";
+			$scope.confirm_password = "";
+		};
+
+		$scope.editProfile = function() {
+			$scope.accountView = 'edit';
+			$scope.title = 'EDIT PROFILE';
+			$scope.temp = $scope.user;
+			$scope.temp.last_name = $filter('uppercase')($scope.temp.last_name);
+			$scope.temp.first_name = $filter('uppercase')($scope.temp.first_name);
+			$scope.temp.middle_initial = $filter('uppercase')($scope.temp.middle_initial);
+		};
+
+		$scope.editPic = function() {
+			console.log("Implement edit pic");
+		};
+
+		$scope.saveProfile = function() {
+			$scope.user = $scope.temp;
+			console.log($scope.user)
+			$scope.accountView = 'home';
+			$scope.title = 'MY ACCOUNT';
+			/*$http({
+				method: 'PUT',
+				url: 'http://' + config.backend_url + '/teacher/'+$scope.temp.teacher_id,
+				data: $scope.temp,
+				withCredentials:true
+			}).then(success, error);
+
+			function success (response) {
+				$mdToast.show(
+					$mdToast.simple()
+						.textContent('Successfully updated profile!')
+						.hideDelay(1000)
+                );
+				$scope.user = $scope.temp;
+				console.log($scope.user)
+				$scope.accountView = 'home';
+				$scope.title = 'MY ACCOUNT';
+			};
+
+			function error (response) {
+				$mdToast.show(
+					$mdToast.simple()
+						.textContent(response.data.errors[0].message)
+						.hideDelay(1000)
+                );
+			}
+		}*/
   };
-
-
-
 })();

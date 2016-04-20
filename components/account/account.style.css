@@ -6,7 +6,7 @@
   margin-right: 5px;
 }
 
-#changePass input {
+#AccountView input {
   background-color: #EFEFEF;
   color: #303030;
   border: 1px solid #737373;
@@ -72,7 +72,7 @@
   -o-border-radius: 200px;
 }
 
-#displayPic > * {
+#displayPic > img {
   color: #303030;
   height: 120px;
   width: 120px;
@@ -82,9 +82,24 @@
   -o-border-radius: 200px;
 }
 
+#displayPic .md-button {
+  top: -40px;
+  background-color: #737373;
+  min-width: 25px;
+  max-width: 50px;
+  min-height: 10px;
+  max-height: 20px;
+}
+
+#displayPic span {
+  top: -10px;
+  color: #DEDEDE;
+  font-size: 10px;
+}
+
 #nameContainer > h2 {
   font-family: quicksand_bold;
-  font-size: 23px;
+  font-size: 25px;
   margin-bottom: 0px;
 }
 
@@ -94,6 +109,18 @@
   font-size: 20px;
   margin-top: 0px;
 }
+
+#nameContainer input {
+  font-family: quicksand_bold;
+  font-size: 20px;
+  margin-top: 0px;
+}
+
+#nameContainer div:nth-child(1) *{
+  margin-bottom:3px;
+  font-size: 25px;
+}
+
 
 #accountInfo * {
   font-family: quicksand_bold;
