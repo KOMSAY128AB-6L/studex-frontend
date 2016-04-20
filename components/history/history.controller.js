@@ -8,6 +8,7 @@
 	historyCtrlFunc.$inject = ['$scope', '$http', '$location', '$mdToast'];
 	
 	function historyCtrlFunc($scope, $http, $location, $mdToast) {
+		$scope.title = 'HISTORY';
 
 		$scope.logout = function () {
 			$http({
@@ -30,9 +31,11 @@
 		};
 
 		$scope.volunteer_log = function () {
+			$scope.title = 'VOLUNTEERED STUDENTS';
+
 			$http({
 				method: 'GET',
-				url: 'http://' + config.backend_url + '/student_logs',
+				url: 'http://' + config.backend_url + '/student_logs/:id',
 				withCredentials: true
 			}).then(success, error);
 
@@ -41,23 +44,35 @@
 			};
 
 			function error (response) {
-
+				$mdToast.show(
+					$mdToast.simple()
+						.textContent(response.status)
+						.hideDelay(1000)
+                );
 			}
 		};
 
 
 		$scope.transaction_log = function () {
-			$scope.transactions= [
-				{
-					transaction : 'Transaction',
-					transaction_date : '07/30/1997'
-				},
-				{
-					transaction : 'Transaction',
-					transaction_date : '07/30/1997'
-				},
+			$scope.title = 'TRANSACTIONS';
 
-			];
+			$http({
+				method: 'GET',
+				url: 'http://' + config.backend_url + '/history/:id',
+				withCredentials: true
+			}).then(success, error);
+
+			function success (response) {
+				$scope.transactions = response.data.data.items;
+			};
+
+			function error (response) {
+				$mdToast.show(
+					$mdToast.simple()
+						.textContent(response.status)
+						.hideDelay(1000)
+                );
+			}
 		};
 
 
