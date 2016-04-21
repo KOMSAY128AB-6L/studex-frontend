@@ -13,7 +13,7 @@
 				<div flex="20"></div>
 				
 				<div flex="" layout="column" >	
-					<div flex>
+					<div flex layout="row">
 						<md-button ng-click="$parent.form='transactions' ; transaction_log()">LOG OF TRANSACTIONS</md-button>
 					</div>
 					<div flex>
@@ -49,10 +49,10 @@
 						<md-list-item class="md-3-line content-transaction-item" ng-repeat="transaction in transactions">
 							<div class="md-list-item-text" layout="row">
 								<div flex="50">
-									<h4>{{ transaction.log_text }}</h4>
+									<p>{{ transaction.log_text }}</p>
 								</div>
 								<div flex="50">
-									<h4>{{ transaction.log_time }}</h4>
+									<p>{{ transaction.log_time }}</p>
 								</div>
 							</div>
 						</md-list-item>
@@ -90,11 +90,11 @@
 							<img src="" class="md-avatar"/>
 
 							<div class="md-list-item-text" layout="row">
-								<div flex="50">
-									<h4>{{ volunteer.STUDENT}}</h4>
+								<div flex="50" >
+									<p>{{ volunteer.Volunteer }}</p>
 								</div>
 								<div flex="50">
-									<h4>{{ volunteer.volunteer_date }}</h4>
+									<p>{{ volunteer.volunteer_date }}</p>
 								</div>
 							</div>
 						</md-list-item>

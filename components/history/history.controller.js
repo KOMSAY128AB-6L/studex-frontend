@@ -27,7 +27,7 @@
 						.textContent(response.status)
 						.hideDelay(1000)
                 );
-			}
+			};
 		};
 
 		$scope.volunteer_log = function () {
@@ -35,7 +35,7 @@
 
 			$http({
 				method: 'GET',
-				url: 'http://' + config.backend_url + '/student_logs/:id',
+				url: 'http://' + config.backend_url + '/student_logs',
 				withCredentials: true
 			}).then(success, error);
 
@@ -49,7 +49,7 @@
 						.textContent(response.status)
 						.hideDelay(1000)
                 );
-			}
+			};
 		};
 
 
@@ -58,7 +58,7 @@
 
 			$http({
 				method: 'GET',
-				url: 'http://' + config.backend_url + '/history/:id',
+				url: 'http://' + config.backend_url + '/history',
 				withCredentials: true
 			}).then(success, error);
 
@@ -72,7 +72,7 @@
 						.textContent(response.status)
 						.hideDelay(1000)
                 );
-			}
+			};
 		};
 
 
