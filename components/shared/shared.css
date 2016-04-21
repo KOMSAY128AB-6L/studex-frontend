@@ -8,6 +8,11 @@
     src: url(../../assets/fonts/REVOLUTION.ttf);
 }
 
+@font-face {
+	font-family: quicksand_bold;
+	src: url(../../assets/fonts/Quicksand_Bold.otf);
+}
+
 * {
 	outline: none;
 }
@@ -35,4 +40,9 @@ body, .main {
 .main * {
 	font-family: quicksand;
 	font-weight: bold;
+}
+
+md-toolbar h2 {
+	font-family: revolution;
+	letter-spacing: 5px;
 }

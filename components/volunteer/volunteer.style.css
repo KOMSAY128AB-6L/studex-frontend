@@ -16,13 +16,10 @@
 }
 
 #skewText {
-
-	font-family:quicksand;
 	color: #FFFFFF;
 	font-size: 15px;
 	letter-spacing: 1px;
 	margin-top:15px;
-
 
     -ms-transform: skew(-30deg);
     -webkit-transform: skew(-30deg, 0deg);
@@ -30,25 +27,32 @@
 
 }
 
-#main-history h2 {
+#main-volunteer h2 {
 	font-family: revolution;
 	font-size: 30px;
 	letter-spacing: 10px;
 	margin-top: 0;
 }
 
-#history-buttons span {
-	color: #FFFFFF;
-	font-size:10px;
+#content-header {
+	max-height:40px;
 }
 
-#history-buttons a {
-	min-width:100%;
-	background-color: rgb(48,48,48);
+#content-volunteer {
+	margin-top:0px;
+
+	color: rgb(48,48,48);
+	background-color: transparent;
 }
 
-#copyright {
-	position:absolute;
-	bottom: 0;
-	right: 0;
+#content-volunteer h4 {
+	color:rgb(48,48,48);
+}
+
+#content-volunteer md-list-item {
+	min-height: 50px;
+}
+
+#content-volunteer img, .md-list-item-text {
+	margin: 0px;
 }

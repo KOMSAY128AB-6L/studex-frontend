@@ -38,52 +38,48 @@
   margin-bottom: 5px;
 }
 
-#lol{
-	margin-top: -120px;
-	margin-left: -40px;
-
-	z-index: 100;
-}
 
 #center-div{
-	margin-top: 5em;
-	margin-left: auto;
-	margin-right: auto;
+	margin-top: 4em;
+  margin-right: auto;
+  margin-left: auto;
 	width: 80%;
 	height: 40%;
-	padding-left: 20%;
+  overflow-y: scroll;
 }
 
 .row-div{
 	height: 20%;
-	margin: 2% 0 2% 0; 
+	margin: -2% 0 2% 0; 
+  display: inline-block;
 }
 
 .boxes{
 	height: 80%;
-	width: 30%;
+	width: 300px;
 	background-color: #303030;
 	color: white;
 	margin: 2% 5% 5% 5%;
-	padding-top: 1em;
+  display: inline-block;
 }
+
+@media screen and (max-width: 400px) {
+  .boxes{
+    width: 250px;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  #center-div{
+    margin-top: 2rem;
+  }
+} 
 
 .main{
 	height: 100%;
 }
 
-#center-button{
-
-	width: 15%;
-	height: 15%;
-	color: white;
-	border-radius: 50%;
-	background-color: #303030;
-}
-
-
 .inset{
-
+  margin-top: 10%;
   margin-left: auto;
   margin-right: auto;
   display:block;
@@ -109,7 +105,11 @@
   opacity:1
 }
 
-
+.vertical{
+  position: relative;
+  top: 50%;
+  transform: translateY(-140%);
+}
 
 
 
