@@ -1,2 +1,7 @@
-<md-toolbar layout="row" layout-align="end center" style="min-height: 40px">
+<md-toolbar layout="row" layout-align="center center" style="min-height: 40px" id="navbar">
+	<a ng-click="navigation.home()" layout-padding><img src="assets/icons/home.png" alt="home"></a>
+	<a ng-click="navigation.account()" layout-padding><img src="assets/icons/profile.png" alt="my account"></a>
+	<a ng-click="navigation.sections()" layout-padding><img src="assets/icons/sections.png" alt="my sections"></a>
+	<a ng-click="navigation.history()" layout-padding><img src="assets/icons/history.png" alt="history"></a>
+	<a ng-click="navigation.logout()" layout-padding><img src="assets/icons/logout.png" alt="log out"></a>
 </md-toolbar>
