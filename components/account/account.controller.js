@@ -28,9 +28,11 @@
 			.primaryPalette('customPrimary')
 	};
 
-  function accountCtrlFunc($scope, $http) {
+  function accountCtrlFunc($scope, $http, navbarService) {
   		$scope.title = 'MY ACCOUNT';
 		$scope.null_picture = false;
+
+		$scope.navigation = navbarService.navigation();
 
 		$http({
 			method: 'GET',
