@@ -30,6 +30,10 @@
 				'templateUrl': './components/transaction/transaction.view.html',
 				'controller' : 'transactionCtrl'
 			})
+			.when('/addclass', {
+				'templateUrl': './components/addclass/addclass.view.html',
+				'controller' : 'addclassCtrl'
+			})
 			.otherwise({'redirectTo': '/'})
 	}
 
