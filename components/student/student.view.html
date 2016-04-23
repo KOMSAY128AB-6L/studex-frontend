@@ -1,0 +1,73 @@
+<md-toolbar layout="row" layout-align="center center">
+  <h2>STUDEX</h2>
+</md-toolbar>
+
+<div layout="row">
+  
+  <div flex="20" flex-gt-sm="75"></div>
+  <div id="skew" flex="" flex layout="column" layout-align="center center">
+    <h3 id="skewText">ADD STUDENT</h3>
+  </div>
+</div>
+
+<div flex class="main" id="main-student" layout="column" layout-align="center center">
+  <div layout="row">
+     <!-- FORM -->
+    <!-- pass in the variable if our form is valid or invalid -->
+    <form name="addStudent" ng-submit="add()" > <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
+
+        <!-- FIRST NAME -->
+        <div class="form-group">
+            <label>First Name: </label>
+            <input type="text" name="firstname" id="text3" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.firstname" size="25">
+            <span ng-show="errorFirstName">{{errorFirstName}}</span>
+        </div>
+
+        <!-- MIDDLE INITIAL -->
+        <div class="form-group">
+            <label>Middle Initial: </label>
+            <input type="text" name="middleinitial" id="text3" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.middleinitial" size="23">
+            <span ng-show="errorMiddleInitial">{{errorMiddleInitial}}</span>
+        </div>
+        
+        <!-- LAST NAME -->
+        <div class="form-group">
+            <label>Last Name: </label>
+            <input type="text" name="lastname" id="text3" class="ng-pristine ng-valid md-input ng-touched"ng-model="user.lastname" size="25">
+            <span ng-show="errorLastName">{{errorLastName}}</span>
+        </div>
+
+        <!-- STUDENT NUMBER -->
+        <div class="form-group">
+            <label>Student number: </label>
+            <input type="text" name="studentnumber" id="text3" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.studentnumber" ng-minlength="10" ng-maxlength="10"  size="20">
+            <span ng-show="errorStudentNumber">{{errorStudentNumber}}</span>
+        </div>
+        
+        <!-- EMAIL -->
+        <div class="form-group">
+            <label>E-mail Address: </label>
+            <input type="email" name="email" id="text3" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.email" size="22">
+            <span ng-show="errorEmail">{{errorEmail}}</span>
+        </div>
+        
+        <!-- SUBMIT BUTTON -->
+        <div layout="row" id="student-buttons">
+          <div flex="40"></div>
+          <div flex="" layout="row" >  
+            <div flex>
+              <md-button id="save" size="90" ng-click="add()">SAVE</md-button>
+            </div>
+          </div>
+          <div flex="40"></div>
+        </div>
+
+
+    </form>
+
+  </div>
+  
+
+</div>
+<md-toolbar layout="row" layout-align="end center" style="min-height: 40px">
+</md-toolbar>
