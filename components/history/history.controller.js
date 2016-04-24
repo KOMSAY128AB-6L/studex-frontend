@@ -10,26 +10,6 @@
 	function historyCtrlFunc($scope, $http, $location, $mdToast) {
 		$scope.title = 'HISTORY';
 
-		$scope.logout = function () {
-			$http({
-				method: 'POST',
-				url: 'http://' + config.backend_url + '/logout',
-				withCredentials:true
-			}).then(success, error);
-
-			function success (response) {
-				$location.path('/');
-			};
-
-			function error (response) {
-				$mdToast.show(
-					$mdToast.simple()
-						.textContent(response.status)
-						.hideDelay(1000)
-                );
-			};
-		};
-
 		$scope.volunteer_log = function () {
 			$scope.title = 'VOLUNTEERED STUDENTS';
 
