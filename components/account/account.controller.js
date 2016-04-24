@@ -112,7 +112,7 @@
 						.textContent(response.data.errors[0].message)
 						.hideDelay(1000)
                 );
-			}
-		}*/
+			}*/
+		}
   };
 })();
