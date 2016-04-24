@@ -12,6 +12,10 @@
   border: 1px solid #737373;
 }
 
+#editProf input {
+  background: transparent;
+}
+
 #btn-lrg {
   min-width: 100%;
   min-height: 45px;
@@ -83,7 +87,7 @@
 }
 
 #displayPic .md-button {
-  top: -40px;
+  top: -100px;
   background-color: #737373;
   min-width: 25px;
   max-width: 50px;

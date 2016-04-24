@@ -34,7 +34,6 @@
   function accountCtrlFunc($scope, $http, $mdToast, $filter, navbarService) {
 		$scope.title = 'MY ACCOUNT';
 		$scope.null_picture = false;
-		$scope.fab = {};
 
 		$scope.navigation = navbarService.navigation();
 
@@ -73,26 +72,24 @@
 		$scope.editProfile = function() {
 			$scope.accountView = 'edit';
 			$scope.title = 'EDIT PROFILE';
-			$scope.fab.isOpen = false;
-			$scope.fab.mode = 'md-fling';
+			$scope.fab = {'mode': 'ng-fling'};
 			$scope.temp = $scope.user;
 			$scope.temp.last_name = $filter('uppercase')($scope.temp.last_name);
 			$scope.temp.first_name = $filter('uppercase')($scope.temp.first_name);
 			$scope.temp.middle_initial = $filter('uppercase')($scope.temp.middle_initial);
+			console.log($scope.fab);
 		};
 
 		$scope.editPic = function() {
 			console.log("Implement edit pic");
+			$scope.fab.isOpen = !$scope.fab.isOpen;
+			console.log($scope.fab.isOpen);
 		};
 
 		$scope.saveProfile = function() {
-			$scope.user = $scope.temp;
-			console.log($scope.user)
-			$scope.accountView = 'home';
-			$scope.title = 'MY ACCOUNT';
-			/*$http({
+			$http({
 				method: 'PUT',
-				url: 'http://' + config.backend_url + '/teacher/'+$scope.temp.teacher_id,
+				url: 'http://' + config.backend_url + '/teacher',
 				data: $scope.temp,
 				withCredentials:true
 			}).then(success, error);
@@ -115,7 +112,7 @@
 						.textContent(response.data.errors[0].message)
 						.hideDelay(1000)
                 );
-			}*/
+			}
 		}
   };
 })();
