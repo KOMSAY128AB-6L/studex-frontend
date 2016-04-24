@@ -5,10 +5,12 @@
 	app.controller('historyCtrl', historyCtrlFunc);
 
 
-	historyCtrlFunc.$inject = ['$scope', '$http', '$location', '$mdToast'];
+	historyCtrlFunc.$inject = ['$scope', '$http', '$location', '$mdToast', 'navbarService'];
 	
-	function historyCtrlFunc($scope, $http, $location, $mdToast) {
+	function historyCtrlFunc($scope, $http, $location, $mdToast, navbarService) {
 		$scope.title = 'HISTORY';
+
+		$scope.navigation = navbarService.navigation();
 
 		$scope.volunteer_log = function () {
 			$scope.title = 'VOLUNTEERED STUDENTS';
