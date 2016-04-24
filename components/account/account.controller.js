@@ -6,7 +6,7 @@
 
 	app.config(customTheme);
 
-	accountCtrlFunc.$inject = ['$scope', '$http', '$mdToast', '$filter'];
+	accountCtrlFunc.$inject = ['$scope', '$http', '$mdToast', '$filter', 'navbarService'];
 	customTheme.$inject = ['$mdThemingProvider'];
 
 	function customTheme($mdThemingProvider) {
@@ -32,8 +32,9 @@
 	};
 
   function accountCtrlFunc($scope, $http, $mdToast, $filter, navbarService) {
-  		$scope.title = 'MY ACCOUNT';
+		$scope.title = 'MY ACCOUNT';
 		$scope.null_picture = false;
+		$scope.fab = {};
 
 		$scope.navigation = navbarService.navigation();
 
@@ -72,6 +73,8 @@
 		$scope.editProfile = function() {
 			$scope.accountView = 'edit';
 			$scope.title = 'EDIT PROFILE';
+			$scope.fab.isOpen = false;
+			$scope.fab.mode = 'md-fling';
 			$scope.temp = $scope.user;
 			$scope.temp.last_name = $filter('uppercase')($scope.temp.last_name);
 			$scope.temp.first_name = $filter('uppercase')($scope.temp.first_name);

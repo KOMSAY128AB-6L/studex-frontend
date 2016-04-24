@@ -60,9 +60,17 @@
       <div layout="row">
         <span flex="10"></span>
         <div flex="45">
-          <div id="displayPic" layout-align="center center">
+          <div id="displayPic" layout-align="center center" ng-cloak>
             <img alt="Profile pic" ng-hide="$null_picture" src="//gettingreal2014.com/wp-content/uploads/2014/07/default-avatar.png">
-            <md-button class="md-raised" layout-align="center space-around" ng-click="editPic()">EDIT</md-button>
+            <md-fab-speed-dial md-open="$fab.isOpen" md-direction="up" ng-class="$fab.mode">
+              <md-fab-trigger>
+                <md-button class="md-raised" layout-align="center space-around" ng-click="editPic()">EDIT</md-button>
+              </md-fab-trigger>
+              <md-fab-actions>
+                <md-button class="md-raised" layout-align="center space-around">EDIT</md-button>
+                <md-button class="md-raised" layout-align="center space-around">EDIT</md-button>
+              </md-fab-actions>
+            </md-fab-speed-dial>
           </div>
         </div>
 
