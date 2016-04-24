@@ -31,9 +31,11 @@
 			.primaryPalette('customPrimary')
 	};
 
-  function accountCtrlFunc($scope, $http, $mdToast, $filter) {
-		$scope.title = 'MY ACCOUNT';
+  function accountCtrlFunc($scope, $http, $mdToast, $filter, navbarService) {
+  		$scope.title = 'MY ACCOUNT';
 		$scope.null_picture = false;
+
+		$scope.navigation = navbarService.navigation();
 
 		$http({
 			method: 'GET',

@@ -26,14 +26,6 @@
 				'templateUrl': './components/history/history.view.html',
 				'controller' : 'historyCtrl'
 			})
-			.when('/history/volunteer', {
-				'templateUrl': './components/volunteer/volunteer.view.html',
-				'controller' : 'volunteerCtrl'
-			})
-			.when('/history/transaction', {
-				'templateUrl': './components/transaction/transaction.view.html',
-				'controller' : 'transactionCtrl'
-			})
 			.otherwise({'redirectTo': '/'})
 	}
 

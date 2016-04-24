@@ -1,33 +1,7 @@
-#toolbar-main {
-	background-color: rgb(48,48,48);
-	min-height: 40px;
-	max-height: 40px;
-}
+/* Initial Page */
 
-#skew {
-	margin-top:5px;
-	min-height: 45px;
-	max-height: 45px;
-	background: rgb(48,48,48);
-	
-    -ms-transform: skew(30deg);
-    -webkit-transform: skew(30deg, 0deg);
-    transform: skew(30deg, 0deg);
-}
-
-#skewText {
-
-	font-family:quicksand;
-	color: #FFFFFF;
-	font-size: 15px;
-	letter-spacing: 1px;
-	margin-top:15px;
-
-
-    -ms-transform: skew(-30deg);
-    -webkit-transform: skew(-30deg, 0deg);
-    transform: skew(-30deg, 0deg);
-
+#main-history, #main-history #slantedContainer,#history-buttonContainer {
+	height:100%;
 }
 
 #main-history h2 {
@@ -42,13 +16,104 @@
 	font-size:10px;
 }
 
-#history-buttons a {
+#history-buttons button {
 	min-width:100%;
 	background-color: rgb(48,48,48);
+	margin-left:0px;
+	padding:7px;
 }
 
-#copyright {
-	position:absolute;
-	bottom: 0;
-	right: 0;
+/* */
+
+#main-transaction h2 {
+	font-family: revolution;
+	font-size: 30px;
+	letter-spacing: 10px;
+	margin-top: 0;
+}
+
+#main-transaction p {
+	font-size: 12px;
+}
+
+#main-transaction #slantedContainer {
+	height:100%;
+}
+
+#content-header {
+	max-height:40px;
+}
+
+#content-transaction {
+	margin-top:0px;
+
+	color: rgb(48,48,48);
+	background-color: transparent;
+}
+
+#content-transaction p {
+	font-weight: bold;
+	color:rgb(48,48,48);
+}
+
+#content-transaction md-list-item {
+	min-height: 50px;
+}
+
+#content-transaction img, .md-list-item-text {
+	margin: 0px;
+}
+
+/* */
+
+#main-volunteer h2 {
+	font-family: revolution;
+	font-size: 30px;
+	letter-spacing: 10px;
+	margin-top: 0;
+}
+
+#main-volunteer p {
+	font-size: 12px;
+}
+
+#main-volunteer #slantedContainer {
+	height:100%;
+}
+
+#content-header {
+	height:100%;
+}
+
+#content-volunteer {
+	height: 100%;
+	overflow: auto;
+}
+
+#content-volunteer md-content {
+	margin-top:0px;
+
+	color: rgb(48,48,48);
+	background-color: transparent;
+
+}
+
+#content-volunteer img {
+	height: 50px;
+	width: 50px;
+}
+
+#content-volunteer p {
+	font-weight: bold;
+	color: rgb(48,48,48);
+}
+
+#content-volunteer md-list-item {
+	min-height: 50px;
+}
+
+#content-volunteer img, .md-list-item-text {
+	margin: 0px;
+	overflow: hidden;
+	height:100%;
 }
