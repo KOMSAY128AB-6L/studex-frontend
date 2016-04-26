@@ -1,0 +1,102 @@
+<div ng-include="'components/shared/templates/header.html'">
+</div>
+<div layout="column" class="main">
+    <div layout="row" ng-include="'components/shared/templates/flag.html'">
+    </div>
+
+    <div id="picContainer" layout-align="center center">
+    </div>
+
+    <div flex="5"></div>
+
+    <div layout-align="center center" ng-switch on="form">
+    	
+      <div id="circle" class="circle-container" ng-switch-default>
+        <span class="form-header">SELECT SECTION/S</span>
+		    <form id="checkBox-form" class="form-2">
+          <div id="checkBox" flex-xs flex="100">
+             <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
+              CMSC 128 AB-1L
+            </md-checkbox>
+            <md-checkbox ng-model="data.cb2" aria-label="Checkbox 2">
+              CMSC 128 AB-2L
+            </md-checkbox>
+            <md-checkbox ng-model="data.cb3" aria-label="Checkbox 3">
+              CMSC 128 AB-3L
+            </md-checkbox>
+            <md-checkbox ng-model="data.cb4" aria-label="Checkbox 4">
+              CMSC 128 AB-4L
+            </md-checkbox>
+            <md-checkbox ng-model="data.cb5" aria-label="Checkbox 5">
+              CMSC 128 AB-5L
+            </md-checkbox>
+            <md-checkbox ng-model="data.cb6" aria-label="Checkbox 6">
+              CMSC 128 AB-6L
+            </md-checkbox>
+            <md-button id="white-1" class="md-fab" v ng-click="$parent.form='random'">
+            <span>&gt;&gt;</span>
+            <div class="md-ripple-container"></div>
+          </md-button>
+          </div>
+        </form>
+      </div>		
+
+      <div id="circle" class="circle-container" ng-switch-when="random">
+        <span class="form-header"># OF VOLUNTEERS</span>
+        <form id="white-form" class="form-2">
+          <md-input-container id="inputVol">
+            <input class="ng-pristine ng-valid md-input ng-touched" ng-model="user.num" aria-label ="random">
+          </md-input-container>
+
+          <md-button id="white-2l" class="md-fab" v ng-click="$parent.form='form'">
+            <span>&lt;&lt;</span>
+            <div class="md-ripple-container"></div>
+          </md-button>
+
+          <md-button id="white-2r" class="md-fab" v ng-click="$parent.form='chance'">
+            <span>&gt;&gt;</span>
+            <div class="md-ripple-container"></div>
+          </md-button>
+        </form>
+      </div>
+
+      <div id="circle" class="circle-container" ng-switch-when="chance">
+        <span class="form-header">OPTIONS</span>
+        <form id="checkBox-form" class="form-2">
+          <div id="checkBox-2" flex-xs flex="100">
+             <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
+              SET CHANCE
+            </md-checkbox>
+            <md-checkbox ng-model="data.cb2" aria-label="Checkbox 2">
+              NO REPEAT
+            </md-checkbox>
+
+            <md-button id="white-3l" class="md-fab" v ng-click="$parent.form='random'">
+              <span>&lt;&lt;</span>
+              <div class="md-ripple-container"></div>
+            </md-button>
+            <md-button id="white-3r" class="md-fab" v ng-click="$parent.form='vols'" type="submit">
+              <span>&gt;</span>
+              <div class="md-ripple-container"></div>
+            </md-button>
+          </div>
+        </form>
+      </div>
+
+      <div ng-switch-when="vols">
+        <span class="vol-header">VOLUNTEER</span>
+        <form id="checkBox-form" class="form-2">
+          <div id="checkBox-2" flex-xs flex="100">
+            <md-button id="white-4l" class="md-fab" v ng-click="$parent.form='form'">
+              <span>again?</span>
+              <div class="md-ripple-container"></div>
+            </md-button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+</div>
+<div ng-include="'components/shared/templates/nav.html'">
+</div>
