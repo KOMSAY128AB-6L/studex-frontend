@@ -23,6 +23,15 @@
 		$scope.user = {};
 
 		$scope.register = function () {
+			if ($scope.user.password !== $scope.user.confirm) {
+				$mdToast.show(
+					$mdToast.simple()
+						.textContent("Passwords do not match")
+						.hideDelay(1000)
+				);
+				return;
+			}
+
 			$http({
 				method: 'POST',
 				url: 'http://' + config.backend_url + '/user',

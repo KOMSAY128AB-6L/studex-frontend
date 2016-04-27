@@ -4,9 +4,9 @@
 	var app = angular.module('studEx');
 	app.service('navbarService', navbarServiceFunc);
 
-	navbarServiceFunc.$inject = ['$http', '$location'];
+	navbarServiceFunc.$inject = ['$http', '$location', '$mdToast'];
 
-	function navbarServiceFunc($http, $location) {
+	function navbarServiceFunc($http, $location, $mdToast) {
 
 		this.navigation = function () {
 			var navigation = {
@@ -35,7 +35,7 @@
 
 			function logoutFunc () {
 				$http({
-					method: 'GET',
+					method: 'POST',
 					url: 'http://' + config.backend_url + '/logout',
 					withCredentials:true
 				}).then(success, error);
@@ -45,7 +45,6 @@
 				};
 
 				function error (response) {
-					console.log(response);
 					$mdToast.show(
 						$mdToast.simple()
 							.textContent(response.data.errors[0].message)

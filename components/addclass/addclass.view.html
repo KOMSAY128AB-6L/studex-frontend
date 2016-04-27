@@ -5,8 +5,33 @@
     </div>
 
     <!--INSERT CODE HERE-->
-    <p>This is add class</p>
-
+    
+    <span flex="20"></span>
+    <div id="add_class_div">
+    	<form>
+    		<div class="add_class_child" layout="row">
+	            <div layout="column" layout-align="center center" class="label">
+	              <p>Class Name:</p>
+	            </div>
+	            <div layout="row" layout-align="center center">
+	  			      <input flex type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="class_name">
+	            </div>
+	        </div>
+	        <span flex="20"></span>
+	        <div class="add_class_child" layout="row">
+	            <div layout="column" layout-align="center center" class="label">
+	              <p>Class Section:</p>
+	            </div>
+	            <div layout="row" layout-align="center center">
+	              <input flex type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="class_section">
+	            </div>
+	        </div>
+	        <div class="add_class_child" layout="row">
+		        <md-button id="btn-lrg" class="md-raised" ng-click="addClass()" type="submit">SAVE</m-button>
+	    	</div>
+    	</form>
+    </div>
 </div>
+
 <div ng-include="'components/shared/templates/nav.html'">
 </div>
