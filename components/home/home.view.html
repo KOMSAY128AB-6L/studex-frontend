@@ -15,23 +15,8 @@
         <span class="form-header">SELECT SECTION/S</span>
 		    <form id="checkBox-form" class="form-2">
           <div id="checkBox" flex-xs flex="100">
-             <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
-              CMSC 128 AB-1L
-            </md-checkbox>
-            <md-checkbox ng-model="data.cb2" aria-label="Checkbox 2">
-              CMSC 128 AB-2L
-            </md-checkbox>
-            <md-checkbox ng-model="data.cb3" aria-label="Checkbox 3">
-              CMSC 128 AB-3L
-            </md-checkbox>
-            <md-checkbox ng-model="data.cb4" aria-label="Checkbox 4">
-              CMSC 128 AB-4L
-            </md-checkbox>
-            <md-checkbox ng-model="data.cb5" aria-label="Checkbox 5">
-              CMSC 128 AB-5L
-            </md-checkbox>
-            <md-checkbox ng-model="data.cb6" aria-label="Checkbox 6">
-              CMSC 128 AB-6L
+             <md-checkbox ng-model="class.selected" ng-repeat="class in classes">
+              {{class.class_name + class.section}}
             </md-checkbox>
             <md-button id="white-1" class="md-fab" v ng-click="$parent.form='random'">
             <span>&gt;&gt;</span>
