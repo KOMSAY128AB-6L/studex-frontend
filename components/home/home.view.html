@@ -18,7 +18,7 @@
              <md-checkbox ng-model="class.selected" ng-repeat="class in classes">
               {{ class.class_name + class.section }}
             </md-checkbox>
-            <md-button id="white-1" class="md-fab" v ng-click="$parent.form='random'">
+            <md-button id="white-1" class="md-fab" v ng-click="$parent.form='random'; selectClass()">
             <span>&gt;&gt;</span>
             <div class="md-ripple-container"></div>
           </md-button>
@@ -30,7 +30,7 @@
         <span class="form-header"># OF VOLUNTEERS</span>
         <form id="white-form" class="form-2">
           <md-input-container id="inputVol">
-            <input class="ng-pristine ng-valid md-input ng-touched" ng-model="user.num" aria-label ="random">
+            <input type="number" class="ng-pristine ng-valid md-input ng-touched" ng-model="data.settings.numberOfVolunteers" aria-label ="random">
           </md-input-container>
 
           <md-button id="white-2l" class="md-fab" v ng-click="$parent.form='form'">
@@ -49,10 +49,10 @@
         <span class="form-header">OPTIONS</span>
         <form id="checkBox-form" class="form-2">
           <div id="checkBox-2" flex-xs flex="100">
-             <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
+             <md-checkbox ng-model="data.settings.byChance" aria-label="Checkbox 1">
               SET CHANCE
             </md-checkbox>
-            <md-checkbox ng-model="data.cb2" aria-label="Checkbox 2">
+            <md-checkbox ng-model="data.settings.unique" aria-label="Checkbox 2">
               NO REPEAT
             </md-checkbox>
 
@@ -60,7 +60,7 @@
               <span>&lt;&lt;</span>
               <div class="md-ripple-container"></div>
             </md-button>
-            <md-button id="white-3r" class="md-fab" v ng-click="$parent.form='vols'" type="submit">
+            <md-button id="white-3r" class="md-fab" v ng-click="$parent.form='vols'; getVolunteers()" type="submit">
               <span>&gt;</span>
               <div class="md-ripple-container"></div>
             </md-button>
@@ -70,6 +70,7 @@
 
       <div ng-switch-when="vols">
         <span class="vol-header">VOLUNTEER</span>
+        <br/><span id="temptemptemptemp" ng-repeat="student in students">{{student.first_name + ' ' + student.middle_initial + ' ' + student.last_name}}<br/></span>
         <form id="checkBox-form" class="form-2">
           <div id="checkBox-2" flex-xs flex="100">
             <md-button id="white-4l" class="md-fab" v ng-click="$parent.form='form'">
