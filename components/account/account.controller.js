@@ -6,7 +6,7 @@
 
 	app.config(customTheme);
 
-	accountCtrlFunc.$inject = ['$scope', '$http', '$mdToast', '$filter', 'navbarService'];
+	accountCtrlFunc.$inject = ['$scope', '$http', '$mdToast', '$filter', 'navbarService', 'authService'];
 	customTheme.$inject = ['$mdThemingProvider'];
 
 	function customTheme($mdThemingProvider) {
@@ -31,7 +31,7 @@
 			.primaryPalette('customPrimary')
 	};
 
-  function accountCtrlFunc($scope, $http, $mdToast, $filter, navbarService) {
+  function accountCtrlFunc($scope, $http, $mdToast, $filter, navbarService, authService) {
 		$scope.title = 'MY ACCOUNT';
 		$scope.null_picture = false;
 
@@ -82,8 +82,6 @@
 
 		$scope.editPic = function() {
 			console.log("Implement edit pic");
-			$scope.fab.isOpen = !$scope.fab.isOpen;
-			console.log($scope.fab.isOpen);
 		};
 
 		$scope.saveProfile = function() {
