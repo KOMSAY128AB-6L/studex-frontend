@@ -22,7 +22,6 @@
 				'templateUrl': './components/history/history.view.html',
 				'controller' : 'historyCtrl'
 			})
-<<<<<<< HEAD
 			.when('/history/volunteer', {
 				'templateUrl': './components/volunteer/volunteer.view.html',
 				'controller' : 'volunteerCtrl'
@@ -35,8 +34,6 @@
 				'templateUrl': './components/addclass/addclass.view.html',
 				'controller' : 'addclassCtrl'
 			})
-=======
->>>>>>> 671c7e3e714a030a0b45d5a9e3b1ea9d51d68e42
 			.otherwise({'redirectTo': '/'})
 	}
 

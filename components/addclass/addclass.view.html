@@ -4,17 +4,16 @@
     <div layout="row" ng-include="'components/shared/templates/flag.html'">
     </div>
 
-    <!--INSERT CODE HERE-->
-    
+    <!--INSERT CODE HERE-->	
     <span flex="20"></span>
     <div id="add_class_div">
-    	<form>
+    	<form ng-submit="add_class()">
     		<div class="add_class_child" layout="row">
 	            <div layout="column" layout-align="center center" class="label">
 	              <p>Class Name:</p>
 	            </div>
 	            <div layout="row" layout-align="center center">
-	  			      <input flex type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="class_name">
+	  			      <input flex type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="class.class_name">
 	            </div>
 	        </div>
 	        <span flex="20"></span>
@@ -23,14 +22,16 @@
 	              <p>Class Section:</p>
 	            </div>
 	            <div layout="row" layout-align="center center">
-	              <input flex type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="class_section">
+	              <input flex type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="class.section">
 	            </div>
 	        </div>
 	        <div class="add_class_child" layout="row">
 		        <md-button id="btn-lrg" class="md-raised" ng-click="addClass()" type="submit">SAVE</m-button>
 	    	</div>
     	</form>
+
     </div>
+
 </div>
 
 <div ng-include="'components/shared/templates/nav.html'">

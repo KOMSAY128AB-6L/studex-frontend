@@ -1,12 +1,8 @@
+
 #add_class_div form{
-  padding: 5px;
-  margin: 20px;
-  display: flex;
-  justify-content: center;
-  text-align:center;
-  flex-direction: column;
+  align-items: center;
 }
 
 .add_class_child{
-  margin: auto;
+
 }
