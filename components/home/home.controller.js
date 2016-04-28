@@ -5,9 +5,9 @@
 	app.controller('homeCtrl', homeCtrlFunc);
 	
 
-	homeCtrlFunc.$inject = ['$scope', '$http', '$location', '$mdToast', 'navbarService'];
+	homeCtrlFunc.$inject = ['$scope', '$http', '$location', '$mdToast', 'navbarService', 'authService'];
 
-	function homeCtrlFunc($scope, $http, $location, $mdToast, navbarService) {
+	function homeCtrlFunc($scope, $http, $location, $mdToast, navbarService, authService) {
 		$scope.title = 'RANDOMIZE';
 		$scope.navigation = navbarService.navigation();
 
