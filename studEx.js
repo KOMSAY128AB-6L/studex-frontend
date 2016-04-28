@@ -22,6 +22,10 @@
 				'templateUrl': './components/history/history.view.html',
 				'controller' : 'historyCtrl'
 			})
+			.when('/home', {
+				'templateUrl': './components/home/home.view.html',
+				'controller' : 'homeCtrl'
+			})
 			.otherwise({'redirectTo': '/'})
 	}
 
