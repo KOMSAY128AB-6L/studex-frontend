@@ -135,7 +135,7 @@
               <p>CURRENT PASSWORD:</p>
             </div>
             <div flex layout="row" layout-align="center end">
-  			      <input flex type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="password">
+  			      <input flex type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="pwForm.old_password">
             </div>
           </div>
           <div flex="33" layout="row">
@@ -143,7 +143,7 @@
               <p>NEW PASSWORD:</p>
             </div>
             <div flex layout="row" layout-align="center end">
-              <input flex type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="new_password">
+              <input flex type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="pwForm.new_password">
             </div>
           </div>
           <div flex="33" layout="row">
@@ -151,7 +151,7 @@
               <p>REPEAT NEW PASSWORD:</p>
             </div>
             <div flex layout="row" layout-align="center end">
-              <input flex type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="confirm_password">
+              <input flex type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="pwForm.confirm_password">
             </div>
           </div>
       </div>
