@@ -47,8 +47,16 @@ md-toolbar h2 {
 	letter-spacing: 5px;
 }
 
-md-toolbar #navbar{
+md-toolbar #navbar {
 	position: fixed;
 	padding-bottom: 0;
 	margin-bottom: 0;
+}
+
+md-toolbar #navbar img {
+	height: 85%;
+	width: 85%;
+
+	min-height: 50%;
+	min-width: 50%;
 }
