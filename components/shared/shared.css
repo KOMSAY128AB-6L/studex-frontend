@@ -53,10 +53,7 @@ md-toolbar #navbar {
 	margin-bottom: 0;
 }
 
-md-toolbar #navbar img {
+#navbar img {
 	height: 85%;
 	width: 85%;
-
-	min-height: 50%;
-	min-width: 50%;
 }
