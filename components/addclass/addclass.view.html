@@ -5,28 +5,21 @@
     </div>
 
     <!--INSERT CODE HERE-->	
-    <span flex="20"></span>
-    <div id="add_class_div">
+    <div id="add_class_div" layout="row">
     	<form ng-submit="add_class()">
     		<div class="add_class_child" layout="row">
-	            <div layout="column" layout-align="center center" class="label">
-	              <p>Class Name:</p>
-	            </div>
-	            <div layout="row" layout-align="center center">
-	  			      <input flex type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="class.class_name">
-	            </div>
+    			<div layout="column">
+    				<p>Class Name:</p>
+    				<p>Class Section:</p>
+    			</div>
+				<div layout="column">
+    				<input flex type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="class.class_name">
+    				<input flex type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="class.section">
+    			</div>
 	        </div>
-	        <span flex="20"></span>
-	        <div class="add_class_child" layout="row">
-	            <div layout="column" layout-align="center center" class="label">
-	              <p>Class Section:</p>
-	            </div>
-	            <div layout="row" layout-align="center center">
-	              <input flex type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="class.section">
-	            </div>
-	        </div>
-	        <div class="add_class_child" layout="row">
-		        <md-button id="btn-lrg" class="md-raised" ng-click="addClass()" type="submit">SAVE</m-button>
+	        <div id="buttonAdd" layout="row">
+	        	<md-button id="btn-add" ng-click="addClass()" type="submit">SAVE</md-button>
+		        
 	    	</div>
     	</form>
 
