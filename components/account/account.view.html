@@ -1,54 +1,171 @@
 <div ng-include="'components/shared/templates/header.html'">
 </div>
-<div layout="column" class="main">
-    <div layout="row" ng-include="'components/shared/templates/flag.html'">
-    </div>
+<div flex id="AccountView" layout="column" ng-switch on="accountView">
+  <div flex layout="column" class="main" ng-switch-default>
+      <div layout="row" ng-include="'components/shared/templates/flag.html'">
+      </div>
 
-    <span flex="10"></span>
-
-    <div layout="row">
       <span flex="10"></span>
-      <div flex="45">
-        <div id="displayPic" layout-align="center center">
-          <img alt="Profile pic" ng-hide="$null_picture" src="//gettingreal2014.com/wp-content/uploads/2014/07/default-avatar.png">
+
+      <div layout="row">
+        <span flex="10"></span>
+        <div flex="45">
+          <div id="displayPic" layout-align="center center">
+            <img alt="Profile pic" ng-hide="$null_picture" src="//gettingreal2014.com/wp-content/uploads/2014/07/default-avatar.png">
+          </div>
         </div>
+
+        <span flex="5"></span>
+
+        <div id="nameContainer" layout="column" layout-align="center start">
+          <h2>{{user.last_name | uppercase}}</h2>
+          <h3>{{user.first_name+" "+user.middle_initial | uppercase}}</h3>
+        </div>
+        <span flex="5"></span>
       </div>
 
+      <div flex="20" layout="row">
+        <span flex-xs="10" flex-gt-xs="20"></span>
+
+        <div flex id="accountInfo" layout="column" layout-align="center start">
+          <div layout="row">
+            <h4>TEACHER ID#</h4>
+            <h4>{{user.teacher_id}}</h4>
+          </div>
+          <div layout="row">
+            <h4>E-MAIL ADDRESS</h4>
+            <h4>{{user.email}}</h4>
+          </div>
+        </div>
+
+        <span flex-xs="10" flex-gt-xs="20" flex-order="3"></span>
+      </div>
+
+      <div flex="20" layout="row">
+        <span flex-xs="10" flex-gt-xs="20"></span>
+        <div flex id="accountButtons" layout="column" layout-align="start center" layout-align-gt-xs="center center">
+          <md-button class="md-raised" ng-click="editProfile()">EDIT PROFILE</md-button>
+          <md-button class="md-raised" ng-click="changePass();">CHANGE PASSWORD</md-button>
+        </div>
+        <span flex-xs="10" flex-gt-xs="20" flex-order="3"></span>
+      </div>
+  </div>
+
+  <div flex id="editProf" layout="column" class="main" ng-switch-when="edit">
+      <div layout="row" ng-include="'components/shared/templates/flag.html'">
+      </div>
+
+      <span flex="10"></span>
+
+      <div layout="row">
+        <span flex="10"></span>
+        <div flex="45">
+          <div id="displayPic" layout-align="center center">
+            <img alt="Profile pic" ng-hide="$null_picture" src="//gettingreal2014.com/wp-content/uploads/2014/07/default-avatar.png">
+            <md-fab-speed-dial md-open="false" md-direction="up" ng-class="fab.mode">
+                <md-fab-trigger>
+                   <md-button class="md-raised" layout-align="center space-around" ng-click="editPic()">EDIT</md-button>
+                </md-fab-trigger>
+                <md-fab-actions>
+                   <md-button class="md-raised" layout-align="center space-around">+</md-icon></md-button>
+                   <md-button class="md-raised" layout-align="center space-around">x</md-icon></md-button>
+                </md-fab-actions>
+             </md-fab-speed-dial>
+          </div>
+        </div>
+
+        <span flex="5"></span>
+
+        <div flex id="nameContainer" layout="column" layout-align="center stretch">
+          <div flex layout="row" layout-align="center end">
+            <input flex type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="temp.last_name">
+          </div>
+          <div flex layout="row" layout-align="center start">
+            <input flex="75" type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="temp.first_name">
+            <span flex="5"></span>
+            <input flex="20" type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="temp.middle_initial">
+          </div>
+        </div>
+        <span flex="5"></span>
+      </div>
+
+      <div flex="20" layout="row">
+        <span flex-xs="10" flex-gt-xs="20"></span>
+
+        <div flex id="accountInfo" layout="column" layout-align="center stretch">
+          <div layout="row">
+            <h4>TEACHER ID#</h4>
+            <h4>{{user.teacher_id}}</h4>
+          </div>
+          <div layout="row">
+            <h4 flex="33">E-MAIL ADDRESS</h4>
+            <input flex=66 type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="temp.email">
+          </div>
+        </div>
+
+        <span flex-xs="10" flex-gt-xs="20" flex-order="3"></span>
+      </div>
+
+      <div flex="20" layout="row">
+        <span flex-xs="10" flex-gt-xs="20"></span>
+        <div flex id="accountButtons" layout="column" layout-align="start center" layout-align-gt-xs="center center">
+          <md-button class="md-raised" ng-click="saveProfile()">SAVE</md-button>
+          <md-button class="md-raised" ng-click="changePass();">CHANGE PASSWORD</md-button>
+        </div>
+        <span flex-xs="10" flex-gt-xs="20" flex-order="3"></span>
+      </div>
+
+  </div>
+
+  <div flex layout="column" class="main" ng-switch-when="password">
+    <div layout="row">
+      <span flex-xs="30" flex-gt-xs="60"></span>
+      <div flex id="slantedContainer">
+        <div id="slanted"><div id="slantedText"><p style="font-size: 15px;">{{title}}</p></div></div>
+      </div>
+    </div>
+
+    <span flex="15"></span>
+    <div layout="row">
       <span flex="5"></span>
-
-      <div id="nameContainer" layout="column" layout-align="center start">
-        <h2>{{user.last_name | uppercase}}</h2>
-        <h3>{{user.first_name+" "+user.middle_initial | uppercase}}</h3>
+      <div flex>
+        <form id="changePass" layout="column">
+          <div flex="33" layout="row">
+            <div flex="50" layout="column" layout-align="center end" class="label">
+              <p>CURRENT PASSWORD:</p>
+            </div>
+            <div flex layout="row" layout-align="center end">
+  			      <input flex type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="password">
+            </div>
+          </div>
+          <div flex="33" layout="row">
+            <div flex="50" layout="column" layout-align="center end" class="label">
+              <p>NEW PASSWORD:</p>
+            </div>
+            <div flex layout="row" layout-align="center end">
+              <input flex type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="new_password">
+            </div>
+          </div>
+          <div flex="33" layout="row">
+            <div flex="50" layout="column" layout-align="start end" class="label">
+              <p>REPEAT NEW PASSWORD:</p>
+            </div>
+            <div flex layout="row" layout-align="center end">
+              <input flex type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="confirm_password">
+            </div>
+          </div>
       </div>
       <span flex="5"></span>
     </div>
-
-    <div flex="20" layout="row">
-      <span flex-xs="10" flex-gt-xs="20"></span>
-      
-      <div flex id="accountInfo" layout="column" layout-align="center start">
-        <div layout="row">
-          <h4>TEACHER ID#</h4>
-          <h4>{{user.teacher_id}}</h4>
-        </div>
-        <div layout="row">
-          <h4>E-MAIL ADDRESS</h4>
-          <h4>{{user.email}}</h4>
-        </div>
+    <div flex layout="row" style="margin-top: 30px;">
+      <span flex="15"></span>
+      <div flex layout-align="start center">
+        <md-button id="btn-lrg" class="md-raised" ng-click="savePass()" type="submit"><span>SAVE</span></md-button>
       </div>
-
-      <span flex-xs="10" flex-gt-xs="20" flex-order="3"></span>
+      <span flex="15"></span>
     </div>
-
-    <div flex="20" layout="row">
-      <span flex-xs="10" flex-gt-xs="20"></span>
-      <div flex id="accountButtons" layout="column" layout-align="start center" layout-align-gt-xs="center center">
-        <md-button flex class="md-raised">EDIT PROFILE</md-button>
-        <md-button flex class="md-raised">CHANGE PASSWORD</md-button>
-      </div>
-      <span flex-xs="10" flex-gt-xs="20" flex-order="3"></span>
-    </div>
-
+  </form>
+  </div>
 </div>
 <div ng-include="'components/shared/templates/nav.html'">
 </div>

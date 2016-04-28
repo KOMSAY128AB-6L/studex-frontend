@@ -1,3 +1,38 @@
+.label * {
+  font-family: quicksand_bold;
+  font-size: 13px;
+  text-align: right;
+  margin-bottom: 0px;
+  margin-right: 5px;
+}
+
+#AccountView input {
+  background-color: #EFEFEF;
+  color: #303030;
+  border: 1px solid #737373;
+}
+
+#editProf input {
+  background: transparent;
+}
+
+#btn-lrg {
+  min-width: 100%;
+  min-height: 45px;
+  max-height: 60px;
+  background-color: #303030;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -o-border-radius: 0px;
+}
+
+#btn-lrg > span {
+  top: 1px;
+  color: #DEDEDE;
+  letter-spacing: 5px;
+  position: relative;
+}
+
 #slanted {
   margin-top: 3px;
   background-color: #303030;
@@ -41,7 +76,7 @@
   -o-border-radius: 200px;
 }
 
-#displayPic > * {
+#displayPic > img {
   color: #303030;
   height: 120px;
   width: 120px;
@@ -51,9 +86,24 @@
   -o-border-radius: 200px;
 }
 
+#displayPic .md-button {
+  top: -100px;
+  background-color: #737373;
+  min-width: 25px;
+  max-width: 50px;
+  min-height: 10px;
+  max-height: 20px;
+}
+
+#displayPic span {
+  top: -10px;
+  color: #DEDEDE;
+  font-size: 10px;
+}
+
 #nameContainer > h2 {
   font-family: quicksand_bold;
-  font-size: 23px;
+  font-size: 25px;
   margin-bottom: 0px;
 }
 
@@ -63,6 +113,18 @@
   font-size: 20px;
   margin-top: 0px;
 }
+
+#nameContainer input {
+  font-family: quicksand_bold;
+  font-size: 20px;
+  margin-top: 0px;
+}
+
+#nameContainer div:nth-child(1) *{
+  margin-bottom:3px;
+  font-size: 25px;
+}
+
 
 #accountInfo * {
   font-family: quicksand_bold;
