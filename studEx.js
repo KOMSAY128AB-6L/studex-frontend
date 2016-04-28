@@ -18,10 +18,6 @@
 				'templateUrl': './components/account/account.view.html',
 				'controller' : 'accountCtrl'
 			})
-			.when('/account/password', {
-				'templateUrl': './components/account/password/password.view.html',
-				'controller' : 'changePassCtrl'
-			})
 			.when('/history', {
 				'templateUrl': './components/history/history.view.html',
 				'controller' : 'historyCtrl'
