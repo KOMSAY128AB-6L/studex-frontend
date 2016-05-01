@@ -18,6 +18,10 @@
 	padding:7px;
 }
 
+#transaction p, #volunteer p  {
+	font-size: 12px;
+}
+
 .content-history {
 	background-color: transparent;
 }
