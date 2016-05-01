@@ -23,7 +23,7 @@
 	padding:7px;
 }
 
-/* */
+/* Transaction */
 
 #main-transaction h2 {
 	font-family: revolution;
@@ -38,10 +38,6 @@
 
 #main-transaction #slantedContainer {
 	height:100%;
-}
-
-#content-header {
-	max-height:40px;
 }
 
 #content-transaction {
@@ -64,7 +60,7 @@
 	margin: 0px;
 }
 
-/* */
+/* Volunteer */
 
 #main-volunteer h2 {
 	font-family: revolution;
@@ -79,15 +75,6 @@
 
 #main-volunteer #slantedContainer {
 	height:100%;
-}
-
-#content-header {
-	height:100%;
-}
-
-#content-volunteer {
-	height: 100%;
-	overflow: auto;
 }
 
 #content-volunteer md-content {
