@@ -59,20 +59,20 @@
 		};
 
 		$scope.changePass = function () {
-			$scope.accountView = 'password';
+			$scope.form = 'password';
 			$scope.title = 'CHANGE PASSWORD';
 		};
 
 		$scope.savePass = function() {
 			$scope.title = 'MY ACCOUNT';
-			$scope.accountView = 'home';
+			$scope.form = 'home';
 			$scope.old_password = "";
 			$scope.new_password = "";
 			$scope.confirm_password = "";
 		};
 
 		$scope.editProfile = function() {
-			$scope.accountView = 'edit';
+			$scope.form = 'edit';
 			$scope.title = 'EDIT PROFILE';
 			$scope.fab = {'mode': 'ng-fling'};
 			$scope.temp = $scope.user;
@@ -101,8 +101,7 @@
 						.hideDelay(1000)
                 );
 				$scope.user = $scope.temp;
-				console.log($scope.user)
-				$scope.accountView = 'home';
+				$scope.form = 'home';
 				$scope.title = 'MY ACCOUNT';
 			};
 
