@@ -8,7 +8,7 @@
 
 	function authServiceFunc($http, $location, $mdToast) {
 
-		(function auth() {
+		this.auth = function() {
 			$http({
 				method: 'GET',
 				url: 'http://' + config.backend_url + '/teacher',
@@ -16,19 +16,18 @@
 			}).then(success, error);
 
 			function success (response) {
-
+				if ($location.path() === '/') {
+					$location.path('/home');
+				}
 			};
 
 			function error (response) {
-				$mdToast.show(
-					$mdToast.simple()
-						.textContent(response.data.errors[0].message)
-						.hideDelay(1000)
-				);
-				$location.path("/");
+				if ($location.path() !== '/' && response.status === 403) {
+					$location.path('/');
+				}
 			}
 
-		})();
+		};
 
 	}
 

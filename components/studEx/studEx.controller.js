@@ -16,9 +16,11 @@
 
 
 
-	studExCtrlFunc.$inject = ['$scope', '$http', '$location', '$mdToast'];
+	studExCtrlFunc.$inject = ['$scope', '$http', '$location', '$mdToast', 'authService'];
 
-	function studExCtrlFunc($scope, $http, $location, $mdToast) {
+	function studExCtrlFunc($scope, $http, $location, $mdToast, authService) {
+		authService.auth();
+
 		$scope.form = 'choice';
 		$scope.user = {};
 
@@ -65,7 +67,7 @@
 			}).then(success, error);
 
 			function success (response) {
-				$location.path('/account');
+				$location.path('/home');
 			};
 
 			function error (response) {

@@ -8,6 +8,8 @@
 	historyCtrlFunc.$inject = ['$scope', '$http', '$location', '$mdToast', 'navbarService', 'authService'];
 	
 	function historyCtrlFunc($scope, $http, $location, $mdToast, navbarService, authService) {
+		authService.auth();
+
 		$scope.title = 'HISTORY';
 
 		$scope.navigation = navbarService.navigation();
