@@ -8,7 +8,7 @@
 
 #history-buttons span {
 	color: #FFFFFF;
-	font-size:10px;
+	font-size:15px;
 }
 
 #history-buttons button {
@@ -16,6 +16,10 @@
 	background-color: rgb(48,48,48);
 	margin-left:0px;
 	padding:7px;
+}
+
+#transaction p, #volunteer p  {
+	font-size: 12px;
 }
 
 .content-history {
