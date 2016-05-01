@@ -1,6 +1,6 @@
 'use strict';
 
 var config = {
-    backend_url: 'localhost:5000',
-    frontend_url: 'localhost:8000'
+    backend_url: 'api.nope.pro',
+    frontend_url: 'www.nope.pro'
 };
