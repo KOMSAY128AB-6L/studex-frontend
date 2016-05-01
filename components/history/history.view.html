@@ -26,7 +26,7 @@
 		</div>
 	</div>
 
-	<div id="main-transaction" layout="column" ng-switch-when="transactions">
+	<div id="transaction" layout="column" ng-switch-when="transactions">
 		<div flex="20">
 			<div layout="row" ng-include="'components/shared/templates/flag.html'"></div>
 		</div>
@@ -46,7 +46,7 @@
 			</div>
 
 			<div layout="column">
-				<md-content id="content-transaction">
+				<md-content class="content-history">
 					<md-list flex>
 
 						<md-list-item class="md-3-line content-transaction-item" ng-repeat="transaction in transactions">
@@ -67,7 +67,7 @@
 		</div>
 	</div>
 
-	<div id="main-volunteer" layout="column" ng-switch-when="volunteers">
+	<div id="volunteer" layout="column" ng-switch-when="volunteers">
 		<div flex="20">
 			<div layout="row" ng-include="'components/shared/templates/flag.html'"></div>
 		</div>
@@ -88,7 +88,7 @@
 			</div>
 
 			<div layout="column">
-				<md-content id="content-volunteer">
+				<md-content class="content-history">
 					<md-list flex>
 
 						<md-list-item class="md-3-line content-volunteer-item" ng-repeat="volunteer in volunteers">	
