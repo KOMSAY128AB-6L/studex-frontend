@@ -67,7 +67,7 @@
 			}).then(success, error);
 
 			function success (response) {
-				$location.path('/account');
+				$location.path('/home');
 			};
 
 			function error (response) {
