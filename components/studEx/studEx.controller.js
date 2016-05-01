@@ -16,9 +16,11 @@
 
 
 
-	studExCtrlFunc.$inject = ['$scope', '$http', '$location', '$mdToast'];
+	studExCtrlFunc.$inject = ['$scope', '$http', '$location', '$mdToast', 'authService'];
 
-	function studExCtrlFunc($scope, $http, $location, $mdToast) {
+	function studExCtrlFunc($scope, $http, $location, $mdToast, authService) {
+		authService.auth();
+
 		$scope.form = 'choice';
 		$scope.user = {};
 

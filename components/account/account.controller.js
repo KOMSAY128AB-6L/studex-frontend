@@ -32,6 +32,8 @@
 	};
 
   function accountCtrlFunc($scope, $http, $mdToast, $filter, navbarService, authService) {
+		authService.auth();
+
 		$scope.title = 'MY ACCOUNT';
 		$scope.null_picture = false;
 
