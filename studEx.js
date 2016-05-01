@@ -22,9 +22,12 @@
 				'templateUrl': './components/history/history.view.html',
 				'controller' : 'historyCtrl'
 			})
-			.when('/student', {
-				'templateUrl': './components/student/student.view.html',
-				'controller' : 'studentCtrl'
+<<<<<<< HEAD
+=======
+			.when('/home', {
+				'templateUrl': './components/home/home.view.html',
+				'controller' : 'homeCtrl'
+>>>>>>> ee8c727c5b4611229645583436e4b96be42a86b4
 			})
 			.otherwise({'redirectTo': '/'})
 	}

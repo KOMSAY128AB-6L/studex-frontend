@@ -69,7 +69,6 @@
 			};
 
 			function error (response) {
-				console.log(response);
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent(response.data.errors[0].message)
