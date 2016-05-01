@@ -36,7 +36,7 @@
 			function logoutFunc () {
 				$http({
 					method: 'POST',
-					url: 'http://' + config.backend_url + '/logout',
+					url: 'https://' + config.backend_url + '/logout',
 					withCredentials:true
 				}).then(success, error);
 

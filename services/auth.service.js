@@ -11,7 +11,7 @@
 		this.auth = function() {
 			$http({
 				method: 'GET',
-				url: 'http://' + config.backend_url + '/teacher',
+				url: 'https://' + config.backend_url + '/teacher',
 				withCredentials:true
 			}).then(success, error);
 

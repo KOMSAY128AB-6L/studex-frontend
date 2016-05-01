@@ -19,7 +19,7 @@
 
 			$http({
 				method: 'GET',
-				url: 'http://' + config.backend_url + '/student_logs',
+				url: 'https://' + config.backend_url + '/student_logs',
 				withCredentials: true
 			}).then(success, error);
 
@@ -42,7 +42,7 @@
 
 			$http({
 				method: 'GET',
-				url: 'http://' + config.backend_url + '/history',
+				url: 'https://' + config.backend_url + '/history',
 				withCredentials: true
 			}).then(success, error);
 

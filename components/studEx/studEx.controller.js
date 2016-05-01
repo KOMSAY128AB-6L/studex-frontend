@@ -36,7 +36,7 @@
 
 			$http({
 				method: 'POST',
-				url: 'http://' + config.backend_url + '/user',
+				url: 'https://' + config.backend_url + '/user',
 				data: $scope.user,
 				withCredentials:true
 			}).then(success, error);
@@ -61,7 +61,7 @@
 		$scope.login = function () {
 			$http({
 				method: 'POST',
-				url: 'http://' + config.backend_url + '/login',
+				url: 'https://' + config.backend_url + '/login',
 				data: $scope.user,
 				withCredentials:true
 			}).then(success, error);
