@@ -27,6 +27,7 @@
 				$scope.volunteers = response.data.data.items;
 
 				for(let i = 0;i<$scope.volunteers.length;i++){
+					
 					$scope.volunteers[i].volunteer_time = $scope.volunteers[i].volunteer_date.substring($scope.volunteers[i].volunteer_date.indexOf('T')+1,$scope.volunteers[i].volunteer_date.indexOf('.'));
 					$scope.volunteers[i].volunteer_date = $scope.volunteers[i].volunteer_date.substring(0,$scope.volunteers[i].volunteer_date.indexOf('T'));
 				}
