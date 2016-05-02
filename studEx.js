@@ -26,25 +26,9 @@
 				'templateUrl': './components/sections/sections.view.html',
 				'controller' : 'sectionsCtrl'
 			})
-			.when('/history/volunteer', {
-				'templateUrl': './components/volunteer/volunteer.view.html',
-				'controller' : 'volunteerCtrl'
-			})
-			.when('/history/transaction', {
-				'templateUrl': './components/transaction/transaction.view.html',
-				'controller' : 'transactionCtrl'
-			})
 			.when('/home', {
 				'templateUrl': './components/home/home.view.html',
 				'controller' : 'homeCtrl'
 			})
 			.otherwise({'redirectTo': '/'})
-
-		if(window.history && window.history.pushState){
-    		$locationProvider.html5Mode({
-    			enabled: true,
-    			requireBase: false
-    		});
-  		}
-	}
 })();
