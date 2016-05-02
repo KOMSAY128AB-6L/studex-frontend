@@ -26,6 +26,10 @@
 				'templateUrl': './components/home/home.view.html',
 				'controller' : 'homeCtrl'
 			})
+			.when('/contactus', {
+				'templateUrl': './components/contact_us/contact_us.view.html',
+				'controller' : 'contactusCtrl'
+			})
 			.otherwise({'redirectTo': '/'})
 
 	}
