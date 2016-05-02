@@ -4,11 +4,11 @@
 	var app = angular.module('studEx', ['ngRoute', 'ngMaterial', 'ngAnimate']);
 	app.config(configFunc);
 
-	configFunc.$inject=['$routeProvider'];
+	configFunc.$inject=['$routeProvider', '$locationProvider'];
 
 
 
-	function configFunc($routeProvider) {
+	function configFunc($routeProvider, $locationProvider) {
 		$routeProvider
 			.when('/', {
 				'templateUrl': './components/studEx/studEx.view.html',
@@ -27,6 +27,13 @@
 				'controller' : 'homeCtrl'
 			})
 			.otherwise({'redirectTo': '/'})
+
+		if(window.history && window.history.pushState){
+    		$locationProvider.html5Mode({
+    			enabled: true,
+    			requireBase: false
+    		});
+  		}
 	}
 
 
