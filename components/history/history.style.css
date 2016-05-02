@@ -1,19 +1,14 @@
-/* Initial Page */
-
 #main-history, #main-history #slantedContainer,#history-buttonContainer {
 	height:100%;
 }
 
-#main-history h2 {
-	font-family: revolution;
-	font-size: 30px;
-	letter-spacing: 10px;
-	margin-top: 0;
+#main-history h5 {
+	margin-bottom:0px;
 }
 
 #history-buttons span {
 	color: #FFFFFF;
-	font-size:10px;
+	font-size:12px;
 }
 
 #history-buttons button {
@@ -23,84 +18,27 @@
 	padding:7px;
 }
 
-/* Transaction */
-
-#main-transaction h2 {
-	font-family: revolution;
-	font-size: 30px;
-	letter-spacing: 10px;
-	margin-top: 0;
-}
-
-#main-transaction p {
+#transaction p, #volunteer p  {
 	font-size: 12px;
 }
 
-#main-transaction #slantedContainer {
-	height:100%;
-}
-
-#content-transaction {
-	margin-top:0px;
-
-	color: rgb(48,48,48);
+.content-history {
 	background-color: transparent;
 }
 
-#content-transaction p {
+.content-history .md-3-line .md-list-item-text p, .content-history p {
 	font-weight: bold;
 	color:rgb(48,48,48);
 }
 
-#content-transaction md-list-item {
+.content-history md-list-item {
 	min-height: 50px;
 }
 
-#content-transaction img, .md-list-item-text {
-	margin: 0px;
-}
+.content-history img {
+	max-width:50px;
+	max-height:50px;
 
-/* Volunteer */
-
-#main-volunteer h2 {
-	font-family: revolution;
-	font-size: 30px;
-	letter-spacing: 10px;
-	margin-top: 0;
-}
-
-#main-volunteer p {
-	font-size: 12px;
-}
-
-#main-volunteer #slantedContainer {
-	height:100%;
-}
-
-#content-volunteer md-content {
-	margin-top:0px;
-
-	color: rgb(48,48,48);
-	background-color: transparent;
-
-}
-
-#content-volunteer img {
-	height: 50px;
-	width: 50px;
-}
-
-#content-volunteer p {
-	font-weight: bold;
-	color: rgb(48,48,48);
-}
-
-#content-volunteer md-list-item {
-	min-height: 50px;
-}
-
-#content-volunteer img, .md-list-item-text {
-	margin: 0px;
-	overflow: hidden;
+	width:100%;
 	height:100%;
 }
