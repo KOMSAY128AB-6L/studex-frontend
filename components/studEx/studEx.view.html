@@ -1,11 +1,11 @@
 <div flex="20"></div>
-<div layout="column" layout-align="center center">
-	<div flex class="main">
+<div id="contain" layout="column" layout-align="center center">
+	<div class="main">
 		<div>
 			<h1>STUDEX</h1>
 		</div>
-		
-		<div id="circle" ng-switch on="form">
+
+		<div id="circle1" ng-switch on="form">
 			<div class="circle-container" ng-switch-when="login">
 				<span class="form-header">- LOG IN -</span>
 				<form id="white-form" ng-submit="login()" class="form-2">
@@ -17,7 +17,7 @@
 							<label>password</label>
 							<input type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.password" >
 						</md-input-container>
-						<md-button id="white-1" class="md-fab" type="submit">
+						<md-button id="white" class="md-fab" type="submit">
 							<span>&gt;</span>
 							<div class="md-ripple-container"></div>
 						</md-button>
@@ -50,7 +50,7 @@
 
 			<div class="circle-container" ng-switch-when="register2">
 				<span class="form-header">- REGISTER -</span>
-				<form id="white-form" ng-submit="register()" class="form-2">
+				<form id="white-form" ng-submit="register()" class="form-3">
 					<md-input-container>
 						<label>e-mail address</label>
 						<input type="email" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.email" >
@@ -59,7 +59,11 @@
 						<label>password</label>
 						<input type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.password" >
 					</md-input-container>
-					<md-button id="white-1" class="md-fab" type="submit">
+					<md-input-container>
+						<label>confirm password</label>
+						<input type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.confirm" >
+					</md-input-container>
+					<md-button id="white-2" class="md-fab" type="submit">
 						<span>&gt;</span>
 						<div class="md-ripple-container"></div>
 					</md-button>
@@ -76,7 +80,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div>
 			<span>&copy;AB-6L 2016 All Rights Reserved</span>
 		</div>

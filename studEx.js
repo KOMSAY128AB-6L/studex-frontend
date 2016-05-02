@@ -34,9 +34,10 @@
 				'templateUrl': './components/transaction/transaction.view.html',
 				'controller' : 'transactionCtrl'
 			})
+			.when('/home', {
+				'templateUrl': './components/home/home.view.html',
+				'controller' : 'homeCtrl'
+			})
 			.otherwise({'redirectTo': '/'})
 	}
-
-
-
 })();

@@ -16,13 +16,24 @@
 
 
 
-	studExCtrlFunc.$inject = ['$scope', '$http', '$location', '$mdToast'];
+	studExCtrlFunc.$inject = ['$scope', '$http', '$location', '$mdToast', 'authService'];
 
-	function studExCtrlFunc($scope, $http, $location, $mdToast) {
+	function studExCtrlFunc($scope, $http, $location, $mdToast, authService) {
+		authService.auth();
+
 		$scope.form = 'choice';
 		$scope.user = {};
 
 		$scope.register = function () {
+			if ($scope.user.password !== $scope.user.confirm) {
+				$mdToast.show(
+					$mdToast.simple()
+						.textContent("Passwords do not match")
+						.hideDelay(1000)
+				);
+				return;
+			}
+
 			$http({
 				method: 'POST',
 				url: 'http://' + config.backend_url + '/user',
@@ -41,7 +52,7 @@
 			function error (response) {
 				$mdToast.show(
 					$mdToast.simple()
-						.textContent(response.status)
+						.textContent(response.data.errors[0].message)
 						.hideDelay(1000)
                 );
 			}
@@ -56,13 +67,13 @@
 			}).then(success, error);
 
 			function success (response) {
-				$location.path('/account');
+				$location.path('/home');
 			};
 
 			function error (response) {
 				$mdToast.show(
 					$mdToast.simple()
-						.textContent(response.status)
+						.textContent(response.data.errors[0].message)
 						.hideDelay(1000)
                 );
 			}
