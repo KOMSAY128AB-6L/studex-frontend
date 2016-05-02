@@ -4,11 +4,11 @@
 	var app = angular.module('studEx', ['ngRoute', 'ngMaterial', 'ngAnimate']);
 	app.config(configFunc);
 
-	configFunc.$inject=['$routeProvider', '$locationProvider'];
+	configFunc.$inject=['$routeProvider'];
 
 
 
-	function configFunc($routeProvider, $locationProvider) {
+	function configFunc($routeProvider) {
 		$routeProvider
 			.when('/', {
 				'templateUrl': './components/studEx/studEx.view.html',
@@ -31,4 +31,6 @@
 				'controller' : 'homeCtrl'
 			})
 			.otherwise({'redirectTo': '/'})
+
+	}
 })();
