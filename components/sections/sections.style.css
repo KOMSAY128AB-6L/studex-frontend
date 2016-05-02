@@ -1,45 +1,5 @@
-#slanted {
-  margin-top: 3px;
-  background-color: #303030;
-  color: #DEDEDE;
-  -webkit-transform: skew(30deg) translate(15px);
-  -moz-transform: skew(30deg);
-  -o-transform: skew(30deg);
-}
 
-#slantedContainer {
-  overflow: hidden;
-}
-
-#slanted {
-  margin-top: 3px;
-  background-color: #303030;
-  color: #DEDEDE;
-  -webkit-transform: skew(30deg) translate(15px);
-  -moz-transform: skew(30deg);
-  -o-transform: skew(30deg);
-}
-
-#slantedText > * {
-  margin: 0px;
-  font-size: 20px;
-  font-weight: 900;
-  line-height: 40px;
-  letter-spacing: 2px;
-  -webkit-transform: skew(-30deg);
-  -moz-transform: skew(-30deg);
-  -o-transform: skew(-30deg);
-}
-
-#copyBtmRight > span{
-  text-align: right;
-  font-size: 12px;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-
-#center-div{
+#centerDiv {
 	margin-top: 4em;
   margin-right: auto;
   margin-left: auto;
@@ -48,7 +8,7 @@
   overflow-y: scroll;
 }
 
-.row-div{
+.rowDiv {
 	height: 20%;
 	margin: -2% 0 2% 0; 
   display: inline-block;
@@ -61,6 +21,20 @@
 	color: white;
 	margin: 2% 5% 5% 5%;
   display: inline-block;
+  min-height: 23.563px;
+}
+
+#sectionId {
+  height: inherit;
+  width: inherit;
+}
+
+#selectionContainer {
+  margin-top: 7%;
+  margin-left: auto;
+  margin-right: auto;
+  height:150px;
+  width: 100px;
 }
 
 @media screen and (max-width: 400px) {
@@ -75,11 +49,16 @@
   }
 } 
 
-.main{
-	height: 100%;
+@media screen and (min-width: 800px) {
+  .boxes {
+    margin:2% 5% 2% 5%;
+  }
+  #imaginary {
+    margin-top: 0;
+  }
 }
 
-.inset{
+.inset {
   margin-top: 75%;
   margin-left: auto;
   margin-right: auto;
@@ -98,7 +77,7 @@
   opacity:0.95
 }
 
-.inset:active{
+.inset:active {
   color:#eee;
   text-shadow:0 0 1px #666;
   text-decoration:none;
@@ -106,13 +85,12 @@
   opacity:1
 }
 
-.vertical{
-  position: relative;
-  top: 50%;
-  transform: translateY(-140%);
+.classesName {
+  margin: 0;
+  vertical-align: middle;
 }
 
-#manual-upload{
+#uploadSelectionDiv {
   height: 10px;
   width: 10px;
   left: auto;
@@ -125,7 +103,7 @@
   display: hidden;
 }
 
-#upload{
+#uploadOptionDiv {
   height:10px;
   width: 10px;
   margin-top: 2em;
@@ -136,28 +114,20 @@
   display: hidden;
 }
 
-#imaginary{
-  margin-top: 7%;
-  margin-left: auto;
-  margin-right: auto;
-  height:150px;
-  width: 100px;
-}
-
-.holder{
+.selectionDivHolder {
   width: 150%;
 }
 
-.text{
+.selectionText {
   margin-top: 3em;
   position: absolute;
 }
 
-#text1{
+#selectionText1 {
   margin-top: 1em;
 }
 
-#text2{
+#selectionText2 {
   margin-top: 3em;
 }
 
@@ -171,7 +141,7 @@
   transform: translateY(-140%);
 }
 
-#csvForm{
+#csvForm {
   margin-left: auto;
   margin-right: auto;
   background-color: white;
@@ -182,6 +152,42 @@
   transform: translateY(90%);
 }
 
+#sectionContainer {
+  height: inherit;
+  width: inherit;
+}
+
+#classesNameContainer {
+  height: inherit;
+  width: inherit;
+}
+/**************************************** ADD CLASS ***************************/
+
+
+#addClassDiv{
+  top: 50%;
+  transform: translateY(70%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#buttonAdd{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width:100%;
+  color: rgba(255,234,255,0);
+}
+
+#buttonAdd button{
+  width:80%;
+  background-color:rgb(48,48,48);
+}
+
+#buttonAdd span {
+  width:150%;
+  color: #FFFFFF;
+}
 
 
 
