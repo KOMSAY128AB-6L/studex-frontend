@@ -35,28 +35,12 @@
 		authService.auth();
 
 		$scope.title = 'MY ACCOUNT';
-		$scope.null_picture = false;
+
+		$scope.user = authService.getSession();
+
+		$scope.null_picture = ($scope.user.picture == null);
 
 		$scope.navigation = navbarService.navigation();
-
-		$http({
-			method: 'GET',
-			url: 'http://' + config.backend_url + '/teacher',
-			withCredentials:true
-		}).then(success, error);
-
-		function success (response) {
-			$scope.user = response.data;
-			$scope.null_picture = ($scope.user.picture == null);
-		};
-
-		function error (response) {
-			$mdToast.show(
-				$mdToast.simple()
-					.textContent(response.data.errors[0].message)
-					.hideDelay(1000)
-			);
-		};
 
 		$scope.changePass = function () {
 			$scope.form = 'password';
@@ -100,7 +84,7 @@
 						.textContent('Successfully updated profile!')
 						.hideDelay(1000)
                 );
-				$scope.user = $scope.temp;
+				authService.setSession($scope.temp, ()=>{});
 				$scope.form = 'home';
 				$scope.title = 'MY ACCOUNT';
 			};

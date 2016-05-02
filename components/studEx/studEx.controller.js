@@ -67,7 +67,17 @@
 			}).then(success, error);
 
 			function success (response) {
-				$location.path('/home');
+				$http({
+					method: 'GET',
+					url: 'http://' + config.backend_url + '/teacher' ,
+					withCredentials:true
+				}).then(
+				(response) => {
+					authService.setSession(response.data, function () {$location.path('/home')});
+				},
+				(response) => {
+
+				});
 			};
 
 			function error (response) {
