@@ -14,6 +14,10 @@
 
 		$scope.navigation = navbarService.navigation();
 
+		$scope.navigation.history = function () {
+			$scope.title = 'HISTORY';
+		};
+
 		$scope.volunteer_log = function () {
 			$scope.title = 'VOLUNTEERED STUDENTS';
 
@@ -40,7 +44,6 @@
                 );
 			};
 		};
-
 
 		$scope.transaction_log = function () {
 			$scope.title = 'TRANSACTIONS';
