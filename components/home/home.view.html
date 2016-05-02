@@ -11,12 +11,15 @@
 
     <div layout-align="center center" ng-switch on="form">
     	
-      <div id="circle" class="circle-container" ng-switch-default>
+      <div id="circle" class="circle-container-home" ng-switch-default>
         <span class="form-header">SELECT SECTION/S</span>
 		    <form id="checkBox-form" class="form-2">
           <div id="checkBox" flex-xs flex="100">
              <md-checkbox ng-model="class.selected" ng-repeat="class in classes">
               {{ class.class_name + class.section }}
+            </md-checkbox>
+            <md-checkbox ng-model="class.selected">
+              NO CALLED STUDENTS
             </md-checkbox>
             <md-button id="white-1" class="md-fab" v ng-click="$parent.form='random'; selectClass()">
             <span>&gt;&gt;</span>
@@ -26,7 +29,7 @@
         </form>
       </div>		
 
-      <div id="circle" class="circle-container" ng-switch-when="random">
+      <div id="circle" class="circle-container-home" ng-switch-when="random">
         <span class="form-header"># OF VOLUNTEERS</span>
         <form id="white-form" class="form-2">
           <md-input-container id="inputVol">
@@ -45,17 +48,19 @@
         </form>
       </div>
 
-      <div id="circle" class="circle-container" ng-switch-when="chance">
+      <div id="circle" class="circle-container-home" ng-switch-when="chance">
         <span class="form-header">OPTIONS</span>
         <form id="checkBox-form" class="form-2">
           <div id="checkBox-2" flex-xs flex="100">
-             <md-checkbox ng-model="data.settings.byChance" aria-label="Checkbox 1">
-              SET CHANCE
-            </md-checkbox>
+            
+            <md-radio-group ng-model="data.group1">
+              <md-radio-button ng-model="data.settings.chance" aria-label="Radio 1" value="chance">BY CHANCE</md-radio-button>
+              <md-radio-button ng-model="data.settings.count" aria-label="Radio 2" value="count"> BY COUNT </md-radio-button>
+            </md-radio-group>  
+
             <md-checkbox ng-model="data.settings.unique" aria-label="Checkbox 2">
               NO REPEAT
             </md-checkbox>
-
             <md-button id="white-3l" class="md-fab" v ng-click="$parent.form='random'">
               <span>&lt;&lt;</span>
               <div class="md-ripple-container"></div>
@@ -70,18 +75,27 @@
 
       <div ng-switch-when="vols">
         <span class="vol-header">VOLUNTEER</span>
-        <br/><span id="temptemptemptemp" ng-repeat="student in students">{{student.first_name + ' ' + student.middle_initial + ' ' + student.last_name}}<br/></span>
+        <div id="volBox">
+          <br/>
+          <span id="temptemptemptemp" ng-repeat="student in students">
+            {{student.first_name + ' ' + student.middle_initial + ' ' + student.last_name}}
+            <br/>
+          </span>      
+        </div>
         <form id="checkBox-form" class="form-2">
           <div id="checkBox-2" flex-xs flex="100">
-            <md-button id="white-4l" class="md-fab" v ng-click="$parent.form='form'">
-              <span>again?</span>
+            <md-button id="white-4l" class="md-raised" v ng-click="$parent.form='form'">
+              <span>SETTINGS</span>
+              <div class="md-ripple-container"></div>
+            </md-button>
+            <md-button id="white-4r" class="md-raised" v ng-click="$parent.form='vols'; getVolunteers()">
+              <span>AGAIN</span>
               <div class="md-ripple-container"></div>
             </md-button>
           </div>
         </form>
       </div>
     </div>
-
 
 </div>
 <div ng-include="'components/shared/templates/nav.html'">
