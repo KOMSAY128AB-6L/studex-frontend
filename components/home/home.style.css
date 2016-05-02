@@ -14,13 +14,13 @@
 	margin-bottom: 110px;
 	}
 
-.circle-container {
+.circle-container-home {
 	position: relative;
 	width: 100%;
 	height: 100%;
 }
 
-.circle-container > div, form {
+.circle-container-home > div, form {
 	height: 50%;
 	vertical-align: middle;
 	border-width: 0.5px;
@@ -78,6 +78,10 @@
 	color: #DEDEDE;
 }
 
+#checkBox-form {
+	width: 80%;
+}
+
 button {
 	max-height: 40px;
 	max-width: 40px;
@@ -131,15 +135,41 @@ button > span {
 }
 
 
+#white-4r {
+	position: absolute;
+	right: 12%;
+	top: 73%;
+	float: right;
+	background-color: #DEDEDE;
+}
+
 #white-4l {
 	position: absolute;
-	left: 40%;
-	top: 60%;
+	left: 12%;
+	top: 73%;
 	float: left;
 	background-color: #DEDEDE;
+}
+
+.md-button.md-raised:not([disabled]) {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    padding-top:10px;
 }
 
 #white-form label {
 	color: #DEDEDE;
 
+}
+
+#temptemptemptemp{
+	float: left;
+	width: 50%;
+	padding: 10px;
+
+}
+
+#volBox{
+	height: 300px;
+    overflow: scroll;
+    padding-left: 30%;
 }
