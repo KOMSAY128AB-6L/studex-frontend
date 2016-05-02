@@ -1,5 +1,13 @@
+
 <md-toolbar layout="row" layout-align="end center" style="min-height: 80px">
 </md-toolbar>
+
+<div layout="column" class="csvDiv" ng-hide="csvHide" ng-click="hide()">
+  <div id="csvForm">
+
+  </div>
+</div>
+
 <div layout="column" class="main">
 
     <div layout="row">
@@ -9,16 +17,28 @@
       </div>
     </div>
 
-
-
     <div id="center-div">
     	<div layout="row" class="row-div">
           <div class="boxes" layout="column" ng-repeat="class in classes"><p class="vertical">{{class.class_name +" "+class.section}}</p></div>
     	</div>
     </div>
+    <div id="imaginary">
+      
+      <div ng-hide="isHidden" class="holder">
+        <div class="inset" id="manual-upload" ng-click="addClass()">
+        </div>
+        <span class="text" id="text1">Manual Upload</span>
+      </div>
 
-    <div class="inset">
-    	+
+      <div ng-hide="isHidden" class="holder">
+        <div class="inset" id="upload" ng-click="uploadCSV()">
+        </div>
+        <span class="text" id="text2">Upload CSV File</span>
+      </div>
+      
+      <div class="inset" ng-click="uploadSection()">
+        +
+      </div>
     </div>
 </div>
 

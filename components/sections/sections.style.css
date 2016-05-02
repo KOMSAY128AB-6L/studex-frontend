@@ -69,6 +69,7 @@
     margin-right: 0;
     margin-left: 0;
   }
+
   #center-div{
     margin-top: 2rem;
   }
@@ -79,7 +80,7 @@
 }
 
 .inset{
-  margin-top: 10%;
+  margin-top: 75%;
   margin-left: auto;
   margin-right: auto;
   display:block;
@@ -97,7 +98,7 @@
   opacity:0.95
 }
 
-.inset:hover{
+.inset:active{
   color:#eee;
   text-shadow:0 0 1px #666;
   text-decoration:none;
@@ -110,6 +111,77 @@
   top: 50%;
   transform: translateY(-140%);
 }
+
+#manual-upload{
+  height: 10px;
+  width: 10px;
+  left: auto;
+  right: auto;
+  margin-top: 0;
+  margin-top: 0.2em;
+  margin-left: 1.75em;
+  color:red;
+  position: absolute;
+  display: hidden;
+}
+
+#upload{
+  height:10px;
+  width: 10px;
+  margin-top: 2em;
+  margin-left: 1.75em;
+  margin-right: auto;
+  color:red;
+  position: absolute;
+  display: hidden;
+}
+
+#imaginary{
+  margin-top: 7%;
+  margin-left: auto;
+  margin-right: auto;
+  height:150px;
+  width: 100px;
+}
+
+.holder{
+  width: 150%;
+}
+
+.text{
+  margin-top: 3em;
+  position: absolute;
+}
+
+#text1{
+  margin-top: 1em;
+}
+
+#text2{
+  margin-top: 3em;
+}
+
+.csvDiv{
+  height: 100%;
+  width:100%;
+  background-color: rgba(0,0,0,0.70);
+  position: absolute;
+  z-index: 2;
+  top: 140%;
+  transform: translateY(-140%);
+}
+
+#csvForm{
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  width: 15em;
+  height: 10em;
+  z-index: 10;  
+  top: 90%;
+  transform: translateY(90%);
+}
+
 
 
 
