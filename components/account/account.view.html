@@ -1,6 +1,6 @@
 <div ng-include="'components/shared/templates/header.html'">
 </div>
-<div flex id="AccountView" layout="column" ng-switch on="accountView">
+<div flex id="AccountView" layout="column" ng-switch on="form">
   <div flex layout="column" class="main" ng-switch-default>
       <div layout="row" ng-include="'components/shared/templates/flag.html'">
       </div>
@@ -11,7 +11,7 @@
         <span flex="10"></span>
         <div flex="45">
           <div id="displayPic" layout-align="center center">
-            <img alt="Profile pic" ng-hide="$null_picture" src="//gettingreal2014.com/wp-content/uploads/2014/07/default-avatar.png">
+            <img alt="Profile pic" ng-hide="$null_picture" src="assets/images/default-avatar.png">
           </div>
         </div>
 

@@ -1,11 +1,70 @@
 <div flex="20"></div>
-<div layout="column" layout-align="center center">
-	<div flex class="main">
+<div id="contain" layout="column" layout-align="center center">
+	<div class="main">
 		<div>
 			<h1>STUDEX</h1>
 		</div>
 
-		<div id="circle" ng-switch on="form">
+		<div id="circle1" ng-switch on="form">
+			<div class="circle-container" ng-switch-when="forgotpw">
+				<span class="form-header">- FORGOT PASSWORD -</span>
+				<form id="white-form" ng-submit="forgotpw()" class="form-1">
+						<md-input-container>
+							<label class="md-primary md-hue-2">e-mail address</label>
+							<input type="email" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.email" >
+						</md-input-container>
+						<label ng-click="$parent.form='confirmforgotpw'">
+							already have a reset key?
+						</label>
+						<md-button id="white" class="md-fab" type="submit">
+							<span>&gt;</span>
+							<div class="md-ripple-container"></div>
+						</md-button>
+				</form>
+				<span class="italic" ng-click="$parent.form='login'">log in?</span>
+				<span class="italic" ng-click="$parent.form='register'">register?</span>
+			</div>
+
+			<div class="circle-container" ng-switch-when="confirmforgotpw">
+				<span class="form-header">- FORGOT PASSWORD -</span>
+				<form id="white-form" class="form-2">
+						<md-input-container>
+							<label class="md-primary md-hue-2">e-mail address</label>
+							<input type="email" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.email" >
+						</md-input-container>
+						<md-input-container>
+							<label>password reset key</label>
+							<input class="ng-pristine ng-valid md-input ng-touched" ng-model="user.random_string" >
+						</md-input-container>
+						<md-button id="white-2" class="md-fab" type="button" ng-click="$parent.form='confirmforgotpw2'">
+						<span>&gt;&gt;</span>
+						<div class="md-ripple-container"></div>
+					</md-button>
+				</form>
+				<span class="italic" ng-click="$parent.form='login'">log in?</span>
+				<span class="italic" ng-click="$parent.form='register'">register?</span>
+			</div>
+
+			<div class="circle-container" ng-switch-when="confirmforgotpw2">
+				<span class="form-header">- FORGOT PASSWORD -</span>
+				<form id="white-form" ng-submit="confirmforgotpw()" class="form-2">
+						<md-input-container>
+							<label class="md-primary md-hue-2">new password</label>
+							<input type="password" value="" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.new_password" >
+						</md-input-container>
+						<md-input-container>
+							<label>confirm new password</label>
+							<input type="password" value="" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.confirm_password" >
+						</md-input-container>
+						<md-button id="white" class="md-fab" type="submit">
+							<span>&gt;</span>
+							<div class="md-ripple-container"></div>
+						</md-button>
+				</form>
+				<span class="italic" ng-click="$parent.form='login'">log in?</span>
+				<span class="italic" ng-click="$parent.form='register'">register?</span>
+			</div>
+
 			<div class="circle-container" ng-switch-when="login">
 				<span class="form-header">- LOG IN -</span>
 				<form id="white-form" ng-submit="login()" class="form-2">
@@ -17,11 +76,12 @@
 							<label>password</label>
 							<input type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.password" >
 						</md-input-container>
-						<md-button id="white-1" class="md-fab" type="submit">
+						<md-button id="white" class="md-fab" type="submit">
 							<span>&gt;</span>
 							<div class="md-ripple-container"></div>
 						</md-button>
 				</form>
+				<span class="italic" ng-click="$parent.form='forgotpw'">forgot password?</span>
 				<span class="italic" ng-click="$parent.form='register'">register?</span>
 			</div>
 

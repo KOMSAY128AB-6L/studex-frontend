@@ -4,9 +4,9 @@
 	var app = angular.module('studEx');
 	app.service('navbarService', navbarServiceFunc);
 
-	navbarServiceFunc.$inject = ['$http', '$location', '$mdToast'];
+	navbarServiceFunc.$inject = ['$http', '$location', '$mdToast', 'authService'];
 
-	function navbarServiceFunc($http, $location, $mdToast) {
+	function navbarServiceFunc($http, $location, $mdToast, authService) {
 
 		this.navigation = function () {
 			var navigation = {
@@ -41,6 +41,7 @@
 				}).then(success, error);
 
 				function success (response) {
+					authService.destroy();
 					$location.path('/');
 				};
 

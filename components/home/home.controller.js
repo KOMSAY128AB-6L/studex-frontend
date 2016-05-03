@@ -8,6 +8,8 @@
 	homeCtrlFunc.$inject = ['$scope', '$http', '$location', '$mdToast', 'navbarService', 'authService'];
 
 	function homeCtrlFunc($scope, $http, $location, $mdToast, navbarService, authService) {
+		authService.auth();
+
 		$scope.title = 'RANDOMIZE';
 		$scope.navigation = navbarService.navigation();
 

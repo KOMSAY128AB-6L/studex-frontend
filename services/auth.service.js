@@ -8,27 +8,45 @@
 
 	function authServiceFunc($http, $location, $mdToast) {
 
-		(function auth() {
-			$http({
-				method: 'GET',
-				url: 'http://' + config.backend_url + '/teacher',
-				withCredentials:true
-			}).then(success, error);
+		this.getSession = function () {
+			var user = {};
 
-			function success (response) {
+			user.first_name = localStorage.getItem('first_name');
+			user.middle_initial = localStorage.getItem('middle_initial');
+			user.last_name = localStorage.getItem('last_name');
+			user.email = localStorage.getItem('email');
+			user.picture = localStorage.getItem('picture');
 
-			};
+			return user;
+		}
 
-			function error (response) {
-				$mdToast.show(
-					$mdToast.simple()
-						.textContent(response.data.errors[0].message)
-						.hideDelay(1000)
-				);
-				$location.path("/");
+		this.setSession = function (data, callback) {
+			localStorage.setItem('first_name', data.first_name);
+			localStorage.setItem('middle_initial', data.middle_initial);
+			localStorage.setItem('last_name', data.last_name);
+			localStorage.setItem('email', data.email);
+			localStorage.setItem('picture', data.picture);
+
+			callback();
+		}
+
+		this.destroy = function () {
+			localStorage.clear();
+		}
+
+		this.auth = function() {
+			if (!!localStorage.getItem('email')) {
+				if ($location.path() === '/') {
+					$location.path('/home');
+				}
+			}
+			else {
+				if ($location.path() !== '/') {
+					$location.path('/');
+				}
 			}
 
-		})();
+		};
 
 	}
 

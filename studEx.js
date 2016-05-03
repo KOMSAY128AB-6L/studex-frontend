@@ -27,6 +27,7 @@
 				'controller' : 'homeCtrl'
 			})
 			.otherwise({'redirectTo': '/'})
+
 	}
 
 

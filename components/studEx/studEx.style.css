@@ -10,6 +10,11 @@ body {
 	line-height: 100px;
 }
 
+.form-1 > * {
+	margin-top: -15px;
+	margin-bottom: 0px;
+}
+
 .form-2 > * {
 	margin-top: -25px;
 }
@@ -18,7 +23,11 @@ body {
 	margin-top: -35px;
 }
 
-#circle {
+#contain {
+	overflow: hidden;
+}
+
+#circle1 {
 	width: 250px;
 	height: 250px;
 	background: #303030;
@@ -27,9 +36,8 @@ body {
 	border-radius: 50%;
 	color: #DEDEDE;
 	margin: 0 auto;
-	display: block;
 	font-size: 15px;
-	margin-bottom: 110px;
+	margin-bottom: 100px;
 }
 
 .circle-container {
@@ -86,7 +94,7 @@ button > span {
 	font-size: 15px;
 }
 
-#white-1 {
+#white {
 	position: absolute;
 	left: 50%;
 	top: 86%;

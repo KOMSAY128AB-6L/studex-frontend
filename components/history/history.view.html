@@ -1,7 +1,7 @@
 <div ng-include="'components/shared/templates/header.html'">
 </div>
 
-<div flex class="main" layout="column" ng-switch on="form">
+<div flex class="main" id="main-history" layout="column" ng-switch on="form">
 
 	<div id="main-history" layout="column" ng-switch-default>
 		<div layout="row" ng-include="'components/shared/templates/flag.html'">
@@ -9,11 +9,11 @@
 
 		<div layout="column" layout-align="center" id="history-buttonContainer">
 
-			<div layout="row" id="history-buttons">
-				<div flex="20"></div>
+			<div layout="row" id="history-buttons" layout-align="center center">
+				<div flex="10" flex-gt-sm="20"></div>
 				
 				<div flex="" layout="column" >	
-					<div flex layout="row">
+					<div flex>
 						<md-button ng-click="$parent.form='transactions' ; transaction_log()">LOG OF TRANSACTIONS</md-button>
 					</div>
 					<div flex>
@@ -21,18 +21,20 @@
 					</div>
 				</div>
 
-				<div flex="20"></div>
+				<div flex="10" flex-gt-sm="20"></div>
 			</div>
 		</div>
 	</div>
 
-	<div id="main-transaction" layout="column" ng-switch-when="transactions">
-		<div layout="row" ng-include="'components/shared/templates/flag.html'"></div>
+	<div id="transaction" layout="column" ng-switch-when="transactions">
+		<div flex="20">
+			<div layout="row" ng-include="'components/shared/templates/flag.html'"></div>
+		</div>
 
 		<div layout="column">
 
-			<div layout="column">
-				<div layout="row" id="content-header">
+			<div flex="5">
+				<div layout="row">
 					<div flex="50">
 						<h5>TRANSACTION</h5>
 					</div>
@@ -42,9 +44,9 @@
 				</div>
 				<div layout="row"><span flex="5"></span><hr flex style="border-color:rgb(48,48,48)"><span flex="5"> </span> </div>
 			</div>
-			
-			<div layout="column" id="content-transction">
-				<md-content id="content-transaction">
+
+			<div layout="column">
+				<md-content class="content-history">
 					<md-list flex>
 
 						<md-list-item class="md-3-line content-transaction-item" ng-repeat="transaction in transactions">
@@ -53,6 +55,7 @@
 									<p>{{ transaction.log_text }}</p>
 								</div>
 								<div flex="50">
+									<p>{{ transaction.log_date }}</p>
 									<p>{{ transaction.log_time }}</p>
 								</div>
 							</div>
@@ -61,41 +64,44 @@
 					</md-list>
 				</md-content>
 			</div>
-
 		</div>
 	</div>
 
-	<div id="main-volunteer" layout="column" ng-switch-when="volunteers">
-		<div layout="row" ng-include="'components/shared/templates/flag.html'">
+	<div id="volunteer" layout="column" ng-switch-when="volunteers">
+		<div flex="20">
+			<div layout="row" ng-include="'components/shared/templates/flag.html'"></div>
 		</div>
 
 		<div layout="column">
-			
-				<div layout="row" id="content-header">
+
+			<div flex="5">
+				<div layout="row">
 					<div flex="10"></div>
-					<div flex="50" flex-gt-sm="40">
+					<div flex="45">
 						<h5>NAME</h5>
 					</div>
-					<div flex="40" flex-gt-sm="50">
+					<div flex="45">
 						<h5>DATE AND TIME</h5>
 					</div>
 				</div>
 				<div layout="row"><span flex="5"></span><hr flex style="border-color:rgb(48,48,48)"><span flex="5"> </span> </div>
+			</div>
 
-			<div layout="column" id="content-volunteer">
-				<span flex="20"></span>
-				<md-content >
+			<div layout="column">
+				<md-content class="content-history">
 					<md-list flex>
-						
-						<md-list-item class="md-3-line content-volunteer-item" ng-repeat="volunteer in volunteers">	
-							<img src="" class="md-avatar"/>
 
+						<md-list-item class="md-3-line content-volunteer-item" ng-repeat="volunteer in volunteers">	
 							<div class="md-list-item-text" layout="row">
-								<div flex="50" >
+								<div flex="10">
+									<img src="assets/icons/profile.png" class="md-avatar"/>
+								</div>
+								<div flex="45" layout="row" layout-align="center center">
 									<p>{{ volunteer.Volunteer }}</p>
 								</div>
-								<div flex="50">
+								<div flex="45" layout="column" layout-align="center center">
 									<p>{{ volunteer.volunteer_date }}</p>
+									<p>{{ volunteer.volunteer_time }}</p>
 								</div>
 							</div>
 						</md-list-item>
