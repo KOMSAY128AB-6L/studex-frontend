@@ -18,10 +18,24 @@
 
 <div flex class="main" id="main-student" layout="column" layout-align="center center">
   <div layout="row">
-     <!-- FORM -->
+    <!-- FORM -->
     <!-- pass in the variable if our form is valid or invalid -->
     <form name="addStudent" ng-submit="add()" > <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
 
+        <!-- EMAIL -->
+        <div class="form-group">
+            <label>E-mail Address: </label>
+            <input type="email" name="email" id="text3" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.email" size="22">
+            <span ng-show="errorEmail">{{errorEmail}}</span>
+        </div>
+
+        <!-- STUDENT NUMBER -->
+        <div class="form-group">
+            <label>Student number: </label>
+            <input type="text" name="studentnumber" id="text3" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.studentnumber" ng-minlength="10" ng-maxlength="10"  size="20">
+            <span ng-show="errorStudentNumber">{{errorStudentNumber}}</span>
+        </div>
+        
         <!-- FIRST NAME -->
         <div class="form-group">
             <label>First Name: </label>
@@ -42,19 +56,12 @@
             <input type="text" name="lastname" id="text3" class="ng-pristine ng-valid md-input ng-touched"ng-model="user.lastname" size="25">
             <span ng-show="errorLastName">{{errorLastName}}</span>
         </div>
-
-        <!-- STUDENT NUMBER -->
-        <div class="form-group">
-            <label>Student number: </label>
-            <input type="text" name="studentnumber" id="text3" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.studentnumber" ng-minlength="10" ng-maxlength="10"  size="20">
-            <span ng-show="errorStudentNumber">{{errorStudentNumber}}</span>
-        </div>
         
-        <!-- EMAIL -->
+        <!-- STUDENT TAG -->
         <div class="form-group">
-            <label>E-mail Address: </label>
-            <input type="email" name="email" id="text3" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.email" size="22">
-            <span ng-show="errorEmail">{{errorEmail}}</span>
+            <label>Tag: </label>
+            <input type="text" name="tag" id="text3" class="ng-pristine ng-valid md-input ng-touched"ng-model="user.tag" size="25">
+            <span ng-show="errorTag">{{errorTag}}</span>
         </div>
         
         <!-- SUBMIT BUTTON -->
