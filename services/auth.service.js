@@ -11,6 +11,7 @@
 		this.getSession = function () {
 			var user = {};
 
+			user.teacher_id = localStorage.getItem('teacher_id');
 			user.first_name = localStorage.getItem('first_name');
 			user.middle_initial = localStorage.getItem('middle_initial');
 			user.last_name = localStorage.getItem('last_name');
@@ -21,6 +22,7 @@
 		}
 
 		this.setSession = function (data, callback) {
+			localStorage.setItem('teacher_id', data.teacher_id);
 			localStorage.setItem('first_name', data.first_name);
 			localStorage.setItem('middle_initial', data.middle_initial);
 			localStorage.setItem('last_name', data.last_name);
