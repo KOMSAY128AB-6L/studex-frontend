@@ -99,7 +99,7 @@
 		$scope.saveProfile = function() {
 			$http({
 				method: 'PUT',
-				url: 'http://' + config.backend_url + '/teacher',
+				url: config.protocol + config.backend_url + '/teacher',
 				data: $scope.temp,
 				withCredentials:true
 			}).then(success, error);

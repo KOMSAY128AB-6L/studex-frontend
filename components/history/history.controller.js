@@ -19,7 +19,7 @@
 
 			$http({
 				method: 'GET',
-				url: 'http://' + config.backend_url + '/student_logs',
+				url: config.protocol + config.backend_url + '/student_logs',
 				withCredentials: true
 			}).then(success, error);
 
@@ -35,19 +35,18 @@
 			function error (response) {
 				$mdToast.show(
 					$mdToast.simple()
-						.textContent(response.status)
+						.textContent(response.data.errors[0].message)
 						.hideDelay(1000)
                 );
 			};
 		};
-
 
 		$scope.transaction_log = function () {
 			$scope.title = 'TRANSACTIONS';
 
 			$http({
 				method: 'GET',
-				url: 'http://' + config.backend_url + '/history',
+				url: config.protocol + config.backend_url + '/history',
 				withCredentials: true
 			}).then(success, error);
 
@@ -63,7 +62,7 @@
 			function error (response) {
 				$mdToast.show(
 					$mdToast.simple()
-						.textContent(response.status)
+						.textContent(response.data.errors[0].message)
 						.hideDelay(1000)
                 );
 			};
