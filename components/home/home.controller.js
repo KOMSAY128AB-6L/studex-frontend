@@ -22,7 +22,7 @@
 
 		$http({
 				method: 'GET',
-				url: 'http://' + config.backend_url + '/classes',
+				url: config.protocol + config.backend_url + '/classes',
 				withCredentials:true
 			}).then(success, error);
 
@@ -46,7 +46,7 @@
   					
   					$http({
   						method: 'GET',
-  						url: 'http://' + config.backend_url + '/student/' + value.class_id,
+  						url: config.protocol + config.backend_url + '/student/' + value.class_id,
   						withCredentials: true
   					}).then(
   					(response) => {
@@ -71,7 +71,7 @@
 		$scope.getVolunteers = function () {
 			$http({
 				method: 'POST',
-				url: 'http://' + config.backend_url + '/randomize/students',
+				url: config.protocol + config.backend_url + '/randomize/students',
 				data: $scope.data,
 				withCredentials: true
 			}).then(

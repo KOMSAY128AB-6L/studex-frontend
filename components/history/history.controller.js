@@ -19,7 +19,7 @@
 
 			$http({
 				method: 'GET',
-				url: 'http://' + config.backend_url + '/student_logs',
+				url: config.protocol + config.backend_url + '/student_logs',
 				withCredentials: true
 			}).then(success, error);
 
@@ -47,7 +47,7 @@
 
 			$http({
 				method: 'GET',
-				url: 'http://' + config.backend_url + '/history',
+				url: config.protocol + config.backend_url + '/history',
 				withCredentials: true
 			}).then(success, error);
 

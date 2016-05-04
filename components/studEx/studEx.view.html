@@ -70,11 +70,11 @@
 				<form id="white-form" ng-submit="login()" class="form-2">
 						<md-input-container>
 							<label class="md-primary md-hue-2">e-mail address</label>
-							<input type="email" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.email" >
+							<input type="email" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.email" required>
 						</md-input-container>
 						<md-input-container>
 							<label>password</label>
-							<input type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.password" >
+							<input type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.password" required>
 						</md-input-container>
 						<md-button id="white" class="md-fab" type="submit">
 							<span>&gt;</span>
@@ -90,15 +90,15 @@
 				<form id="white-form" class="form-3">
 					<md-input-container>
 						<label>first name</label>
-						<input class="ng-pristine ng-valid md-input ng-touched" ng-model="user.first_name" >
+						<input class="ng-pristine ng-valid md-input ng-touched" ng-model="user.first_name" required>
 					</md-input-container>
 					<md-input-container>
 						<label>middle initial</label>
-						<input class="ng-pristine ng-valid md-input ng-touched" ng-model="user.middle_initial" >
+						<input class="ng-pristine ng-valid md-input ng-touched" ng-model="user.middle_initial" required>
 					</md-input-container>
 					<md-input-container>
 						<label>last name</label>
-						<input class="ng-pristine ng-valid md-input ng-touched" ng-model="user.last_name" >
+						<input class="ng-pristine ng-valid md-input ng-touched" ng-model="user.last_name" required>
 					</md-input-container>
 					<md-button id="white-2" class="md-fab" type="button" ng-click="$parent.form='register2'">
 						<span>&gt;&gt;</span>
@@ -113,15 +113,15 @@
 				<form id="white-form" ng-submit="register()" class="form-3">
 					<md-input-container>
 						<label>e-mail address</label>
-						<input type="email" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.email" >
+						<input type="email" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.email" required>
 					</md-input-container>
 					<md-input-container>
 						<label>password</label>
-						<input type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.password" >
+						<input type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.password" required>
 					</md-input-container>
 					<md-input-container>
 						<label>confirm password</label>
-						<input type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.confirm" >
+						<input type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.confirm" required>
 					</md-input-container>
 					<md-button id="white-2" class="md-fab" type="submit">
 						<span>&gt;</span>
