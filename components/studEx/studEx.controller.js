@@ -36,7 +36,7 @@
 
 			$http({
 				method: 'POST',
-				url: 'http://' + config.backend_url + '/user',
+				url: config.protocol + config.backend_url + '/user',
 				data: $scope.user,
 				withCredentials:true
 			}).then(success, error);
@@ -47,6 +47,7 @@
 						.textContent('Successfully registered!')
 						.hideDelay(1000)
                 );
+                $scope.login();
 			};
 
 			function error (response) {
@@ -61,7 +62,7 @@
 		$scope.login = function () {
 			$http({
 				method: 'POST',
-				url: 'http://' + config.backend_url + '/login',
+				url: config.protocol + config.backend_url + '/login',
 				data: $scope.user,
 				withCredentials:true
 			}).then(success, error);
@@ -69,7 +70,7 @@
 			function success (response) {
 				$http({
 					method: 'GET',
-					url: 'http://' + config.backend_url + '/teacher' ,
+					url: config.protocol + config.backend_url + '/teacher' ,
 					withCredentials:true
 				}).then(
 				(response) => {
@@ -98,7 +99,7 @@
             
 			$http({
 				method: 'POST',
-				url: 'http://' + config.backend_url + '/reset',
+				url: config.protocol + config.backend_url + '/reset',
 				data: $scope.user,
 			}).then(success, error);
 
@@ -124,7 +125,7 @@
 		$scope.confirmforgotpw = function () {
 			$http({
 				method: 'POST',
-				url: 'http://' + config.backend_url + '/confirm_reset',
+				url: config.protocol + config.backend_url + '/confirm_reset',
 				data: $scope.user,
 			}).then(success, error);
 
