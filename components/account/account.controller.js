@@ -35,10 +35,26 @@
 		authService.auth();
 
 		$scope.title = 'MY ACCOUNT';
+		$scope.picture = "";
 
 		$scope.user = authService.getSession();
 
-		$scope.null_picture = ($scope.user.picture == null);
+		//$scope.null_picture = ($scope.user.picture == null);
+		var getPic = function() {
+			$http({
+				method: 'GET',
+				url: 'http://' + config.backend_url + '/teacher/picture',
+				withCredentials:true
+			}).then(success, error);
+
+			function success (response) {
+				$scope.null_picture = true;
+			};
+
+			function error (response) {
+				$scope.null_picture = false;
+			}
+		}();
 
 		$scope.navigation = navbarService.navigation();
 
@@ -110,13 +126,8 @@
 						.textContent('Successfully updated profile!')
 						.hideDelay(1000)
                 );
-<<<<<<< HEAD
-				$scope.user = $scope.temp;
-				$scope.accountView = 'home';
-=======
 				authService.setSession($scope.temp, ()=>{});
 				$scope.form = 'home';
->>>>>>> c801f538940ee460a90f10d692fd1bf2c9825c50
 				$scope.title = 'MY ACCOUNT';
 			};
 
