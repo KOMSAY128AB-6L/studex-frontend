@@ -18,7 +18,7 @@
              <md-checkbox ng-model="class.selected" ng-repeat="class in classes">
               {{ class.class_name + class.section }}
             </md-checkbox>
-            <md-checkbox ng-model="class.selected">
+            <md-checkbox ng-model="data.no_called">
               NO CALLED STUDENTS
             </md-checkbox>
             <md-button id="white-1" class="md-fab" v ng-click="$parent.form='random'; selectClass()">
@@ -54,8 +54,9 @@
           <div id="checkBox-2" flex-xs flex="100">
             
             <md-radio-group ng-model="data.group1">
-              <md-radio-button ng-model="data.settings.chance" aria-label="Radio 1" value="chance">BY CHANCE</md-radio-button>
-              <md-radio-button ng-model="data.settings.count" aria-label="Radio 2" value="count"> BY COUNT </md-radio-button>
+              <md-radio-button ng-model="data.randomize" name="randomize" value="chance">BY CHANCE</md-radio-button>
+              <md-radio-button ng-model="data.randomize" name="randomize" value="count"> BY COUNT </md-radio-button>
+              <md-radio-button ng-model="data.randomize" name="randomize" value="default"> DEFAULT </md-radio-button>
             </md-radio-group>  
 
             <md-checkbox ng-model="data.settings.unique" aria-label="Checkbox 2">
