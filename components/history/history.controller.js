@@ -14,10 +14,6 @@
 
 		$scope.navigation = navbarService.navigation();
 
-		$scope.navigation.history = function () {
-			$scope.title = 'HISTORY';
-		};
-
 		$scope.volunteer_log = function () {
 			$scope.title = 'VOLUNTEERED STUDENTS';
 
