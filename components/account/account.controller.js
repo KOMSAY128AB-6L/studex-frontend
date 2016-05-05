@@ -36,25 +36,9 @@
 
 		$scope.title = 'MY ACCOUNT';
 		$scope.picture = "";
+		$scope.config = config;
 
 		$scope.user = authService.getSession();
-
-		//$scope.null_picture = ($scope.user.picture == null);
-		var getPic = function() {
-			$http({
-				method: 'GET',
-				url: 'http://' + config.backend_url + '/teacher/picture',
-				withCredentials:true
-			}).then(success, error);
-
-			function success (response) {
-				$scope.null_picture = true;
-			};
-
-			function error (response) {
-				$scope.null_picture = false;
-			}
-		}();
 
 		$scope.navigation = navbarService.navigation();
 
