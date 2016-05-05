@@ -26,6 +26,10 @@
 				'templateUrl': './components/home/home.view.html',
 				'controller' : 'homeCtrl'
 			})
+			.when('/sections/section', {
+				'templateUrl': './components/sections/section/section.view.html',
+				'controller' : 'sectionCtrl'
+			})
 			.otherwise({'redirectTo': '/'})
 
 	}

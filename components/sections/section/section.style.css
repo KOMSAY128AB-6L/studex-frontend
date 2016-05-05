@@ -1,0 +1,51 @@
+.header *{
+	margin-left: 20px;
+	font-family: quicksand_bold;
+}
+
+.info{
+	margin-top: 5px;
+	margin-left: 25px;
+}
+
+.raw{
+	margin-left: 150px;
+	font-family: quicksand_bold;
+}
+
+#rawinfo{
+	margin-top: -100px;
+}
+
+hr{
+	border: 0.1em solid #303030;
+}
+
+.lastname{
+	margin-top: -10px;
+}
+
+.studinfo{
+	margin-top: -20px;
+	margin-left: 80px;
+}
+
+.studheader{
+	margin-top: -20px;
+}
+
+.icons{
+	margin-top: -40px;
+}
+
+.icons2{
+	margin-top: -15px;
+}
+
+#secinfo{
+	margin-top: 20px;
+}
+
+md-card{
+	background: transparent!important;
+}
