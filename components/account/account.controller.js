@@ -71,6 +71,71 @@
 			$scope.confirm_password = "";
 		};
 
+		$scope.handleCSV = function() {
+			$scope.title = 'UPLOAD CSV';
+			$scope.form = 'upload';
+		};
+
+		$scope.uploadCSV = function() {
+			let formData = new FormData();
+			formData.append("csv", $scope.csv);
+
+			$http({
+				method: 'POST',
+				url: 'http://' + config.backend_url + '/class/csv',
+				data: formData,
+				headers: {'Content-Type': undefined},
+				withCredentials:true
+			}).then(success, error);
+
+			function success (response) {
+				$mdToast.show(
+					$mdToast.simple()
+						.textContent('Successfully uploaded csv file!')
+						.hideDelay(1000)
+        );
+				$scope.form = 'home';
+				$scope.title = 'MY ACCOUNT';
+				$scope.csv = "";
+			};
+
+			function error (response) {
+				$mdToast.show(
+					$mdToast.simple()
+						.textContent(response.data.errors[0].message)
+						.hideDelay(1000)
+        );
+			};
+		}
+
+		$scope.printCSV = function() {
+			$http({
+				method: 'GET',
+				url: 'http://' + config.backend_url + '/class/csv',
+				headers: {'Content-Type': undefined},
+				withCredentials:true
+			}).then(success, error);
+
+			function success (response) {
+				$mdToast.show(
+					$mdToast.simple()
+						.textContent('Successfully printed csv file!')
+						.hideDelay(1000)
+        );
+				$scope.form = 'home';
+				$scope.title = 'MY ACCOUNT';
+				$scope.csv = "";
+			};
+
+			function error (response) {
+				$mdToast.show(
+					$mdToast.simple()
+						.textContent(response.data.errors[0].message)
+						.hideDelay(1000)
+        );
+			};
+		}
+
 		$scope.editProfile = function() {
 			$scope.form = 'edit';
 			$scope.title = 'EDIT PROFILE';
