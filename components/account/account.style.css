@@ -150,7 +150,7 @@
 }
 
 #accountButtons > .md-button > span {
-  top: 1px;
+  top: -8px;
   color: #DEDEDE;
   position: relative;
 	font-size: 15px;
@@ -168,4 +168,8 @@
   text-align: right;
   font-size: 12px;
   margin-bottom: 5px;
+}
+
+#popup{
+  padding-top:3px;
 }
