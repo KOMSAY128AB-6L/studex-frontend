@@ -82,7 +82,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent('Successfully updated profile!')
-						.hideDelay(1000)
+						.hideDelay(1750)
                 );
 				authService.setSession($scope.temp, ()=>{});
 				$scope.form = 'home';
@@ -93,7 +93,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent(response.data.errors[0].message)
-						.hideDelay(1000)
+						.hideDelay(1750)
                 );
 			}
 		}
