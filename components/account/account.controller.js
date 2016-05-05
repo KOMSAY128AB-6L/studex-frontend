@@ -123,5 +123,41 @@
                 );
 			}
 		}
+
+		$scope.deactivate = function() {
+			$http({
+				method: 'DELETE',
+				url: config.protocol + config.backend_url + '/teacher',
+				withCredentials:true
+			}).then(success, error);
+
+			function success (response) {
+				$mdToast.show(
+					$mdToast.simple()
+						.textContent('Successfully deactivated profile!')
+						.hideDelay(1750)
+                );
+				$http({
+					method: 'POST',
+					url: config.protocol + config.backend_url + '/logout',
+					withCredentials:true
+				}).then(
+				function (response) {
+					authService.destroy();
+					$location.path('/');
+				},
+				function (response) {
+
+				});
+			};
+
+			function error (response) {
+				$mdToast.show(
+					$mdToast.simple()
+						.textContent(response.data.errors[0].message)
+						.hideDelay(1750)
+                );
+			}
+		}
   };
 })();
