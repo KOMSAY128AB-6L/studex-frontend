@@ -35,10 +35,10 @@
 		authService.auth();
 
 		$scope.title = 'MY ACCOUNT';
+		$scope.picture = "";
+		$scope.config = config;
 
 		$scope.user = authService.getSession();
-
-		$scope.null_picture = ($scope.user.picture == null);
 
 		$scope.navigation = navbarService.navigation();
 
@@ -48,11 +48,38 @@
 		};
 
 		$scope.savePass = function() {
-			$scope.title = 'MY ACCOUNT';
-			$scope.form = 'home';
-			$scope.old_password = "";
-			$scope.new_password = "";
-			$scope.confirm_password = "";
+			if($scope.pwForm.new_password != $scope.pwForm.confirm_password) {
+				$mdToast.show(
+					$mdToast.simple()
+						.textContent('New password does not match!')
+						.hideDelay(3000)
+                );
+			} else {
+				$http({
+					method: 'POST',
+					url: 'http://' + config.backend_url + '/change_password',
+					data: $scope.pwForm,
+					withCredentials:true
+				}).then(success, error);
+
+				function success (response) {
+					$mdToast.show(
+						$mdToast.simple()
+							.textContent('Successfully updated password!')
+							.hideDelay(3000)
+	                );
+						$scope.title = 'MY ACCOUNT';
+						$scope.accountView = 'home';
+				};
+
+				function error (response) {
+					$mdToast.show(
+						$mdToast.simple()
+							.textContent(response.data.errors[0].message)
+							.hideDelay(3000)
+	                );
+				}
+			}
 		};
 
 		$scope.editProfile = function() {
@@ -63,7 +90,6 @@
 			$scope.temp.last_name = $filter('uppercase')($scope.temp.last_name);
 			$scope.temp.first_name = $filter('uppercase')($scope.temp.first_name);
 			$scope.temp.middle_initial = $filter('uppercase')($scope.temp.middle_initial);
-			console.log($scope.fab);
 		};
 
 		$scope.editPic = function() {
