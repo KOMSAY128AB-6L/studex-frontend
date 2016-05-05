@@ -46,6 +46,12 @@ hr{
 	margin-top: 20px;
 }
 
-md-card{
-	background: transparent!important;
+#sectionedit input{
+	background: transparent;
+	color: #303030;
+	border: 1px solid #737373;
+}
+
+.editsec{
+	margin-left: 150px;
 }
