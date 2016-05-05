@@ -52,10 +52,12 @@
         <span class="form-header">TAGS </span>
         <span class="form-sub-header"></span></br>(separated by commas)</span>
         <form id="white-form" class="form-2">
-          <md-input-container id="inputVol">
-            <input type="number" class="ng-pristine ng-valid md-input ng-touched" ng-model="data.settings.tags" aria-label ="random">
+          <md-input-container id="inputTag">
+            <input type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="data.settings.tags" aria-label ="random">
           </md-input-container>
-
+           <md-checkbox id="atleast-checkbox" ng-model="data.atleast">
+              at least one
+            </md-checkbox>
           <md-button id="white-2l" class="md-fab" v ng-click="$parent.form='random'">
             <span>&lt;&lt;</span>
             <div class="md-ripple-container"></div>
