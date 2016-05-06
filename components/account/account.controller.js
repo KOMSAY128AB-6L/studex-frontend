@@ -37,6 +37,7 @@
 		$scope.title = 'MY ACCOUNT';
 		$scope.picture = "";
 		$scope.config = config;
+		$scope.pwForm = {};
 
 		$scope.user = authService.getSession();
 
