@@ -139,7 +139,6 @@
 			};
 
 			function error (response) {
-				$scope.form = 'choice';
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent(response.data.errors[0].message)
