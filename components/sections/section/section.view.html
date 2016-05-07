@@ -10,8 +10,11 @@
 		<div layout="row" id="secinfo">
 			<div class="header"><span>SECTION INFORMATION</span></div>
 			<div flex class="icons2" layout="column" layout-align="center end">
-				<md-button class="md-icon-button md-raised" aria-label="Edit" ng-click="editSection()">
+				<md-button ng-hide="check" class="md-icon-button md-raised" aria-label="Edit" ng-click="editSection()">
 					<md-icon md-svg-icon="../../assets/icons/ic_edit_black_24px.svg"></md-icon>
+				</md-button>
+				<md-button ng-show="check" class="md-icon-button md-raised" aria-label="Edit" ng-click="saveSection()">
+					<md-icon md-svg-icon="../../assets/icons/ic_done_black_24px.svg"></md-icon>
 				</md-button>
 			</div>
 			<span flex="5"></span>	
@@ -76,57 +79,57 @@
 			<md-content>
 				<md-card md-hue-1 ng-repeat="student in class">
 					<div ng-hide="flag[$index]">    			
-					<md-card-title>
-						<md-card-title-media>
-							<div class="md-media-sm card-media">
-								<img alt="Profile pic" ng-hide="$null_picture" src="//gettingreal2014.com/wp-content/uploads/2014/07/default-avatar.png">
-							</div>
-						</md-card-title-media>
-						<md-card-title-text>
-							<span class="md-headline lastname">{{ student.last_name }}</span>
-							<div flex class="icons" layout="column" layout-align="center end">
-								<md-button class="md-icon-button md-raised" aria-label="Edit" ng-click="editStudent($index)">
-									<md-icon md-svg-icon="../../assets/icons/ic_edit_black_24px.svg"></md-icon>
-								</md-button>
-							</div>
-							<span flex="5"></span>
-							<span class="md-subhead">{{ student.first_name }} {{ student.middle_initial }}</span>
-						</md-card-title-text>
-					</md-card-title>
-					<md-card-content class="s">
-						<span>{{ student.student_number }}</span><br>
-						<span>{{ student.email }}</span>
-					</md-card-content>
+						<md-card-title>
+							<md-card-title-media>
+								<div class="md-media-sm card-media">
+				    				<img alt="Profile pic" ng-src="{{config.protocol + config.backend_url}}/student/{{ student.student_id }}/picture">
+								</div>
+							</md-card-title-media>
+							<md-card-title-text>
+								<span class="md-headline lastname">{{ student.last_name }}</span>
+								<div flex class="icons" layout="column" layout-align="center end">
+									<md-button class="md-icon-button md-raised" aria-label="Edit" ng-click="editStudent($index)">
+										<md-icon md-svg-icon="../../assets/icons/ic_edit_black_24px.svg"></md-icon>
+									</md-button>
+								</div>
+								<span flex="5"></span>
+								<span class="md-subhead">{{ student.first_name }} {{ student.middle_initial }}</span>
+							</md-card-title-text>
+						</md-card-title>
+						<md-card-content>
+							<span>{{ student.student_number }}</span><br>
+							<span>{{ student.email }}</span>
+						</md-card-content>
 					</div>
 					
 					<div ng-show="flag[$index]">
-					<md-card-title>
-						<md-card-title-media>
-							<div class="md-media-sm card-media">
-								<img alt="Profile pic" ng-hide="$null_picture" src="//gettingreal2014.com/wp-content/uploads/2014/07/default-avatar.png">
-							</div>
-						</md-card-title-media>
-						<md-card-title-text>
-							<div flex layout="row" layout-align="center end" class="md-headline lastname">
-								<input flex type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="student.last_name">
-								<div flex="25" class="icons" layout="column" layout-align="center end">
-									<md-button class="md-icon-button md-raised" aria-label="Edit" ng-click="saveStudent($index)">
-										<md-icon md-svg-icon="../../assets/icons/ic_done_black_24px.svg"></md-icon>
-									</md-button>
+						<md-card-title>
+							<md-card-title-media>
+								<div class="md-media-sm card-media">
+									<img alt="Profile pic" ng-src="{{config.protocol + config.backend_url}}/student/{{ student.student_id }}/picture">
 								</div>
-							</div>
-							<span flex="5"></span>
-							<div flex layout="row" layout-align="center start" class="">
-								<input flex="75" type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="student.first_name">
+							</md-card-title-media>
+							<md-card-title-text>
+								<div flex layout="row" layout-align="center end" class="md-headline lastname">
+									<input flex type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="student.last_name">
+									<div flex="25" class="icons" layout="column" layout-align="center end">
+										<md-button class="md-icon-button md-raised" aria-label="Edit" ng-click="saveStudent($index)">
+											<md-icon md-svg-icon="../../assets/icons/ic_done_black_24px.svg"></md-icon>
+										</md-button>
+									</div>
+								</div>
 								<span flex="5"></span>
-								<input flex="20" type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="student.middle_initial">
-							</div>
-						</md-card-title-text>
-					</md-card-title>
-					<md-card-content class="s">
-						<span>{{ student.student_number }}</span><br>
-						<input flex="75" type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="student.email">
-					</md-card-content>
+								<div flex layout="row" layout-align="center start" class="">
+									<input flex="75" type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="student.first_name">
+									<span flex="5"></span>
+									<input flex="20" type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="student.middle_initial">
+								</div>
+							</md-card-title-text>
+						</md-card-title>
+						<md-card-content class="s">
+							<span>{{ student.student_number }}</span><br>
+							<input flex="75" type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="student.email">
+						</md-card-content>
 					</div>
 				</md-card>
 			</md-content>

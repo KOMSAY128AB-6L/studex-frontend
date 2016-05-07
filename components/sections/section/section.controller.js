@@ -34,6 +34,11 @@
 		  	$scope.check = true;
 		  }
 		  
+		  $scope.saveSection = function(){
+		  	$scope.title = 'CMSC 128 AB-6L';
+		  	$scope.check = false;
+		  }
+		  
 		  $scope.editStudent = function(index) {
 		  	$scope.flag[index] = true;
 			$scope.title = 'EDIT STUDENT';
