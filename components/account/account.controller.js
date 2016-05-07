@@ -6,7 +6,7 @@
 
 	app.config(customTheme);
 
-	accountCtrlFunc.$inject = ['$scope', '$http', '$mdToast', '$filter', 'navbarService', 'authService'];
+	accountCtrlFunc.$inject = ['$scope', '$http', '$mdToast', '$filter', '$location', 'navbarService', 'authService'];
 	customTheme.$inject = ['$mdThemingProvider'];
 
 	function customTheme($mdThemingProvider) {
@@ -31,14 +31,15 @@
 			.primaryPalette('customPrimary')
 	};
 
-  function accountCtrlFunc($scope, $http, $mdToast, $filter, navbarService, authService) {
+  function accountCtrlFunc($scope, $http, $mdToast, $filter, $location, navbarService, authService) {
 		authService.auth();
 
 		$scope.title = 'MY ACCOUNT';
+		$scope.picture = "";
+		$scope.config = config;
+		$scope.pwForm = {};
 
 		$scope.user = authService.getSession();
-
-		$scope.null_picture = ($scope.user.picture == null);
 
 		$scope.navigation = navbarService.navigation();
 
@@ -48,11 +49,38 @@
 		};
 
 		$scope.savePass = function() {
-			$scope.title = 'MY ACCOUNT';
-			$scope.form = 'home';
-			$scope.old_password = "";
-			$scope.new_password = "";
-			$scope.confirm_password = "";
+			if($scope.pwForm.new_password != $scope.pwForm.confirm_password) {
+				$mdToast.show(
+					$mdToast.simple()
+						.textContent('New password does not match!')
+						.hideDelay(3000)
+                );
+			} else {
+				$http({
+					method: 'POST',
+					url: 'http://' + config.backend_url + '/change_password',
+					data: $scope.pwForm,
+					withCredentials:true
+				}).then(success, error);
+
+				function success (response) {
+					$mdToast.show(
+						$mdToast.simple()
+							.textContent('Successfully updated password!')
+							.hideDelay(3000)
+	                );
+						$scope.title = 'MY ACCOUNT';
+						$scope.accountView = 'home';
+				};
+
+				function error (response) {
+					$mdToast.show(
+						$mdToast.simple()
+							.textContent(response.data.errors[0].message)
+							.hideDelay(3000)
+	                );
+				}
+			}
 		};
 
 		$scope.editProfile = function() {
@@ -63,7 +91,6 @@
 			$scope.temp.last_name = $filter('uppercase')($scope.temp.last_name);
 			$scope.temp.first_name = $filter('uppercase')($scope.temp.first_name);
 			$scope.temp.middle_initial = $filter('uppercase')($scope.temp.middle_initial);
-			console.log($scope.fab);
 		};
 
 		$scope.editPic = function() {
@@ -82,7 +109,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent('Successfully updated profile!')
-						.hideDelay(1000)
+						.hideDelay(1750)
                 );
 				authService.setSession($scope.temp, ()=>{});
 				$scope.form = 'home';
@@ -93,7 +120,43 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent(response.data.errors[0].message)
-						.hideDelay(1000)
+						.hideDelay(1750)
+                );
+			}
+		}
+
+		$scope.deactivate = function() {
+			$http({
+				method: 'DELETE',
+				url: config.protocol + config.backend_url + '/teacher',
+				withCredentials:true
+			}).then(success, error);
+
+			function success (response) {
+				$mdToast.show(
+					$mdToast.simple()
+						.textContent('Successfully deactivated profile!')
+						.hideDelay(1750)
+                );
+				$http({
+					method: 'POST',
+					url: config.protocol + config.backend_url + '/logout',
+					withCredentials:true
+				}).then(
+				function (response) {
+					authService.destroy();
+					$location.path('/');
+				},
+				function (response) {
+
+				});
+			};
+
+			function error (response) {
+				$mdToast.show(
+					$mdToast.simple()
+						.textContent(response.data.errors[0].message)
+						.hideDelay(1750)
                 );
 			}
 		}

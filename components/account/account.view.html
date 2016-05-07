@@ -11,7 +11,7 @@
         <span flex="10"></span>
         <div flex="45">
           <div id="displayPic" layout-align="center center">
-            <img alt="Profile pic" ng-hide="$null_picture" src="assets/images/default-avatar.png">
+            <img alt="Profile pic" ng-src="{{config.protocol + config.backend_url}}/teacher/picture">
           </div>
         </div>
 
@@ -44,8 +44,9 @@
       <div flex="20" layout="row">
         <span flex-xs="10" flex-gt-xs="20"></span>
         <div flex id="accountButtons" layout="column" layout-align="start center" layout-align-gt-xs="center center">
-          <md-button class="md-raised" ng-click="editProfile()">EDIT PROFILE</md-button>
-          <md-button class="md-raised" ng-click="changePass();">CHANGE PASSWORD</md-button>
+          <md-button class="md-raised" ng-click="editProfile()" layout-align="center center">EDIT PROFILE</md-button>
+          <md-button class="md-raised" ng-click="changePass();" layout-align="center center">CHANGE PASSWORD</md-button>
+          <md-button class="md-raised" ng-click="deactivate();" layout-align="center center">DEACTIVATE</md-button>
         </div>
         <span flex-xs="10" flex-gt-xs="20" flex-order="3"></span>
       </div>
@@ -55,13 +56,13 @@
       <div layout="row" ng-include="'components/shared/templates/flag.html'">
       </div>
 
+      <form flex ng-submit="saveProfile()" layout="column">
       <span flex="10"></span>
-
       <div layout="row">
         <span flex="10"></span>
         <div flex="45">
           <div id="displayPic" layout-align="center center">
-            <img alt="Profile pic" ng-hide="$null_picture" src="//gettingreal2014.com/wp-content/uploads/2014/07/default-avatar.png">
+            <img alt="Profile pic" ng-src="{{config.protocol + config.backend_url}}/teacher/picture">
             <md-fab-speed-dial md-open="false" md-direction="up" ng-class="fab.mode">
                 <md-fab-trigger>
                    <md-button id="popup" class="md-raised" layout-align="center space-around" ng-click="editPic()">EDIT</md-button>
@@ -78,12 +79,12 @@
 
         <div flex id="nameContainer" layout="column" layout-align="center stretch">
           <div flex layout="row" layout-align="center end">
-            <input flex type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="temp.last_name">
+            <input flex type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="temp.last_name" required>
           </div>
           <div flex layout="row" layout-align="center start">
-            <input flex="75" type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="temp.first_name">
+            <input flex="75" type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="temp.first_name" required>
             <span flex="5"></span>
-            <input flex="20" type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="temp.middle_initial">
+            <input flex="20" type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="temp.middle_initial" required>
           </div>
         </div>
         <span flex="5"></span>
@@ -99,7 +100,7 @@
           </div>
           <div layout="row">
             <h4 flex="33">E-MAIL ADDRESS</h4>
-            <input flex=66 type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="temp.email">
+            <input flex=66 type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="temp.email" required>
           </div>
         </div>
 
@@ -109,11 +110,12 @@
       <div flex="20" layout="row">
         <span flex-xs="10" flex-gt-xs="20"></span>
         <div flex id="accountButtons" layout="column" layout-align="start center" layout-align-gt-xs="center center">
-          <md-button class="md-raised" ng-click="saveProfile()">SAVE</md-button>
-          <md-button class="md-raised" ng-click="changePass();">CHANGE PASSWORD</md-button>
+          <md-button class="md-raised" layout-align="center center" type="submit">SAVE</md-button>
+          <md-button class="md-raised" ng-click="changePass();" layout-align="center center">CHANGE PASSWORD</md-button>
         </div>
         <span flex-xs="10" flex-gt-xs="20" flex-order="3"></span>
       </div>
+      </form>
 
   </div>
 
@@ -126,41 +128,41 @@
     </div>
 
     <span flex="15"></span>
+    <form flex id="changePass" ng-submit="savePass()">
     <div layout="row">
       <span flex="5"></span>
-      <div flex>
-        <form id="changePass" layout="column">
-          <div flex="33" layout="row">
-            <div flex="50" layout="column" layout-align="center end" class="label">
-              <p>CURRENT PASSWORD:</p>
-            </div>
-            <div flex layout="row" layout-align="center end">
-  			      <input flex type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="password">
-            </div>
+      <div flex layout="column">
+        <div flex="33" layout="row">
+          <div flex="50" layout="column" layout-align="center end" class="label">
+            <p>CURRENT PASSWORD:</p>
           </div>
-          <div flex="33" layout="row">
-            <div flex="50" layout="column" layout-align="center end" class="label">
-              <p>NEW PASSWORD:</p>
-            </div>
-            <div flex layout="row" layout-align="center end">
-              <input flex type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="new_password">
-            </div>
+          <div flex layout="row" layout-align="center end">
+			      <input flex type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="pwForm.old_password" required>
           </div>
-          <div flex="33" layout="row">
-            <div flex="50" layout="column" layout-align="start end" class="label">
-              <p>REPEAT NEW PASSWORD:</p>
-            </div>
-            <div flex layout="row" layout-align="center end">
-              <input flex type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="confirm_password">
-            </div>
+        </div>
+        <div flex="33" layout="row">
+          <div flex="50" layout="column" layout-align="center end" class="label">
+            <p>NEW PASSWORD:</p>
           </div>
+          <div flex layout="row" layout-align="center end">
+            <input flex type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="pwForm.new_password" required>
+          </div>
+        </div>
+        <div flex="33" layout="row">
+          <div flex="50" layout="column" layout-align="start end" class="label">
+            <p>REPEAT NEW PASSWORD:</p>
+          </div>
+          <div flex layout="row" layout-align="center end">
+            <input flex type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="pwForm.confirm_password" required>
+          </div>
+        </div>
       </div>
       <span flex="5"></span>
     </div>
     <div flex layout="row" style="margin-top: 30px;">
       <span flex="15"></span>
       <div flex layout-align="start center">
-        <md-button id="btn-lrg" class="md-raised" ng-click="savePass()" type="submit"><span>SAVE</span></md-button>
+        <md-button id="btn-lrg" class="md-raised" type="submit"><span>SAVE</span></md-button>
       </div>
       <span flex="15"></span>
     </div>

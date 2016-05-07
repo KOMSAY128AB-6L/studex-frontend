@@ -29,7 +29,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent("Passwords do not match")
-						.hideDelay(1000)
+						.hideDelay(1750)
 				);
 				return;
 			}
@@ -45,7 +45,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent('Successfully registered!')
-						.hideDelay(1000)
+						.hideDelay(1750)
                 );
                 $scope.login();
 			};
@@ -54,7 +54,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent(response.data.errors[0].message)
-						.hideDelay(1000)
+						.hideDelay(1750)
                 );
 			}
 		};
@@ -85,7 +85,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent(response.data.errors[0].message)
-						.hideDelay(1000)
+						.hideDelay(1750)
                 );
 			}
 		};
@@ -117,7 +117,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent(response.data.errors[0].message)
-						.hideDelay(1000)
+						.hideDelay(1750)
                 );
 			}
 		};
@@ -139,7 +139,6 @@
 			};
 
 			function error (response) {
-				$scope.form = 'choice';
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent(response.data.errors[0].message)
