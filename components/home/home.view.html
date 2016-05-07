@@ -41,6 +41,28 @@
             <div class="md-ripple-container"></div>
           </md-button>
 
+          <md-button id="white-2r" class="md-fab" v ng-click="$parent.form='tags'">
+            <span>&gt;&gt;</span>
+            <div class="md-ripple-container"></div>
+          </md-button>
+        </form>
+      </div>
+
+      <div id="circle" class="circle-container-home" ng-switch-when="tags">
+        <span class="form-header">TAGS </span>
+        <p class="form-sub-header">(separated by commas)</p>
+        <form id="white-form" class="form-2">
+          <md-input-container id="inputTag">
+            <input type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="data.settings.tags" aria-label ="random">
+          </md-input-container>
+           <md-checkbox id="atleast-checkbox" ng-model="data.atleast">
+              CONSIDER ALL TAGS
+            </md-checkbox>
+          <md-button id="white-2l" class="md-fab" v ng-click="$parent.form='random'">
+            <span>&lt;&lt;</span>
+            <div class="md-ripple-container"></div>
+          </md-button>
+
           <md-button id="white-2r" class="md-fab" v ng-click="$parent.form='chance'">
             <span>&gt;&gt;</span>
             <div class="md-ripple-container"></div>
@@ -62,7 +84,7 @@
             <md-checkbox ng-model="data.settings.unique" aria-label="Checkbox 2">
               NO REPEAT
             </md-checkbox>
-            <md-button id="white-3l" class="md-fab" v ng-click="$parent.form='random'">
+            <md-button id="white-3l" class="md-fab" v ng-click="$parent.form='tags'">
               <span>&lt;&lt;</span>
               <div class="md-ripple-container"></div>
             </md-button>
@@ -84,7 +106,7 @@
           </span>      
         </div>
         <form id="checkBox-form" class="form-2">
-          <div id="checkBox-2" flex-xs flex="100">
+          <div flex-xs flex="100">
             <md-button id="white-4l" class="md-raised" v ng-click="$parent.form='form'">
               <span>SETTINGS</span>
               <div class="md-ripple-container"></div>
