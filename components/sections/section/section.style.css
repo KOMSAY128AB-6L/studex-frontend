@@ -1,6 +1,8 @@
 .header *{
 	margin-left: 20px;
 	font-family: quicksand_bold;
+	font-size: 20px;
+	padding-bottom: 10px;
 }
 
 .info{
@@ -18,20 +20,29 @@
 }
 
 hr{
-	border: 0.1em solid #303030;
+	border: 0.1em solid #000000;
 }
 
 .lastname{
-	margin-top: -10px;
+	padding-top: 20px;
+	padding-bottom: 0px;
+	margin-left: 40px;
+	text-align: left;
+}
+
+.firstname{
+	margin-top: 0px;
+	margin-left: 40px;
+	text-align: left;
 }
 
 .studinfo{
-	margin-top: -20px;
-	margin-left: 80px;
+	margin-left: 0px;
+	text-align: center;
 }
 
 .studheader{
-	margin-top: -20px;
+	line-height: 10px;
 }
 
 .icons{
@@ -43,15 +54,65 @@ hr{
 }
 
 #secinfo{
-	margin-top: 20px;
+	margin-top: 70px;
 }
 
 #sectionedit input{
 	background: transparent;
 	color: #303030;
 	border: 1px solid #737373;
+	width: 250px;
+}
+
+#studentedit input{
+	background: transparent;
+	color: white;
+	border: 1px solid #737373;
+	width: 20px;
 }
 
 .editsec{
 	margin-left: 150px;
+}
+
+#student-list{
+	height: 5%;
+	margin-top:25px;
+	overflow-y: scroll;
+	color: red;
+}
+
+.ln{
+	margin-left: -30px;
+	margin-bottom: 5px;
+}
+
+.fn{
+	margin-left: 10px;
+}
+
+.mn{
+	margin-left: 5px;
+}
+
+#email input{
+	width: 1000px;
+}
+
+#sectheader{
+	padding:10px;
+}
+
+#section-box{
+	margin-top: 25px;
+}
+
+hr{
+	margin-left: -50px;
+	margin-top: 20px;
+}
+
+#slantedContainer{
+	visibility: visible;
+	z-index: 100;
 }
