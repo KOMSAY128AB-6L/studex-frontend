@@ -44,8 +44,8 @@
 			$scope.flag[index] = false;
 			$scope.title = 'CMSC 128 AB-6L';
 			
-			let data = $scope.class[index];
-			let temp_id = $scope.class[index].student_id;
+			var data = $scope.class[index];
+			var temp_id = $scope.class[index].student_id;
 			console.log(temp_id);
 			
 			$http({
