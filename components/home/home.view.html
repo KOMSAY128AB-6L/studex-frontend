@@ -31,9 +31,9 @@
 
       <div id="circle" class="circle-container-home" ng-switch-when="random">
         <span class="form-header"># OF VOLUNTEERS</span>
-        <form id="white-form" class="form-2">
+        <form id="white-form" class="form-2" ng-submit="$parent.form='tags'">
           <md-input-container id="inputVol">
-            <input type="number" class="ng-pristine ng-valid md-input ng-touched" ng-model="data.settings.numberOfVolunteers" aria-label ="random">
+            <input type="number" class="ng-pristine ng-valid md-input ng-touched" ng-model="data.settings.numberOfVolunteers" aria-label ="random" required>
           </md-input-container>
 
           <md-button id="white-2l" class="md-fab" v ng-click="$parent.form='form'">
@@ -41,7 +41,29 @@
             <div class="md-ripple-container"></div>
           </md-button>
 
-          <md-button id="white-2r" class="md-fab" v ng-click="$parent.form='chance'">
+          <md-button type="submit" id="white-2r" class="md-fab">
+            <span>&gt;&gt;</span>
+            <div class="md-ripple-container"></div>
+          </md-button>
+        </form>
+      </div>
+
+      <div id="circle" class="circle-container-home" ng-switch-when="tags">
+        <span class="form-header">TAGS </span>
+        <p class="form-sub-header">(separated by commas)</p>
+        <form id="white-form" class="form-2">
+          <md-input-container id="inputTag">
+            <input type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="data.tags_input" aria-label ="random">
+          </md-input-container>
+           <md-checkbox id="atleast-checkbox" ng-model="data.settings.andAllTags">
+              CONSIDER ALL TAGS
+            </md-checkbox>
+          <md-button id="white-2l" class="md-fab" v ng-click="$parent.form='random'">
+            <span>&lt;&lt;</span>
+            <div class="md-ripple-container"></div>
+          </md-button>
+
+          <md-button id="white-2r" class="md-fab" v ng-click="$parent.form='chance'; inputTags()">
             <span>&gt;&gt;</span>
             <div class="md-ripple-container"></div>
           </md-button>
@@ -53,16 +75,16 @@
         <form id="checkBox-form" class="form-2">
           <div id="checkBox-2" flex-xs flex="100">
             
-            <md-radio-group ng-model="data.group1">
-              <md-radio-button ng-model="data.randomize" name="randomize" value="chance">BY CHANCE</md-radio-button>
-              <md-radio-button ng-model="data.randomize" name="randomize" value="count"> BY COUNT </md-radio-button>
-              <md-radio-button ng-model="data.randomize" name="randomize" value="default"> DEFAULT </md-radio-button>
+            <md-radio-group ng-model="data.randomize">
+              <md-radio-button value="chance">BY CHANCE</md-radio-button>
+              <md-radio-button value="count"> BY COUNT </md-radio-button>
+              <md-radio-button value="default"> DEFAULT </md-radio-button>
             </md-radio-group>  
 
             <md-checkbox ng-model="data.settings.unique" aria-label="Checkbox 2">
               NO REPEAT
             </md-checkbox>
-            <md-button id="white-3l" class="md-fab" v ng-click="$parent.form='random'">
+            <md-button id="white-3l" class="md-fab" v ng-click="$parent.form='tags'">
               <span>&lt;&lt;</span>
               <div class="md-ripple-container"></div>
             </md-button>
@@ -84,7 +106,7 @@
           </span>      
         </div>
         <form id="checkBox-form" class="form-2">
-          <div id="checkBox-2" flex-xs flex="100">
+          <div flex-xs flex="100">
             <md-button id="white-4l" class="md-raised" v ng-click="$parent.form='form'">
               <span>SETTINGS</span>
               <div class="md-ripple-container"></div>
