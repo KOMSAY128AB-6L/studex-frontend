@@ -185,7 +185,6 @@ button > span {
     overflow-y: scroll;
     padding-left: 30%;
 }
-/**
-#atleast-checkbox{
-	margin-top: -50px;
+.md-label{
+	margin-top:5px;
 }
