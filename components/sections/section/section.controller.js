@@ -41,6 +41,8 @@
 		
 		$scope.saveStudent = function(index) {
 			console.log($scope.class[index]);
+			$scope.flag[index] = false;
+			$scope.title = 'CMSC 128 AB-6L';
 			
 			let data = $scope.class[index];
 			let temp_id = $scope.class[index].student_id;
