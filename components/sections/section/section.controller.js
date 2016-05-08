@@ -7,6 +7,8 @@
 	sectionCtrlFunc.$inject = ['$scope', '$http', '$mdToast', '$filter', 'navbarService', 'authService'];
 	
   function sectionCtrlFunc($scope, $http, $mdToast, $filter, navbarService, authService) {
+  		$scope.config = config;
+
 		$scope.title = 'CMSC 128 AB-6L';
 		$scope.check = false;
 		
@@ -45,13 +47,13 @@
 		};
 		
 		$scope.saveStudent = function(index) {
-			console.log($scope.class[index]);
 			$scope.flag[index] = false;
 			$scope.title = 'CMSC 128 AB-6L';
 			
 			var data = $scope.class[index];
 			var temp_id = $scope.class[index].student_id;
-			console.log(temp_id);
+
+			data.chance = parseFloat(data.chance);
 			
 			$http({
 				method: 'PUT',

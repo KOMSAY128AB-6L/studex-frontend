@@ -1,23 +1,18 @@
-.header *{
+.header {
 	margin-left: 20px;
 	font-family: quicksand_bold;
 }
 
-.info{
+.info {
 	margin-top: 5px;
-	margin-left: 25px;
 }
 
-.raw{
-	margin-left: 150px;
+.raw {
+	margin-top: 5px;
 	font-family: quicksand_bold;
 }
 
-#rawinfo{
-	margin-top: -100px;
-}
-
-hr{
+hr {
 	border: 0.1em solid #303030;
 }
 
