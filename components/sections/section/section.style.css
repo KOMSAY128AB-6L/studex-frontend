@@ -102,11 +102,6 @@ hr{
 	margin-top: 20px;
 }
 
-#slantedContainer{
-	visibility: visible;
-	z-index: 100;
-}
-
 #pageheader{
 	height: 800px;
 }
