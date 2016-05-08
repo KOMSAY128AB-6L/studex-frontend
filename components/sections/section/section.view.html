@@ -99,10 +99,16 @@
 								<span class="md-subhead">{{ student.first_name }} {{ student.middle_initial }}</span>
 							</md-card-title-text>
 						</md-card-title>
-						<md-card-content class="studinfo">
-							<span>{{ student.student_number }}</span><br>
-							<span>{{ student.email }}</span>
-						</md-card-content>
+						<div layout="row">
+							<div layout="column" class="chance">	
+								<span class="md-headline">{{ student.chance*100 }}%</span>
+								<span>chance</span>
+							</div>
+							<md-card-content flex layout="column" layout-align="start center">
+								<span>{{ student.student_number }}</span><br>
+								<span>{{ student.email }}</span>
+							</md-card-content>
+						</div>
 					</div>
 					
 					<div id="student-box" ng-show="flag[$index]">
@@ -129,10 +135,18 @@
 								</div>
 							</md-card-title-text>
 						</md-card-title>
-						<md-card-content class="s">
-							<span>{{ student.student_number }}</span><br>
-							<input flex="75" type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="student.email">
-						</md-card-content>
+						<div layout="row" layout-align="start center">
+							<div layout="column" layout-align="start start" class="chance">
+								<div class="md-headline" layout="row" layout-align="start start">	
+									<input flex="60" type="text" class="ng-pristine ng-valid md-input ng-touched inputchance" ng-model="student.chance"><span>%<span><br>
+								</div>
+								<span>chance</span>
+							</div>
+							<md-card-content flex layout="column" layout-align="center center" class="moreinfo">
+								<span>{{ student.student_number }}</span><br>
+								<input flex="60" type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="student.email">
+							</md-card-content>
+						</div>
 					</div>
 				</md-card>
 			</md-content>

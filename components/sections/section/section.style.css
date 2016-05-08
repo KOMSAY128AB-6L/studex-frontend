@@ -108,4 +108,16 @@ hr{
 
 #pageheader{
 	height: 700px;
+<<<<<<< HEAD
 }
+=======
+}
+
+.chance{
+	margin-left: 30px;
+}
+
+.inputchance{
+	width: 50px;
+}
+>>>>>>> 791b5d477b4d46af3ff17e0e55e71c98e3e12dee

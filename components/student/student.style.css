@@ -1,0 +1,125 @@
+#slanted {
+  margin-top: 3px;
+  background-color: #303030;
+  color: #DEDEDE;
+  -webkit-transform: skew(30deg) translate(15px);
+  -moz-transform: skew(30deg);
+  -o-transform: skew(30deg);
+}
+
+#slantedContainer {
+  overflow: hidden;
+}
+
+#slanted {
+  margin-top: 3px;
+  background-color: #303030;
+  color: #DEDEDE;
+  -webkit-transform: skew(30deg) translate(15px);
+  -moz-transform: skew(30deg);
+  -o-transform: skew(30deg);
+}
+
+#slantedText > * {
+  font-family: quicksand_bold;
+  margin: 0px;
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: 2px;
+  -webkit-transform: skew(-30deg);
+  -moz-transform: skew(-30deg);
+  -o-transform: skew(-30deg);
+}
+
+
+#student-buttons span {
+  color: #FFFFFF;
+  font-size:10px;
+}
+
+#student-buttons a {
+  min-width:100%;
+  background-color: rgb(48,48,48);
+}
+
+#save{
+  min-width: 100%;
+  max-height: 30px;
+  background-color: #303030;
+  top: 1px;
+  color: #DEDEDE;
+  position: relative;
+  font-size: 30px;
+}
+
+label{
+  padding-top: 4px;
+  float:left; 
+  display: block;
+}
+
+#text3 {
+  background-color: #D1D1D1;
+  border: 2px solid #7A3B1C;
+  border-radius: 15px;
+  background: transparent; 
+  color: #7A3B1C;
+  padding: 6px 6px 6px 6px;
+  outline: 0;
+}
+
+
+@font-face {
+    font-family: quicksand;
+    src: url(../../assets/fonts/Quicksand_Book.otf);
+}
+
+@font-face {
+    font-family: revolution;
+    src: url(../../assets/fonts/REVOLUTION.ttf);
+}
+
+@font-face {
+  font-family: quicksand_bold;
+  src: url(../../assets/fonts/Quicksand_Bold.otf);
+}
+
+* {
+  outline: none;
+}
+
+body, .main {
+  height: 100%;
+}
+
+.main > * {
+  color: #303030;
+  text-align: center;
+}
+
+.main h1 {
+  font-family: revolution;
+  font-size: 50px;
+  letter-spacing: 5px;
+  margin-top: 0;
+}
+
+.main p {
+  font-size: 15px;
+}
+
+.main * {
+  font-family: quicksand;
+  font-weight: bold;
+}
+
+md-toolbar h2 {
+  font-family: revolution;
+  letter-spacing: 5px;
+}
+
+md-toolbar #navbar{
+  position: fixed;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
