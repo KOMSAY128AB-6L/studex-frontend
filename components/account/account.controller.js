@@ -6,7 +6,7 @@
 
 	app.config(customTheme);
 
-	accountCtrlFunc.$inject = ['$scope', '$http', '$mdToast', '$filter', 'navbarService', 'authService'];
+	accountCtrlFunc.$inject = ['$scope', '$http', '$mdToast', '$filter', 'navbarService', 'authService', 'Upload'];
 	customTheme.$inject = ['$mdThemingProvider'];
 
 	function customTheme($mdThemingProvider) {
@@ -31,7 +31,7 @@
 			.primaryPalette('customPrimary')
 	};
 
-  function accountCtrlFunc($scope, $http, $mdToast, $filter, navbarService, authService) {
+  function accountCtrlFunc($scope, $http, $mdToast, $filter, navbarService, authService, Upload) {
 		authService.auth();
 
 		$scope.title = 'MY ACCOUNT';
@@ -74,6 +74,32 @@
 		$scope.handleCSV = function() {
 			$scope.title = 'UPLOAD CSV';
 			$scope.form = 'upload';
+		};
+
+		$scope.uploadFiles = function(file, errFiles) {
+			$scope.f = file;
+			$scope.errFile = errFiles && errFiles[0];
+			if (file) {
+				alert(file);
+				console.log(file);
+				file.upload = Upload.upload({
+					url: 'http://' + config.backend_url + '/class/csv',
+					data: {file: file},
+					withCredentials: true
+				});
+
+				file.upload.then(function (response) {
+					$timeout(function () {
+						file.result = response.data;
+					});
+				}, function (response) {
+					if (response.status > 0) {
+						$scope.upladCsvErrorMsg = response.status + ': ' + response.data;
+					}
+				}, function (evt) {
+					file.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
+				});
+			}
 		};
 
 		$scope.uploadCSV = function() {

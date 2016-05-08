@@ -186,13 +186,22 @@
           <!-- UPLOAD CSV -->
           <div id="circle" class="circle-container">
             <form id="handleCSV" layout="column">
-              <div flex="50" layout-align="center" style="margin-left:20px;">
+              <div flex="50" layout-align="left" style="margin-left:20px;">
       					<div flex="50" layout="column" class="label" style="margin-left:30px;margin-top:80px;margin-bottom:5px;">
       						<p>UPLOAD</p>
       					</div>
       					<div flex layout="row" layout-align="center end">
-      						<input flex type="file" class="ng-pristine ng-valid md-input ng-touched" ng-model="csv">
-      					</div>
+                  <button type="file" ngf-select="uploadFiles($file, $invalidFiles)"
+                    accept="*" ngf-max-height="1000">
+                    Select File</button>
+                  File:
+                  <div style="font:smaller">{{f.name}} {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}}
+                      <span class="progress" ng-show="f.progress >= 0">
+                          <div style="width:{{f.progress}}%"
+                               ng-bind="f.progress + '%'"></div>
+                      </span>
+                  </div>
+                  {{upladCsvErrorMsg}}
       				</div>
               <md-button id="white-1" class="md-fab" ng-click="uploadCSV()" type="submit">
                 <span>&gt;</span>
@@ -203,7 +212,7 @@
           <!-- PRINT CSV -->
           <div id="circle" class="circle-container">
             <form id="handleCSV" layout="column">
-              <div flex="50" layout-align="center" style="margin-left:20px;">
+              <div flex="50" layout-align="right" style="margin-left:20px;">
       					<div flex="50" layout="column" class="label" style="margin-left:20px;margin-top:80px;margin-bottom:5px;">
       						<p>PRINT</p>
       					</div>
