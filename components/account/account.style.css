@@ -1,3 +1,8 @@
+#account-buttonContainer {
+	height:100%;
+  margin-top:10%;
+}
+
 .label * {
   font-family: quicksand_bold;
   font-size: 13px;
@@ -139,7 +144,7 @@
   margin-left: 10px;
 }
 
-#accountButtons > .md-button {
+#accountButtons > .md-button, #accountButtons > form > .md-button {
   min-width: 100%;
   max-height: 30px;
   background-color: #303030;
@@ -149,7 +154,7 @@
   -o-border-radius: 0px;
 }
 
-#accountButtons > .md-button > span {
+#accountButtons > .md-button > span, #accountButtons > form > .md-button > span {
   top: 1px;
   color: #DEDEDE;
   position: relative;
