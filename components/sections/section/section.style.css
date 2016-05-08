@@ -71,3 +71,7 @@ hr{
 .editname{
 	margin-left: -20px;
 }
+
+#studList{
+	overflow-y:scroll;
+}
