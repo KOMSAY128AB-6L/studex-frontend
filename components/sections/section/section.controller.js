@@ -4,9 +4,9 @@
 	var app = angular.module('studEx');
 	app.controller('sectionCtrl', sectionCtrlFunc);
 	
-	sectionCtrlFunc.$inject = ['$scope', '$http', '$mdToast', '$filter', 'navbarService', 'authService'];
+	sectionCtrlFunc.$inject = ['$scope', '$http', '$mdToast', '$filter', 'navbarService', 'authService', '$location'];
 	
-  function sectionCtrlFunc($scope, $http, $mdToast, $filter, navbarService, authService) {
+  function sectionCtrlFunc($scope, $http, $mdToast, $filter, navbarService, authService, $location) {
 		$scope.title = 'CMSC 128 AB-6L';
 		$scope.check = false;
 		$scope.add = false;
@@ -33,6 +33,7 @@
 		  $scope.addStudent = function(){
 		  	$scope.title = 'ADD STUDENT';
 		  	$scope.add = true;
+		  	$location.path('/student');
 		  }
 		  
 		  $scope.editSection = function(){
@@ -51,13 +52,11 @@
 		};
 		
 		$scope.saveStudent = function(index) {
-			console.log($scope.class[index]);
 			$scope.flag[index] = false;
 			$scope.title = 'CMSC 128 AB-6L';
 			
 			var data = $scope.class[index];
 			var temp_id = $scope.class[index].student_id;
-			console.log(temp_id);
 			
 			$http({
 				method: 'PUT',
