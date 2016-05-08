@@ -65,11 +65,11 @@
             <img alt="Profile pic" ng-src="{{config.protocol + config.backend_url}}/teacher/picture">
             <md-fab-speed-dial md-open="false" md-direction="up" ng-class="fab.mode">
                 <md-fab-trigger>
-                   <md-button class="md-raised" layout-align="center space-around" ng-click="editPic()">EDIT</md-button>
+                   <md-button id="popup" class="md-raised" layout-align="center space-around" ng-click="editPic()">EDIT</md-button>
                 </md-fab-trigger>
                 <md-fab-actions>
-                   <md-button class="md-raised" layout-align="center space-around">+</md-button>
-                   <md-button class="md-raised" layout-align="center space-around">x</md-button>
+                   <md-button id="popup" class="md-raised" layout-align="center space-around">+</md-icon></md-button>
+                   <md-button id="popup" class="md-raised" layout-align="center space-around">x</md-icon></md-button>
                 </md-fab-actions>
              </md-fab-speed-dial>
           </div>
