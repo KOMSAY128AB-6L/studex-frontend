@@ -114,3 +114,11 @@ hr{
 #pageheader{
 	height: 700px;
 }
+
+.chance{
+	margin-left: 30px;
+}
+
+.inputchance{
+	width: 50px;
+}
