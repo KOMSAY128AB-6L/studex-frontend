@@ -27,6 +27,7 @@ hr{
 
 .icons{
 	margin-top: -40px;
+	float: right!important;
 }
 
 .icons2{
@@ -55,10 +56,18 @@ hr{
 	width: 50px;
 }
 
+.inputlastname{
+	width: 150px;
+}
+
 .moreinfo{
 	margin: 0 auto;
 }
 
 #pageheader{
 	height: 500px;
+}
+
+.editname{
+	margin-left: -20px;
 }

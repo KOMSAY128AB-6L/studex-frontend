@@ -117,19 +117,20 @@
 										<img alt="Profile pic" ng-src="{{config.protocol + config.backend_url}}/{{ student.student_id }}/picture">
 									</div>
 								</md-card-title-media>
-								<md-card-title-text layout="column">
-									<div layout="row" layout-align-xs="start center">
-										<div flex layout="column" layout-align="start center" class="md-headline lastname">
-											<input flex="40" type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="student.last_name">
+								<md-card-title-text layout="column" layout-align="start center">
+									<div layout="row">
+										<div layout="column" layout-align="start center" class="md-headline">
+											<input flex-xs="10" flex="30" type="text" class="ng-pristine ng-valid md-input ng-touched inputlastname" ng-model="student.last_name">
 										</div>
-										<div flex="25" class="icons2" layout="column" layout-align="start end">
+										<div class="icons2" layout="column" layout-align="center end">
 											<md-button class="md-icon-button md-raised" aria-label="Edit" ng-click="saveStudent($index)">
 												<md-icon md-svg-icon="../../assets/icons/ic_done_black_24px.svg"></md-icon>
 											</md-button>
 										</div>
 									</div>
-									<div layout="row" layout-align="center start">
-										<input flex="40" type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="student.first_name">
+									<div layout="row" layout-align="start center">
+										<span flex="20"></span>
+										<input flex-xs="30" flex="40" type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="student.first_name">
 										<span flex="5"></span>
 										<input flex="10" type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="student.middle_initial">
 									</div>
