@@ -38,6 +38,7 @@ body {
 	margin: 0 auto;
 	font-size: 15px;
 	margin-bottom: 100px;
+	position: relative;
 }
 
 .circle-container {
@@ -112,4 +113,45 @@ button > span {
 
 #white-form label {
 	color: #DEDEDE;
+}
+
+.slide-down.ng-animate,
+.slide-left.ng-animate {
+	transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
+
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+}
+
+/*exit*/
+.slide-down.ng-leave.ng-leave-active,
+.slide-down.ng-enter {
+	top:-100%;
+	opacity: 0;
+}
+/*arrival*/
+.slide-down.ng-leave,
+.slide-down.ng-enter.ng-enter-active {
+	top:0;
+	opacity: 1;
+}
+
+/*exit*/
+.slide-left.ng-leave.ng-leave-active,
+.slide-left.ng-enter {
+	left:100%;
+	opacity: 0;
+}
+/*arrival*/
+.slide-left.ng-leave,
+.slide-left.ng-enter.ng-enter-active {
+	left:0;
+	opacity: 1;
+}
+
+.jump-to {
+	cursor: pointer;
 }

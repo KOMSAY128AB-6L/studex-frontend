@@ -6,26 +6,26 @@
 		</div>
 
 		<div id="circle1" ng-switch on="form">
-			<div class="circle-container" ng-switch-when="forgotpw">
+			<div class="circle-container slide-down" ng-switch-when="forgotpw">
 				<span class="form-header">- FORGOT PASSWORD -</span>
 				<form id="white-form" ng-submit="forgotpw()" class="form-1">
 						<md-input-container>
 							<label class="md-primary md-hue-2">e-mail address</label>
 							<input type="email" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.email" required>
 						</md-input-container>
-						<label ng-click="$parent.form='confirmforgotpw'">
+						<label class="jump-to slide-left" ng-click="$parent.form='confirmforgotpw'">
 							already have a reset key?
 						</label>
-						<md-button id="white" class="md-fab" type="submit">
+						<md-button id="white" class="md-fab slide-left" type="submit">
 							<span>&gt;</span>
 							<div class="md-ripple-container"></div>
 						</md-button>
 				</form>
-				<span class="italic" ng-click="$parent.form='login'">log in?</span>
-				<span class="italic" ng-click="$parent.form='register'">register?</span>
+				<span class="italic slide-left" ng-click="$parent.form='login'">log in?</span>
+				<span class="italic slide-left" ng-click="$parent.form='register'">register?</span>
 			</div>
 
-			<div class="circle-container" ng-switch-when="confirmforgotpw">
+			<div class="circle-container slide-left" ng-switch-when="confirmforgotpw">
 				<span class="form-header">- FORGOT PASSWORD -</span>
 				<form id="white-form" class="form-2" ng-submit="$parent.form='confirmforgotpw2'">
 						<md-input-container>
@@ -36,16 +36,16 @@
 							<label>password reset key</label>
 							<input class="ng-pristine ng-valid md-input ng-touched" ng-model="user.random_string" required>
 						</md-input-container>
-						<md-button id="white-2" class="md-fab" type="submit">
+						<md-button id="white-2" class="md-fab slide-left" type="submit">
 						<span>&gt;&gt;</span>
 						<div class="md-ripple-container"></div>
 					</md-button>
 				</form>
-				<span class="italic" ng-click="$parent.form='login'">log in?</span>
-				<span class="italic" ng-click="$parent.form='register'">register?</span>
+				<span class="italic slide-left" ng-click="$parent.form='login'">log in?</span>
+				<span class="italic slide-left" ng-click="$parent.form='register'">register?</span>
 			</div>
 
-			<div class="circle-container" ng-switch-when="confirmforgotpw2">
+			<div class="circle-container slide-left" ng-switch-when="confirmforgotpw2">
 				<span class="form-header">- FORGOT PASSWORD -</span>
 				<form id="white-form" ng-submit="confirmforgotpw()" class="form-2">
 						<md-input-container>
@@ -56,16 +56,16 @@
 							<label>confirm new password</label>
 							<input type="password" value="" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.confirm_password" required>
 						</md-input-container>
-						<md-button id="white" class="md-fab" type="submit">
+						<md-button id="white" class="md-fab slide-down" type="submit">
 							<span>&gt;</span>
 							<div class="md-ripple-container"></div>
 						</md-button>
 				</form>
-				<span class="italic" ng-click="$parent.form='login'">log in?</span>
-				<span class="italic" ng-click="$parent.form='register'">register?</span>
+				<span class="italic slide-left" ng-click="$parent.form='login'">log in?</span>
+				<span class="italic slide-left" ng-click="$parent.form='register'">register?</span>
 			</div>
 
-			<div class="circle-container" ng-switch-when="login">
+			<div class="circle-container slide-down" ng-switch-when="login">
 				<span class="form-header">- LOG IN -</span>
 				<form id="white-form" ng-submit="login()" class="form-2">
 						<md-input-container>
@@ -81,11 +81,11 @@
 							<div class="md-ripple-container"></div>
 						</md-button>
 				</form>
-				<span class="italic" ng-click="$parent.form='forgotpw'">forgot password?</span>
-				<span class="italic" ng-click="$parent.form='register'">register?</span>
+				<span class="italic slide-left" ng-click="$parent.form='forgotpw'">forgot password?</span>
+				<span class="italic slide-left" ng-click="$parent.form='register'">register?</span>
 			</div>
 
-			<div class="circle-container" ng-switch-when="register">
+			<div class="circle-container slide-down" ng-switch-when="register">
 				<span class="form-header">- REGISTER -</span>
 				<form id="white-form" class="form-3" ng-submit="$parent.form='register2'">
 					<md-input-container>
@@ -100,15 +100,15 @@
 						<label>last name</label>
 						<input class="ng-pristine ng-valid md-input ng-touched" ng-model="user.last_name" required>
 					</md-input-container>
-					<md-button id="white-2" class="md-fab" type="submit">
+					<md-button id="white-2" class="md-fab slide-left" type="submit">
 						<span>&gt;&gt;</span>
 						<div class="md-ripple-container"></div>
 					</md-button>
 				</form>
-				<span class="italic" ng-click="$parent.form='login'">log-in?</span>
+				<span class="italic slide-left" ng-click="$parent.form='login'">log-in?</span>
 			</div>
 
-			<div class="circle-container" ng-switch-when="register2">
+			<div class="circle-container slide-left" ng-switch-when="register2">
 				<span class="form-header">- REGISTER -</span>
 				<form id="white-form" ng-submit="register()" class="form-3">
 					<md-input-container>
@@ -123,19 +123,19 @@
 						<label>confirm password</label>
 						<input type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.confirm" required>
 					</md-input-container>
-					<md-button id="white-2" class="md-fab" type="submit">
+					<md-button id="white-2" class="md-fab slide-down" type="submit">
 						<span>&gt;</span>
 						<div class="md-ripple-container"></div>
 					</md-button>
 				</form>
-				<span class="italic" ng-click="$parent.form='login'">log-in?</span>
+				<span class="italic slide-left" ng-click="$parent.form='login'">log-in?</span>
 			</div>
 
-			<div class="circle-container" ng-switch-default>
-				<div id="upper" ng-click="$parent.form='login'">
+			<div class="circle-container slide-down" ng-switch-default>
+				<div id="upper" class="slide-down" ng-click="$parent.form='login'">
 					<span>LOG IN &gt;</span>
 				</div>
-				<div id="lower" ng-click="$parent.form='register'">
+				<div id="lower" class="slide-down" ng-click="$parent.form='register'">
 					<span>REGISTER &gt;</span>
 				</div>
 			</div>
