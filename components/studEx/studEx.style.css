@@ -41,6 +41,20 @@ body {
 	position: relative;
 }
 
+#circle2 {
+	width: 250px;
+	height: 250px;
+	background: transparent;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	color: #DEDEDE;
+	margin: 0 auto;
+	font-size: 15px;
+	margin-bottom: 100px;
+	position: relative;
+}
+
 .circle-container {
 	position: relative;
 	width: 100%;
