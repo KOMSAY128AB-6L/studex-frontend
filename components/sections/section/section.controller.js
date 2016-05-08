@@ -9,6 +9,7 @@
   function sectionCtrlFunc($scope, $http, $mdToast, $filter, navbarService, authService) {
 		$scope.title = 'CMSC 128 AB-6L';
 		$scope.check = false;
+		$scope.add = false;
 		
 		$http({
 		  	method: 'GET',
@@ -28,6 +29,11 @@
 		  			.hideDelay(3000)
 		  	);
 		  };
+		  
+		  $scope.addStudent = function(){
+		  	$scope.title = 'ADD STUDENT';
+		  	$scope.add = true;
+		  }
 		  
 		  $scope.editSection = function(){
 		  	$scope.title = 'EDIT SECTION';
