@@ -181,52 +181,25 @@
 
     <span flex="5"></span>
     <div flex>
-      <div flex="33" layout="row">
-        <div flex="100" layout="center end" layout-align="center end" class="label" style="margin-top:80px;">
-          <!-- UPLOAD CSV -->
-          <div id="circle" class="circle-container">
-            <form id="handleCSV" layout="column">
-              <div flex="50" layout-align="left" style="margin-left:20px;">
-      					<div flex="50" layout="column" class="label" style="margin-left:30px;margin-top:80px;margin-bottom:5px;">
-      						<p>UPLOAD</p>
-      					</div>
-      					<div flex layout="row" layout-align="center end">
-                  <button type="file" ngf-select="uploadFiles($file, $invalidFiles)"
-                    accept="*" ngf-max-height="1000">
-                    Select File</button>
-                  File:
-                  <div style="font:smaller">{{f.name}} {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}}
-                      <span class="progress" ng-show="f.progress >= 0">
-                          <div style="width:{{f.progress}}%"
-                               ng-bind="f.progress + '%'"></div>
-                      </span>
-                  </div>
-                  {{upladCsvErrorMsg}}
-      				</div>
-              <md-button id="white-1" class="md-fab" ng-click="uploadCSV()" type="submit">
-                <span>&gt;</span>
-                <div class="md-ripple-container"></div>
-              </md-button>
-            </form>
-          </div>
-          <!-- PRINT CSV -->
-          <div id="circle" class="circle-container">
-            <form id="handleCSV" layout="column">
-              <div flex="50" layout-align="right" style="margin-left:20px;">
-      					<div flex="50" layout="column" class="label" style="margin-left:20px;margin-top:80px;margin-bottom:5px;">
-      						<p>PRINT</p>
-      					</div>
-      					<div flex layout="row" layout-align="center" style="padding-right:8px;">
-      						<p>Press the awesome button below to print a CSV file.</p>
-      					</div>
-      				</div>
-              <md-button id="white-1" class="md-fab" ng-click="printCSV()" type="submit">
-                <span>&gt;</span>
-                <div class="md-ripple-container"></div>
-              </md-button>
-            </form>
-          </div>
-        </div>
+      <!-- <div flex="33" layout="row"> -->
+        <div layout="center end" layout-align="center end" class="label">
+            <div layout="row">
+              <span flex-xs="10" flex-gt-xs="20"></span>
+              <div flex id="accountButtons" layout="column" layout-align="start center" layout-align-gt-xs="center center">
+                <md-button class="md-raised" ng-click="editProfile()">EDIT PROFILE</md-button>
+                <!-- UPLOAD CSV -->
+                <form id="handleCSV" layout="column" enctype="multipart/form-data">
+                  <md-button type="file" ngf-select="uploadFiles($file, $invalidFiles)"
+                  accept="*" class="md-raised" ng-model="csv" name="csv" ngf-max-height="1000">
+                  UPLOAD FILE</md-button>
+                </form>
+                <!-- PRINT CSV -->
+                <form id="handleCSV" layout="column">
+                  <md-button class="md-raised" ng-click="printCSV()" type="submit">PRINT FILE</md-button>
+                </form>
+              </div>
+              <span flex-xs="10" flex-gt-xs="20" flex-order="3"></span>
+            </div>
       </div>
     </div>
   </form>

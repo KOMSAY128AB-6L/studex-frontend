@@ -6,7 +6,7 @@
 
 	app.config(customTheme);
 
-	accountCtrlFunc.$inject = ['$scope', '$http', '$mdToast', '$filter', 'navbarService', 'authService', 'Upload'];
+	accountCtrlFunc.$inject = ['$scope', '$http', '$mdToast', '$filter', 'navbarService', 'authService', 'Upload', 'uploadService'];
 	customTheme.$inject = ['$mdThemingProvider'];
 
 	function customTheme($mdThemingProvider) {
@@ -31,7 +31,7 @@
 			.primaryPalette('customPrimary')
 	};
 
-  function accountCtrlFunc($scope, $http, $mdToast, $filter, navbarService, authService, Upload) {
+  function accountCtrlFunc($scope, $http, $mdToast, $filter, navbarService, authService, Upload, uploadService) {
 		authService.auth();
 
 		$scope.title = 'MY ACCOUNT';
@@ -80,59 +80,16 @@
 			$scope.f = file;
 			$scope.errFile = errFiles && errFiles[0];
 			if (file) {
-				alert(file);
 				console.log(file);
-				file.upload = Upload.upload({
-					url: 'http://' + config.backend_url + '/class/csv',
-					data: {file: file},
-					withCredentials: true
-				});
+				let formData = new FormData();
+				formData.append("csv", file);
+				file.upload = uploadService.uploadFileToUrl(file, 'http://' + config.backend_url + '/class/csv');
 
-				file.upload.then(function (response) {
-					$timeout(function () {
-						file.result = response.data;
-					});
-				}, function (response) {
-					if (response.status > 0) {
-						$scope.upladCsvErrorMsg = response.status + ': ' + response.data;
-					}
-				}, function (evt) {
-					file.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
-				});
-			}
-		};
-
-		$scope.uploadCSV = function() {
-			let formData = new FormData();
-			formData.append("csv", $scope.csv);
-
-			$http({
-				method: 'POST',
-				url: 'http://' + config.backend_url + '/class/csv',
-				data: formData,
-				headers: {'Content-Type': undefined},
-				withCredentials:true
-			}).then(success, error);
-
-			function success (response) {
-				$mdToast.show(
-					$mdToast.simple()
-						.textContent('Successfully uploaded csv file!')
-						.hideDelay(1000)
-        );
 				$scope.form = 'home';
 				$scope.title = 'MY ACCOUNT';
 				$scope.csv = "";
-			};
-
-			function error (response) {
-				$mdToast.show(
-					$mdToast.simple()
-						.textContent(response.data.errors[0].message)
-						.hideDelay(1000)
-        );
-			};
-		}
+			}
+		};
 
 		$scope.printCSV = function() {
 			$http({
