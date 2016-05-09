@@ -11,7 +11,7 @@
 				<form id="white-form" ng-submit="forgotpw()" class="form-1">
 						<md-input-container>
 							<label class="md-primary md-hue-2">e-mail address</label>
-							<input type="email" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.email" >
+							<input type="email" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.email" required>
 						</md-input-container>
 						<label ng-click="$parent.form='confirmforgotpw'">
 							already have a reset key?
@@ -27,16 +27,16 @@
 
 			<div class="circle-container" ng-switch-when="confirmforgotpw">
 				<span class="form-header">- FORGOT PASSWORD -</span>
-				<form id="white-form" class="form-2">
+				<form id="white-form" class="form-2" ng-submit="$parent.form='confirmforgotpw2'">
 						<md-input-container>
 							<label class="md-primary md-hue-2">e-mail address</label>
-							<input type="email" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.email" >
+							<input type="email" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.email" required>
 						</md-input-container>
 						<md-input-container>
 							<label>password reset key</label>
-							<input class="ng-pristine ng-valid md-input ng-touched" ng-model="user.random_string" >
+							<input class="ng-pristine ng-valid md-input ng-touched" ng-model="user.random_string" required>
 						</md-input-container>
-						<md-button id="white-2" class="md-fab" type="button" ng-click="$parent.form='confirmforgotpw2'">
+						<md-button id="white-2" class="md-fab" type="submit">
 						<span>&gt;&gt;</span>
 						<div class="md-ripple-container"></div>
 					</md-button>
@@ -50,11 +50,11 @@
 				<form id="white-form" ng-submit="confirmforgotpw()" class="form-2">
 						<md-input-container>
 							<label class="md-primary md-hue-2">new password</label>
-							<input type="password" value="" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.new_password" >
+							<input type="password" value="" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.new_password" required>
 						</md-input-container>
 						<md-input-container>
 							<label>confirm new password</label>
-							<input type="password" value="" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.confirm_password" >
+							<input type="password" value="" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.confirm_password" required>
 						</md-input-container>
 						<md-button id="white" class="md-fab" type="submit">
 							<span>&gt;</span>
@@ -70,11 +70,11 @@
 				<form id="white-form" ng-submit="login()" class="form-2">
 						<md-input-container>
 							<label class="md-primary md-hue-2">e-mail address</label>
-							<input type="email" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.email" >
+							<input type="email" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.email" required>
 						</md-input-container>
 						<md-input-container>
 							<label>password</label>
-							<input type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.password" >
+							<input type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.password" required>
 						</md-input-container>
 						<md-button id="white" class="md-fab" type="submit">
 							<span>&gt;</span>
@@ -87,20 +87,20 @@
 
 			<div class="circle-container" ng-switch-when="register">
 				<span class="form-header">- REGISTER -</span>
-				<form id="white-form" class="form-3">
+				<form id="white-form" class="form-3" ng-submit="$parent.form='register2'">
 					<md-input-container>
 						<label>first name</label>
-						<input class="ng-pristine ng-valid md-input ng-touched" ng-model="user.first_name" >
+						<input class="ng-pristine ng-valid md-input ng-touched" ng-model="user.first_name" required>
 					</md-input-container>
 					<md-input-container>
 						<label>middle initial</label>
-						<input class="ng-pristine ng-valid md-input ng-touched" ng-model="user.middle_initial" >
+						<input class="ng-pristine ng-valid md-input ng-touched" ng-model="user.middle_initial" required>
 					</md-input-container>
 					<md-input-container>
 						<label>last name</label>
-						<input class="ng-pristine ng-valid md-input ng-touched" ng-model="user.last_name" >
+						<input class="ng-pristine ng-valid md-input ng-touched" ng-model="user.last_name" required>
 					</md-input-container>
-					<md-button id="white-2" class="md-fab" type="button" ng-click="$parent.form='register2'">
+					<md-button id="white-2" class="md-fab" type="submit">
 						<span>&gt;&gt;</span>
 						<div class="md-ripple-container"></div>
 					</md-button>
@@ -113,15 +113,15 @@
 				<form id="white-form" ng-submit="register()" class="form-3">
 					<md-input-container>
 						<label>e-mail address</label>
-						<input type="email" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.email" >
+						<input type="email" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.email" required>
 					</md-input-container>
 					<md-input-container>
 						<label>password</label>
-						<input type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.password" >
+						<input type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.password" required>
 					</md-input-container>
 					<md-input-container>
 						<label>confirm password</label>
-						<input type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.confirm" >
+						<input type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="user.confirm" required>
 					</md-input-container>
 					<md-button id="white-2" class="md-fab" type="submit">
 						<span>&gt;</span>

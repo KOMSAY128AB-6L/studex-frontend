@@ -11,16 +11,15 @@
 	margin: 0 auto;
 	display: block;
 	font-size: 15px;
-	margin-bottom: 110px;
-	}
+}
 
-.circle-container {
+.circle-container-home {
 	position: relative;
 	width: 100%;
 	height: 100%;
 }
 
-.circle-container > div, form {
+.circle-container-home > div, form {
 	height: 50%;
 	vertical-align: middle;
 	border-width: 0.5px;
@@ -28,6 +27,11 @@
 
 .form-header {
 	line-height: 100px;
+}
+
+.form-sub-header{
+	margin:0px;
+	margin-top:-10px;
 }
 
 .vol-header{
@@ -45,6 +49,13 @@
 	width: 150px;
 }
 
+
+#inputTag{
+	margin-top:10px;
+	margin-bottom: -15px;
+	font-size: 30px;
+	width: 150px;
+}
 #tryText{
 	color: #ffffff;
 	width: 250px;
@@ -57,10 +68,10 @@
 	font-size:18px;
 	width: 220px;
     height: 105px;
-    overflow: scroll;
+    overflow-y: scroll;
     padding:0px;
     text-align: left;
-    margin-left: 15px;
+    margin-left: 30px;
 }
 
 #checkBox-2{
@@ -68,14 +79,18 @@
 	font-size:18px;
 	width: 250px;
     height: 105px;
-    overflow: scroll;
+    overflow-y: scroll;
     padding:0px;
     text-align: left;
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 #checkBox-form label {
 	color: #DEDEDE;
+}
+
+#checkBox-form {
+	width: 80%;
 }
 
 button {
@@ -131,15 +146,45 @@ button > span {
 }
 
 
+#white-4r {
+	position: absolute;
+	right: 12%;
+	top: 73%;
+	float: right;
+	background-color: #DEDEDE;
+}
+
 #white-4l {
 	position: absolute;
-	left: 40%;
-	top: 60%;
+	left: 12%;
+	top: 73%;
 	float: left;
 	background-color: #DEDEDE;
+}
+
+.md-button.md-raised:not([disabled]) {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    padding-top:10px;
 }
 
 #white-form label {
 	color: #DEDEDE;
 
+}
+
+#temptemptemptemp{
+	float: left;
+	width: 50%;
+	padding: 10px;
+
+}
+
+#volBox{
+	height: 300px;
+    overflow-y: scroll;
+    padding-left: 30%;
+}
+
+.md-label{
+	margin-top:5px;
 }

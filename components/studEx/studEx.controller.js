@@ -29,14 +29,14 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent("Passwords do not match")
-						.hideDelay(1000)
+						.hideDelay(1750)
 				);
 				return;
 			}
 
 			$http({
 				method: 'POST',
-				url: 'http://' + config.backend_url + '/user',
+				url: config.protocol + config.backend_url + '/user',
 				data: $scope.user,
 				withCredentials:true
 			}).then(success, error);
@@ -45,15 +45,16 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent('Successfully registered!')
-						.hideDelay(1000)
+						.hideDelay(1750)
                 );
+                $scope.login();
 			};
 
 			function error (response) {
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent(response.data.errors[0].message)
-						.hideDelay(1000)
+						.hideDelay(1750)
                 );
 			}
 		};
@@ -61,20 +62,30 @@
 		$scope.login = function () {
 			$http({
 				method: 'POST',
-				url: 'http://' + config.backend_url + '/login',
+				url: config.protocol + config.backend_url + '/login',
 				data: $scope.user,
 				withCredentials:true
 			}).then(success, error);
 
 			function success (response) {
-				$location.path('/home');
+				$http({
+					method: 'GET',
+					url: config.protocol + config.backend_url + '/teacher' ,
+					withCredentials:true
+				}).then(
+				(response) => {
+					authService.setSession(response.data, function () {$location.path('/home')});
+				},
+				(response) => {
+
+				});
 			};
 
 			function error (response) {
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent(response.data.errors[0].message)
-						.hideDelay(1000)
+						.hideDelay(1750)
                 );
 			}
 		};
@@ -88,7 +99,7 @@
             
 			$http({
 				method: 'POST',
-				url: 'http://' + config.backend_url + '/reset',
+				url: config.protocol + config.backend_url + '/reset',
 				data: $scope.user,
 			}).then(success, error);
 
@@ -106,7 +117,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent(response.data.errors[0].message)
-						.hideDelay(1000)
+						.hideDelay(1750)
                 );
 			}
 		};
@@ -114,7 +125,7 @@
 		$scope.confirmforgotpw = function () {
 			$http({
 				method: 'POST',
-				url: 'http://' + config.backend_url + '/confirm_reset',
+				url: config.protocol + config.backend_url + '/confirm_reset',
 				data: $scope.user,
 			}).then(success, error);
 
@@ -128,7 +139,6 @@
 			};
 
 			function error (response) {
-				$scope.form = 'choice';
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent(response.data.errors[0].message)
