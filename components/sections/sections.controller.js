@@ -4,9 +4,9 @@
 	var app = angular.module('studEx');
 	app.controller('sectionsCtrl', sectionsCtrlFunc);
 
-	sectionsCtrlFunc.$inject = ['$scope', '$http', '$location', '$mdToast', 'navbarService', 'authService', 'Upload', 'uploadService'];
+	sectionsCtrlFunc.$inject = ['$scope', '$http', '$location', '$mdToast', 'navbarService', 'authService', 'uploadService'];
 
-	function sectionsCtrlFunc($scope, $http, $location, $mdToast, navbarService, authService, Upload, uploadService) {
+	function sectionsCtrlFunc($scope, $http, $location, $mdToast, navbarService, authService, uploadService) {
 		authService.auth();
 
 		$scope.config = config;
