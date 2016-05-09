@@ -22,6 +22,10 @@
 				'templateUrl': './components/history/history.view.html',
 				'controller' : 'historyCtrl'
 			})
+			.when('/student', {
+				'templateUrl': './components/student/student.view.html',
+				'controller' : 'studentCtrl'
+			})
 			.when('/home', {
 				'templateUrl': './components/home/home.view.html',
 				'controller' : 'homeCtrl'
