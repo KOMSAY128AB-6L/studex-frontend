@@ -6,7 +6,7 @@
 
 	app.config(customTheme);
 
-	accountCtrlFunc.$inject = ['$scope', '$http', '$mdToast', '$filter', '$location', 'navbarService', 'authService'];
+	accountCtrlFunc.$inject = ['$scope', '$http', '$mdToast', '$filter', '$location', 'navbarService', 'authService', 'uploadService'];
 	customTheme.$inject = ['$mdThemingProvider'];
 
 	function customTheme($mdThemingProvider) {
@@ -31,7 +31,7 @@
 			.primaryPalette('customPrimary')
 	};
 
-  function accountCtrlFunc($scope, $http, $mdToast, $filter, $location, navbarService, authService) {
+  function accountCtrlFunc($scope, $http, $mdToast, $filter, $location, navbarService, authService, uploadService) {
 		authService.auth();
 
 		$scope.title = 'MY ACCOUNT';
