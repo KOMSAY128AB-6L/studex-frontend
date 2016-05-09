@@ -54,13 +54,6 @@ hr{
 	width: 250px;
 }
 
-#studentedit input{
-	background: transparent;
-	color: white;
-	border: 1px solid #737373;
-	width: 20px;
-}
-
 .editsec{
 	margin-left: 150px;
 }
@@ -112,4 +105,10 @@ hr{
 
 .inputchance{
 	width: 50px;
+}
+
+#student-box input{
+	background: transparent;
+	color: white;
+	border: 1px solid white;
 }
