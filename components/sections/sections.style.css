@@ -10,7 +10,7 @@
 
 .rowDiv {
 	height: 20%;
-	margin: -2% 0 2% 0; 
+	margin: -2% 0 2% 0;
   display: inline-block;
 }
 
@@ -47,7 +47,7 @@
   #center-div{
     margin-top: 2rem;
   }
-} 
+}
 
 @media screen and (min-width: 800px) {
   .boxes {
@@ -114,6 +114,10 @@
   display: hidden;
 }
 
+#upload-buttonContainer {
+	margin-top: 10%;
+}
+
 .selectionDivHolder {
   width: 150%;
 }
@@ -147,7 +151,7 @@
   background-color: white;
   width: 15em;
   height: 10em;
-  z-index: 10;  
+  z-index: 10;
   top: 90%;
   transform: translateY(90%);
 }

@@ -6,7 +6,7 @@
 
 	app.config(customTheme);
 
-	accountCtrlFunc.$inject = ['$scope', '$http', '$mdToast', '$filter', 'navbarService', 'authService', 'Upload', 'uploadService'];
+	accountCtrlFunc.$inject = ['$scope', '$http', '$mdToast', '$filter', '$location', 'navbarService', 'authService'];
 	customTheme.$inject = ['$mdThemingProvider'];
 
 	function customTheme($mdThemingProvider) {
@@ -31,7 +31,7 @@
 			.primaryPalette('customPrimary')
 	};
 
-  function accountCtrlFunc($scope, $http, $mdToast, $filter, navbarService, authService, Upload, uploadService) {
+  function accountCtrlFunc($scope, $http, $mdToast, $filter, $location, navbarService, authService) {
 		authService.auth();
 
 		$scope.title = 'MY ACCOUNT';
@@ -82,54 +82,6 @@
 				}
 			}
 		};
-
-		$scope.handleCSV = function() {
-			$scope.title = 'UPLOAD CSV';
-			$scope.form = 'upload';
-		};
-
-		$scope.uploadFiles = function(file, errFiles) {
-			$scope.f = file;
-			$scope.errFile = errFiles && errFiles[0];
-			if (file) {
-				console.log(file);
-				let formData = new FormData();
-				formData.append("csv", file);
-				file.upload = uploadService.uploadFileToUrl(file, 'http://' + config.backend_url + '/class/csv');
-
-				$scope.form = 'home';
-				$scope.title = 'MY ACCOUNT';
-				$scope.csv = "";
-			}
-		};
-
-		$scope.printCSV = function() {
-			$http({
-				method: 'GET',
-				url: 'http://' + config.backend_url + '/class/csv',
-				headers: {'Content-Type': undefined},
-				withCredentials:true
-			}).then(success, error);
-
-			function success (response) {
-				$mdToast.show(
-					$mdToast.simple()
-						.textContent('Successfully printed csv file!')
-						.hideDelay(1000)
-        );
-				$scope.form = 'home';
-				$scope.title = 'MY ACCOUNT';
-				$scope.csv = "";
-			};
-
-			function error (response) {
-				$mdToast.show(
-					$mdToast.simple()
-						.textContent(response.data.errors[0].message)
-						.hideDelay(1000)
-        );
-			};
-		}
 
 		$scope.editProfile = function() {
 			$scope.form = 'edit';
