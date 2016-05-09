@@ -1,21 +1,16 @@
 <div ng-include="'components/shared/templates/header.html'">
 </div>
 
-<div layout="column" class="main" ng-switch on = "form">
+<div layout="column" class="main" ng-switch on="form">
 
   <div layout="row" ng-include="'components/shared/templates/flag.html'">
   </div>
-
-  <div layout="column" class="csvDiv" ng-hide="csvHide" ng-click="hideCSV()">
-    <div id="csvForm">
-    </div>
-  </div>
   
-  <div id="sectionContainer" layout="column" ng-switch-default>
+  <div flex id="sectionContainer" layout="column" ng-switch-default>
     <div id="centerDiv">
       <div layout="row" class="rowDiv">
           <div class="boxes" layout="column" ng-repeat="class in classes">
-            <div id="classesNameContainer" layout="row" layout-align="center end">
+            <div id="classesNameContainer" layout="row" layout-align="center end" ng-click="viewSection(class)">
               <p class="classesName">
                 {{class.class_name +" "+class.section}}
               </p>
@@ -47,7 +42,7 @@
     </div>
   </div>
 
-  <div id="addClassDiv" layout="row" ng-switch-when = "addClassSection">
+  <div id="addClassDiv" layout="row" ng-switch-when="addClassSection">
     <form ng-submit="add_class()">
       <div class="add_class_child" layout="row">
         <div layout="column">
@@ -63,6 +58,155 @@
           <md-button id="btn-add" ng-click="addClass()" type="submit">SAVE</md-button>
       </div>
     </form>
+  </div>
+
+  <div ng-switch-when="viewSection">
+    
+    <div>
+      <div layout="row" id="secinfo">
+        <span class="header">SECTION INFORMATION</span>
+        <div flex class="icons2" layout="column" layout-align="center end">
+          <md-button ng-hide="check" class="md-icon-button md-raised" aria-label="Edit" ng-click="editSection()">
+            <md-icon md-svg-icon="../../assets/icons/ic_edit_black_24px.svg"></md-icon>
+          </md-button>
+          <md-button ng-show="check" class="md-icon-button md-raised" aria-label="Edit" ng-click="saveSection()">
+            <md-icon md-svg-icon="../../assets/icons/ic_done_black_24px.svg"></md-icon>
+          </md-button>
+        </div>
+      </div>
+      <div layout="row">
+        <span flex="5"></span>
+        <hr flex/>
+        <span flex="5"></span>
+      </div>
+      
+      <div layout="row">
+        <div flex="40">
+          <md-list layout="column">
+            <md-list-item class="md-3-line">
+              <div layout-align="center start" layout="column">
+                <span class="info">Class Name</span>
+                <span class="info">Class Section</span>
+                <span class="info">Class ID</span>
+              </div>
+            </md-list-item>
+            </md-list>
+          </div>
+          <div flex="60">
+            <md-list layout="column" ng-hide="check">
+            <md-list-item class="md-3-line">
+              <div layout-align="center start" layout="column">
+                <span class="raw">{{class_info.class_name}}</span>
+                <span class="raw">{{class_info.section}}</span>
+                <span class="raw">{{class_info.class_id}}</span>
+              </div>
+            </md-list-item>
+            </md-list>
+            
+            <md-list layout="column" ng-show="check" id="sectionedit">
+            <md-list-item class="md-3-line">
+              <div layout-align="center start" layout="column" class="editsec">
+                <div layout="row" flex>
+                  <input flex="70" type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="section.className">
+                </div>
+                <div layout="row" flex>
+                  <input flex="70" type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="section.section">
+                </div>
+                <span class="raw">{{class_info.class_id}}</span>  
+              </div>
+            </md-list-item>
+            </md-list>
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <div layout="row">
+        <span class="header">STUDENTS</span>
+      </div>
+      
+      <div layout="row">
+        <span flex="5"></span>
+        <hr flex/>
+        <span flex="5"></span>
+      </div>
+      
+      <div flex="100" class="scrollable">
+        <md-content class="transparent">
+          <md-card ng-repeat="student in class">
+            <div ng-hide="flag[$index]">          
+              <md-card-title>
+                <md-card-title-media>
+                  <div class="md-media-sm card-media">
+                    <img ng-src="{{config.protocol + config.backend_url}}/student/{{ student.student_id }}/picture">
+                  </div>
+                </md-card-title-media>
+                <md-card-title-text>
+                  <span class="md-headline lastname">{{ student.last_name }}</span>
+                  <div flex class="icons" layout="column" layout-align="center end">
+                    <md-button class="md-icon-button md-raised" aria-label="Edit" ng-click="editStudent($index)">
+                      <md-icon md-svg-icon="../../assets/icons/ic_edit_black_24px.svg"></md-icon>
+                    </md-button>
+                  </div>
+                  <span class="md-subhead">{{ student.first_name }} {{ student.middle_initial }}</span>
+                </md-card-title-text>
+              </md-card-title>
+              <div layout="row">
+                <div layout="column" class="chance">  
+                  <span class="md-headline">{{ student.chance * 100 }}%</span>
+                  <span>chance</span>
+                </div>
+                <md-card-content flex layout="column" layout-align="start center">
+                  <span>{{ student.student_number }}</span><br>
+                  <span>{{ student.email }}</span>
+                </md-card-content>
+              </div>
+            </div>
+            
+            <div ng-show="flag[$index]">
+              <md-card-title>
+                <md-card-title-media>
+                  <div class="md-media-sm card-media">
+                    <img alt="Profile pic" ng-src="{{config.protocol + config.backend_url}}/student/{{ student.student_id }}/picture">
+                  </div>
+                </md-card-title-media>
+                <md-card-title-text>
+                  <div flex layout="row" layout-align="center end" class="md-headline lastname">
+                    <span flex="30"></span>
+                    <input flex type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="student.last_name">
+                    <div flex="25" class="icons" layout="column" layout-align="center end">
+                      <md-button class="md-icon-button md-raised" aria-label="Edit" ng-click="saveStudent($index)">
+                        <md-icon md-svg-icon="../../assets/icons/ic_done_black_24px.svg"></md-icon>
+                      </md-button>
+                    </div>
+                  </div>
+                  <span flex="5"></span>
+                  <div flex layout="row" layout-align="center start" class="">
+                    <span flex="15"></span>
+                    <input flex="60" type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="student.first_name">
+                    <span flex="5"></span>
+                    <input flex="15" type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="student.middle_initial">
+                  </div>
+                </md-card-title-text>
+              </md-card-title>
+              <div layout="row" layout-align="start center">
+                <div layout="column" layout-align="start start" class="chance">
+                  <div class="md-headline" layout="row" layout-align="start start"> 
+                    <input flex="60" type="text" class="ng-pristine ng-valid md-input ng-touched inputchance" ng-model="student.chance"><span>%<span><br>
+                  </div>
+                  <span>chance</span>
+                </div>
+                <md-card-content layout="column" layout-align="center center" class="moreinfo">
+                  <span>{{ student.student_number }}</span><br>
+                  <input flex="100" type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="student.email">
+                </md-card-content>
+              </div>
+            </div>
+          </md-card>
+        </md-content>
+      </div>
+    </div>
+
   </div>
 
 </div>

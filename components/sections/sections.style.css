@@ -189,8 +189,61 @@
   color: #FFFFFF;
 }
 
+/****************************************
+  VIEW CLASS
+****************************************/
+.header {
+  margin-left: 20px;
+  font-family: quicksand_bold;
+}
 
+.info {
+  margin-top: 5px;
+}
 
+.raw {
+  margin-top: 5px;
+  font-family: quicksand_bold;
+}
 
+hr {
+  border: 0.1em solid #303030;
+}
 
+.studinfo {
+  margin-left: 80px;
+}
 
+.icons {
+  margin-top: -40px;
+}
+
+.icons2 {
+  margin-top: -15px;
+}
+
+#secinfo {
+  margin-top: 20px;
+}
+
+#sectionedit input {
+  background: transparent;
+  color: #303030;
+  border: 1px solid #737373;
+}
+
+.editsec {
+  margin-left: 150px;
+}
+
+.chance {
+  margin-left: 30px;
+}
+
+.inputchance {
+  width: 50px;
+}
+
+.moreinfo {
+  margin: 0 auto;
+}
