@@ -12,12 +12,44 @@
 		$scope.config = config;
 		$scope.check = false;
 		$scope.isHidden = true;
+		$scope.studentHide = true;
 		$scope.csvHide = true;
 		$scope.navigation = navbarService.navigation();
 		$scope.class = {};
 		$scope.section = {};
-		$scope.title = "SECTIONS";
+		$scope.student = {
+			picture: 'default'
+		};
+		$scope.title = 'SECTIONS';
 		
+		$scope.addStudent = function () {
+			$http({
+				method: 'POST',
+				url: config.protocol + config.backend_url + '/student/' + $scope.student.class_id,
+				data: $scope.student,
+				withCredentials:true
+			}).then(
+			function (response) {
+				$mdToast.show(
+ 				$mdToast.simple()
+						.textContent('Student successfully added!')
+						.hideDelay(1000)
+                );
+			}, 
+			function (response) {
+				$mdToast.show(
+					$mdToast.simple()
+						.textContent(response.data.errors[0].message)
+						.hideDelay(1000)
+                );
+			});
+		}
+
+		$scope.viewAddStudent = function () {
+			$scope.title = 'ADD STUDENT';
+			$scope.form = 'addStudent';
+		}
+
 		$scope.viewSection = function (section) {
 			$scope.title = section.class_name + section.section;
 			$scope.form = 'viewSection';
@@ -25,6 +57,8 @@
 			$scope.section.className = section.class_name;
 			$scope.section.section   = section.section;
 			$scope.section.id        = section.class_id.toString();
+
+			$scope.student.class_id  = section.class_id;
 
 			$http({
 				method: 'GET',

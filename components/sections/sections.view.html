@@ -123,6 +123,11 @@
     <div>
       <div layout="row">
         <span class="header">STUDENTS</span>
+        <div flex class="icons2" layout="column" layout-align="center end">
+          <md-button class="md-icon-button md-raised" aria-label="Edit" ng-click="viewAddStudent()">
+             <md-icon md-svg-icon="../../assets/icons/ic_add_black_24px.svg"></md-icon>
+          </md-button>
+        </div>
       </div>
       
       <div layout="row">
@@ -207,6 +212,51 @@
       </div>
     </div>
 
+  </div>
+
+  <div flex ng-switch-when="addStudent">
+    <div id="circle" class="circle-container" ng-show="studentHide">
+      <span class="form-header">BASIC INFORMATION</span>
+      <form id="white-form" class="form-3" ng-submit="studentHide=false">
+        <md-input-container>
+          <label>first name</label>
+          <input class="ng-pristine ng-valid md-input ng-touched" ng-model="student.first_name" required>
+        </md-input-container>
+        <md-input-container>
+          <label>middle initial</label>
+          <input class="ng-pristine ng-valid md-input ng-touched" ng-model="student.middle_initial" required>
+        </md-input-container>
+        <md-input-container>
+          <label>last name</label>
+          <input class="ng-pristine ng-valid md-input ng-touched" ng-model="student.last_name" required>
+        </md-input-container>
+        <md-button id="white-2" class="md-fab" type="submit" required>
+          <span>&gt;&gt;</span>
+          <div class="md-ripple-container"></div>
+        </md-button>
+      </form>
+    </div>
+    <div id="circle" class="circle-container" ng-hide="studentHide">
+      <span class="form-header">BASIC INFORMATION</span>
+      <form id="white-form" class="form-2" ng-submit="addStudent()">
+        <md-input-container>
+          <label>email address</label>
+          <input type="email" class="ng-pristine ng-valid md-input ng-touched" ng-model="student.email" required>
+        </md-input-container>
+        <md-input-container>
+          <label>student number</label>
+          <input class="ng-pristine ng-valid md-input ng-touched" ng-model="student.student_number" required>
+        </md-input-container>
+        <md-button id="white-2l" class="md-fab" ng-click="studentHide = true">
+          <span>&lt;&lt;</span>
+          <div class="md-ripple-container"></div>
+        </md-button>
+        <md-button id="white-2r" class="md-fab" type="submit">
+          <span>&gt;</span>
+          <div class="md-ripple-container"></div>
+        </md-button>
+      </form>
+    </div>
   </div>
 
 </div>
