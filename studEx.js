@@ -1,7 +1,7 @@
 'use strict';
 
 (function () {
-	var app = angular.module('studEx', ['ngRoute', 'ngMaterial', 'ngAnimate']);
+	var app = angular.module('studEx', ['ngRoute', 'ngMaterial', 'ngAnimate', 'ngFileUpload']);
 	app.config(configFunc);
 
 	configFunc.$inject=['$routeProvider'];
