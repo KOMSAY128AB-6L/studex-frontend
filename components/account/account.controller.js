@@ -58,7 +58,7 @@
 			} else {
 				$http({
 					method: 'POST',
-					url: 'http://' + config.backend_url + '/change_password',
+					url: config.protocol + config.backend_url + '/change_password',
 					data: $scope.pwForm,
 					withCredentials:true
 				}).then(success, error);
