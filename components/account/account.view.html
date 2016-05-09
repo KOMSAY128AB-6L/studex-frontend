@@ -47,7 +47,6 @@
           <md-button class="md-raised" ng-click="editProfile()" layout-align="center center">EDIT PROFILE</md-button>
           <md-button class="md-raised" ng-click="changePass();" layout-align="center center">CHANGE PASSWORD</md-button>
           <md-button class="md-raised" ng-click="deactivate();" layout-align="center center">DEACTIVATE</md-button>
-          <md-button class="md-raised" ng-click="handleCSV();"  layout-align="center center">UPLOAD AND PRINT CSV</md-button>
         </div>
         <span flex-xs="10" flex-gt-xs="20" flex-order="3"></span>
       </div>
@@ -166,39 +165,6 @@
         <md-button id="btn-lrg" class="md-raised" type="submit"><span>SAVE</span></md-button>
       </div>
       <span flex="15"></span>
-    </div>
-  </form>
-  </div>
-
-
-
-  <div flex layout="column" class="main" ng-switch-when="upload">
-  	<div layout="row">
-  		<span flex-xs="30" flex-gt-xs="60"></span>
-  		<div flex id="slantedContainer">
-  			<div id="slanted"><div id="slantedText"><p style="font-size: 15px;">{{title}}</p></div></div>
-  		</div>
-  	</div>
-
-    <form>
-    <span flex="5"></span>
-    <div id="account-buttonContainer" layout="row">
-      <span flex="5"></span>
-        <div flex>
-          <div layout="row">
-            <span flex-xs="10" flex-gt-xs="20"></span>
-            <div flex id="accountButtons" layout="column" layout-align="start center" layout-align-gt-xs="center center">
-              <!-- UPLOAD CSV -->
-              <md-button type="file" ngf-select="uploadFiles($file, $invalidFiles)"
-                accept="*" class="md-raised" ng-model="csv" name="csv" ngf-max-height="1000"
-                formenctype="multipart/form-data">
-                UPLOAD FILE</md-button>
-              <!-- PRINT CSV -->
-              <md-button class="md-raised" ng-click="printCSV()" type="submit">PRINT FILE</md-button>
-            </div>
-            <span flex-xs="10" flex-gt-xs="20" flex-order="3"></span>
-          </div>
-      </div>
     </div>
   </form>
   </div>

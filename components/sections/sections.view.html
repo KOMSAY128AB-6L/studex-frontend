@@ -5,7 +5,7 @@
 
   <div layout="row" ng-include="'components/shared/templates/flag.html'">
   </div>
-  
+
   <div flex id="sectionContainer" layout="column" ng-switch-default>
     <div id="centerDiv">
       <div layout="row" class="rowDiv">
@@ -14,12 +14,12 @@
               <p class="classesName">
                 {{class.class_name +" "+class.section}}
               </p>
-            </div>            
+            </div>
           </div>
       </div>
     </div>
 
-    <div id="selectionContainer">  
+    <div id="selectionContainer">
       <div ng-hide="isHidden" class="selectionDivHolder">
         <div class="inset" id="uploadSelectionDiv" ng-click="$parent.form='addClassSection'">
         </div>
@@ -29,13 +29,13 @@
       </div>
 
       <div ng-hide="isHidden" class="selectionDivHolder">
-        <div class="inset" id="uploadOptionDiv" ng-click="uploadCSV()">
+        <div class="inset" id="uploadOptionDiv" ng-click="handleCSV()">
         </div>
         <span class="selectionText" id="selectionText2">
           Upload CSV File
         </span>
       </div>
-      
+
       <div class="inset" ng-click="uploadSection()">
         +
       </div>
@@ -61,7 +61,7 @@
   </div>
 
   <div ng-switch-when="viewSection">
-    
+
     <div>
       <div layout="row" id="secinfo">
         <span class="header">SECTION INFORMATION</span>
@@ -79,7 +79,7 @@
         <hr flex/>
         <span flex="5"></span>
       </div>
-      
+
       <div layout="row">
         <div flex="40">
           <md-list layout="column">
@@ -102,7 +102,7 @@
               </div>
             </md-list-item>
             </md-list>
-            
+
             <md-list layout="column" ng-show="check" id="sectionedit">
             <md-list-item class="md-3-line">
               <div layout-align="center start" layout="column" class="editsec">
@@ -112,14 +112,14 @@
                 <div layout="row" flex>
                   <input flex="70" type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="section.section">
                 </div>
-                <span class="raw">{{class_info.class_id}}</span>  
+                <span class="raw">{{class_info.class_id}}</span>
               </div>
             </md-list-item>
             </md-list>
         </div>
       </div>
     </div>
-    
+
     <div>
       <div layout="row">
         <span class="header">STUDENTS</span>
@@ -129,17 +129,17 @@
           </md-button>
         </div>
       </div>
-      
+
       <div layout="row">
         <span flex="5"></span>
         <hr flex/>
         <span flex="5"></span>
       </div>
-      
+
       <div flex="100" class="scrollable">
         <md-content class="transparent">
           <md-card ng-repeat="student in class">
-            <div ng-hide="flag[$index]">          
+            <div ng-hide="flag[$index]">
               <md-card-title>
                 <md-card-title-media>
                   <div class="md-media-sm card-media">
@@ -157,7 +157,7 @@
                 </md-card-title-text>
               </md-card-title>
               <div layout="row">
-                <div layout="column" class="chance">  
+                <div layout="column" class="chance">
                   <span class="md-headline">{{ student.chance * 100 }}%</span>
                   <span>chance</span>
                 </div>
@@ -167,7 +167,7 @@
                 </md-card-content>
               </div>
             </div>
-            
+
             <div ng-show="flag[$index]">
               <md-card-title>
                 <md-card-title-media>
@@ -196,7 +196,7 @@
               </md-card-title>
               <div layout="row" layout-align="start center">
                 <div layout="column" layout-align="start start" class="chance">
-                  <div class="md-headline" layout="row" layout-align="start start"> 
+                  <div class="md-headline" layout="row" layout-align="start start">
                     <input flex="60" type="text" class="ng-pristine ng-valid md-input ng-touched inputchance" ng-model="student.chance"><span>%<span><br>
                   </div>
                   <span>chance</span>
@@ -259,9 +259,38 @@
     </div>
   </div>
 
+  <div flex layout="column" class="main" ng-switch-when="upload">
+  	<div layout="row">
+  		<span flex-xs="30" flex-gt-xs="60"></span>
+  		<div flex id="slantedContainer">
+  			<div id="slanted"><div id="slantedText"><p style="font-size: 15px;">{{title}}</p></div></div>
+  		</div>
+  	</div>
+
+    <form>
+      <span flex="5"></span>
+      <div id="account-buttonContainer" layout="row">
+        <span flex="5"></span>
+          <div flex>
+            <div layout="row">
+              <span flex-xs="10" flex-gt-xs="20"></span>
+              <div flex id="accountButtons" layout="column" layout-align="start center" layout-align-gt-xs="center center">
+                <!-- UPLOAD CSV -->
+                <md-button type="file" ngf-select="uploadFiles($file, $invalidFiles)"
+                  accept="*" class="md-raised" ng-model="csv" name="csv" ngf-max-height="1000"
+                  formenctype="multipart/form-data">
+                  UPLOAD FILE</md-button>
+                <!-- PRINT CSV -->
+                <md-button class="md-raised" ng-click="printCSV()" type="submit">PRINT FILE</md-button>
+              </div>
+              <span flex-xs="10" flex-gt-xs="20" flex-order="3"></span>
+            </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
 </div>
 
 <div ng-include="'components/shared/templates/nav.html'">
 </div>
-
-  

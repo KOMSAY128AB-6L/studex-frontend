@@ -5,7 +5,7 @@
 	app.controller('sectionsCtrl', sectionsCtrlFunc);
 
 	sectionsCtrlFunc.$inject = ['$scope', '$http', '$location', '$mdToast', 'navbarService', 'authService'];
-	
+
 	function sectionsCtrlFunc($scope, $http, $location, $mdToast, navbarService, authService) {
 		authService.auth();
 
@@ -21,7 +21,7 @@
 			picture: 'default'
 		};
 		$scope.title = 'SECTIONS';
-		
+
 		$scope.addStudent = function () {
 			$http({
 				method: 'POST',
@@ -35,7 +35,7 @@
 						.textContent('Student successfully added!')
 						.hideDelay(1000)
                 );
-			}, 
+			},
 			function (response) {
 				$mdToast.show(
 					$mdToast.simple()
@@ -76,7 +76,7 @@
 			  			.hideDelay(3000)
 			  	);
 			});
-			
+
 			$scope.class_info = section;
 		}
 
@@ -88,7 +88,7 @@
 			$scope.check = false;
 
 			var data = $scope.section;
-			
+
 			$http({
 				method: 'PUT',
 				url: config.protocol + config.backend_url + '/class',
@@ -101,7 +101,7 @@
 						.textContent('Successfully updated class!')
 						.hideDelay(1000)
                 );
-			}, 
+			},
 			function (response) {
 				$mdToast.show(
 					$mdToast.simple()
@@ -117,12 +117,12 @@
 
 		$scope.saveStudent = function(index) {
 			$scope.flag[index] = false;
-			
+
 			var data = $scope.class[index];
 			var temp_id = $scope.class[index].student_id;
 
 			data.chance = parseFloat(data.chance);
-			
+
 			$http({
 				method: 'PUT',
 				url: config.protocol + config.backend_url + '/student/' + temp_id,
@@ -135,7 +135,7 @@
 						.textContent('Successfully updated student!')
 						.hideDelay(1000)
                 );
-			}, 
+			},
 			function (response) {
 				$mdToast.show(
 					$mdToast.simple()
@@ -143,15 +143,59 @@
 						.hideDelay(3000)
                 );
 			});
-			
+
 		}
 
 		$scope.uploadSection = function () {
 			$scope.isHidden = !$scope.isHidden;
 		}
 
-		$scope.uploadCSV = function () {
-			$scope.csvHide = false;
+		$scope.handleCSV = function() {
+			$scope.title = 'UPLOAD CSV';
+			$scope.form = 'upload';
+		};
+
+		$scope.uploadFiles = function(file, errFiles) {
+			$scope.f = file;
+			$scope.errFile = errFiles && errFiles[0];
+			if (file) {
+				console.log(file);
+				let formData = new FormData();
+				formData.append("csv", file);
+				file.upload = uploadService.uploadFileToUrl(file, 'http://' + config.backend_url + '/class/csv');
+
+				$scope.form = 'home';
+				$scope.title = 'MY ACCOUNT';
+				$scope.csv = "";
+			}
+		};
+
+		$scope.printCSV = function() {
+			$http({
+				method: 'GET',
+				url: 'http://' + config.backend_url + '/class/csv',
+				headers: {'Content-Type': undefined},
+				withCredentials:true
+			}).then(success, error);
+
+			function success (response) {
+				$mdToast.show(
+					$mdToast.simple()
+						.textContent('Successfully printed csv file!')
+						.hideDelay(1000)
+        );
+				$scope.form = 'home';
+				$scope.title = 'MY ACCOUNT';
+				$scope.csv = "";
+			};
+
+			function error (response) {
+				$mdToast.show(
+					$mdToast.simple()
+						.textContent(response.data.errors[0].message)
+						.hideDelay(1000)
+        );
+			};
 		}
 
 		$scope.hideCSV = function () {
@@ -205,4 +249,3 @@
 	};
 
 })();
-
