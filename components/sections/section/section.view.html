@@ -91,13 +91,12 @@
 											<md-icon md-svg-icon="../../assets/icons/ic_edit_black_24px.svg"></md-icon>
 										</md-button>
 									</div>
-									<span flex="5"></span>
 									<span class="md-subhead">{{ student.first_name }} {{ student.middle_initial }}</span>
 								</md-card-title-text>
 							</md-card-title>
 							<div layout="row">
 								<div layout="column" class="chance">	
-									<span class="md-headline">{{ student.chance*100 }}%</span>
+									<span class="md-headline">{{ student.chance * 100 }}%</span>
 									<span>chance</span>
 								</div>
 								<md-card-content flex layout="column" layout-align="start center">
@@ -111,7 +110,7 @@
 							<md-card-title>
 								<md-card-title-media>
 									<div class="md-media-sm card-media">
-										<img alt="Profile pic" ng-src="{{config.protocol + config.backend_url}}/{{ student.student_id }}/picture">
+										<img alt="Profile pic" ng-src="{{config.protocol + config.backend_url}}/student/{{ student.student_id }}/picture">
 									</div>
 								</md-card-title-media>
 								<md-card-title-text>
@@ -142,7 +141,7 @@
 								</div>
 								<md-card-content layout="column" layout-align="center center" class="moreinfo">
 									<span>{{ student.student_number }}</span><br>
-									<input flex="60" type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="student.email">
+									<input flex="100" type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="student.email">
 								</md-card-content>
 							</div>
 						</div>
