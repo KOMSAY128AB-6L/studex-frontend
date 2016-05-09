@@ -54,6 +54,33 @@
 			});
 		}
 
+		this.uploadPicToUrl = function(file, uploadUrl){
+			var fd = new FormData();
+			fd.append('pic', file);
+
+			$http.post(uploadUrl, fd, {
+				transformRequest: angular.identity,
+				headers: {'Content-Type': undefined},
+				withCredentials: true
+			})
+
+			.success(function(){
+				$mdToast.show(
+					$mdToast.simple()
+						.textContent("Successfully uploaded")
+						.hideDelay(1000)
+				);
+			})
+
+			.error(function(){
+				$mdToast.show(
+					$mdToast.simple()
+						.textContent("Error in uploading file")
+						.hideDelay(1000)
+				);
+			});
+		}
+
 	}
 
 })();

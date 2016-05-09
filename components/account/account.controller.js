@@ -35,7 +35,7 @@
 		authService.auth();
 
 		$scope.title = 'MY ACCOUNT';
-		$scope.picture = "";
+		$scope.picture = config.protocol + config.backend_url + '/teacher/picture';
 		$scope.config = config;
 		$scope.pwForm = {};
 
@@ -139,10 +139,20 @@
 			$scope.temp.last_name = $filter('uppercase')($scope.temp.last_name);
 			$scope.temp.first_name = $filter('uppercase')($scope.temp.first_name);
 			$scope.temp.middle_initial = $filter('uppercase')($scope.temp.middle_initial);
+			$scope.picture = config.protocol + config.backend_url + '/teacher/picture';
 		};
 
 		$scope.editPic = function() {
 			console.log("Implement edit pic");
+		};
+
+		$scope.addPic = function(file) {
+			if (file) {
+				let formData = new FormData();
+				formData.append("pic", file);
+				file.upload = uploadService.uploadPicToUrl(file, 'http://' + config.backend_url + '/teacher/upload');
+				$scope.picture = config.protocol + config.backend_url + '/teacher/picture';
+			}
 		};
 
 		$scope.saveProfile = function() {

@@ -11,7 +11,7 @@
         <span flex="10"></span>
         <div flex="45">
           <div id="displayPic" layout-align="center center">
-            <img alt="Profile pic" ng-src="{{config.protocol + config.backend_url}}/teacher/picture">
+            <img alt="Profile pic" ng-src="{{ picture }}">
           </div>
         </div>
 
@@ -63,13 +63,13 @@
         <span flex="10"></span>
         <div flex="45">
           <div id="displayPic" layout-align="center center">
-            <img alt="Profile pic" ng-src="{{config.protocol + config.backend_url}}/teacher/picture">
+            <img alt="Profile pic" ng-src="{{ picture }}">
             <md-fab-speed-dial md-open="false" md-direction="up" ng-class="fab.mode">
                 <md-fab-trigger>
                    <md-button id="popup" class="md-raised" layout-align="center space-around" ng-click="editPic()">EDIT</md-button>
                 </md-fab-trigger>
                 <md-fab-actions>
-                   <md-button id="popup" class="md-raised" layout-align="center space-around">+</md-icon></md-button>
+                   <md-button type="file" ngf-select="addPic($file)" accept="image/jpeg" id="popup" class="md-raised" layout-align="center space-around">+</md-icon></md-button>
                    <md-button id="popup" class="md-raised" layout-align="center space-around">x</md-icon></md-button>
                 </md-fab-actions>
              </md-fab-speed-dial>
