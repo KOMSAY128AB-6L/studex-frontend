@@ -99,8 +99,9 @@
 
 		$scope.addPic = function(file) {
 			if (file) {
-				file.upload = uploadService.uploadPicToUrl(file, 'http://' + config.backend_url + '/teacher/upload');
-				$scope.picture = config.protocol + config.backend_url + '/teacher/picture?_ts=' + new Date().getTime();
+				file.upload = uploadService.uploadPicToUrl(file, config.protocol + config.backend_url + '/teacher/upload', function (){
+					$scope.picture = config.protocol + config.backend_url + '/teacher/picture?_ts=' + new Date().getTime();
+				});
 			}
 		};
 

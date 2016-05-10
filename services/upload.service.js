@@ -54,7 +54,7 @@
 			});
 		}
 
-		this.uploadPicToUrl = function(file, uploadUrl){
+		this.uploadPicToUrl = function(file, uploadUrl, callback){
 			var fd = new FormData();
 			fd.append('pic', file);
 
@@ -70,6 +70,7 @@
 						.textContent("Successfully uploaded")
 						.hideDelay(1000)
 				);
+				callback();
 			})
 
 			.error(function(){
