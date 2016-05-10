@@ -119,8 +119,9 @@
 				withCredentials: true
 			}).then(
 			function (response) {
-				$scope.form = 'default';
-				getClasses();
+				getClasses(function () {
+					$scope.form = 'default';
+				});
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent('Successfully deleted class!')
@@ -255,7 +256,7 @@
 			$scope.title = "ADD CLASS";
 		}
 
-		function getClasses () {
+		function getClasses (callback) {
 			$http({
 				method: 'GET',
 				url: config.protocol + config.backend_url + '/classes',
@@ -264,9 +265,12 @@
 
 			function success (response) {
 				$scope.classes = response.data.data.items;
+				callback();
 			};
 
 			function error (response) {
+				$scope.classes = {};
+				callback();
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent(response.data.errors[0].message)
@@ -275,7 +279,7 @@
 			}
 		};
 
-		getClasses();
+		getClasses(function () {});
 
 		$scope.add_class = function () {
 			$http({
