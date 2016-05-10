@@ -50,7 +50,7 @@
 	  						withCredentials: true
 	  					}).then(
 	  					function (response) {
-	  						response.data.data.items.forEach((student) => {
+	  						response.data.data.items.forEach(function (student) {
 	  							var stud_obj = {student_id: student.student_id};
 	  							$scope.data.student_list.push(stud_obj);
 	  						});

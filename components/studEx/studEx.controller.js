@@ -73,10 +73,10 @@
 					url: config.protocol + config.backend_url + '/teacher' ,
 					withCredentials:true
 				}).then(
-				(response) => {
+				function (response) {
 					authService.setSession(response.data, function () {$location.path('/home')});
 				},
-				(response) => {
+				function (response) {
 
 				});
 			};

@@ -119,7 +119,7 @@
 						.textContent('Successfully updated profile!')
 						.hideDelay(1750)
                 );
-				authService.setSession($scope.temp, ()=>{});
+				authService.setSession($scope.temp, function (){});
 				$scope.form = 'home';
 				$scope.title = 'MY ACCOUNT';
 			};
