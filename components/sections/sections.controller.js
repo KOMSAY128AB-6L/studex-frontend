@@ -217,7 +217,7 @@
 			if (file) {
 				let formData = new FormData();
 				formData.append("csv", file);
-				file.upload = uploadService.uploadFileToUrl(file, 'http://' + config.backend_url + '/class/csv');
+				file.upload = uploadService.uploadFileToUrl(file, config.protocol + config.backend_url + '/class/csv');
 
 				$scope.form = 'home';
 				$scope.title = 'MY ACCOUNT';
@@ -228,7 +228,7 @@
 		$scope.printCSV = function() {
 			$http({
 				method: 'GET',
-				url: 'http://' + config.backend_url + '/class/csv',
+				url: config.protocol + config.backend_url + '/class/csv',
 				headers: {'Content-Type': undefined},
 				withCredentials:true
 			}).then(success, error);
