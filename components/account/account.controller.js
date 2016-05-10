@@ -6,7 +6,7 @@
 
 	app.config(customTheme);
 
-	accountCtrlFunc.$inject = ['$scope', '$http', '$mdToast', '$filter', '$location', 'navbarService', 'authService'];
+	accountCtrlFunc.$inject = ['$scope', '$http', '$mdToast', '$filter', '$location', 'navbarService', 'authService', 'uploadService'];
 	customTheme.$inject = ['$mdThemingProvider'];
 
 	function customTheme($mdThemingProvider) {
@@ -31,11 +31,11 @@
 			.primaryPalette('customPrimary')
 	};
 
-  function accountCtrlFunc($scope, $http, $mdToast, $filter, $location, navbarService, authService) {
+  function accountCtrlFunc($scope, $http, $mdToast, $filter, $location, navbarService, authService, uploadService) {
 		authService.auth();
 
 		$scope.title = 'MY ACCOUNT';
-		$scope.picture = "";
+		$scope.picture = config.protocol + config.backend_url + '/teacher/picture';
 		$scope.config = config;
 		$scope.pwForm = {};
 
@@ -95,6 +95,14 @@
 
 		$scope.editPic = function() {
 			console.log("Implement edit pic");
+		};
+
+		$scope.addPic = function(file) {
+			if (file) {
+				file.upload = uploadService.uploadPicToUrl(file, config.protocol + config.backend_url + '/teacher/upload', function (){
+					$scope.picture = config.protocol + config.backend_url + '/teacher/picture?_ts=' + new Date().getTime();
+				});
+			}
 		};
 
 		$scope.saveProfile = function() {
