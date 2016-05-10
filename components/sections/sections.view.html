@@ -192,7 +192,7 @@
                     <span flex="15"></span>
                     <input flex="60" type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="student.first_name">
                     <span flex="5"></span>
-                    <input flex="15" type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="student.middle_initial">
+                    <input flex="15" type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="student.middle_initial" maxlength="4">
                   </div>
                 </md-card-title-text>
               </md-card-title>
@@ -226,7 +226,7 @@
         </md-input-container>
         <md-input-container>
           <label>middle initial</label>
-          <input class="ng-pristine ng-valid md-input ng-touched" ng-model="student.middle_initial" required>
+          <input class="ng-pristine ng-valid md-input ng-touched" ng-model="student.middle_initial" required maxlength="4">
         </md-input-container>
         <md-input-container>
           <label>last name</label>
