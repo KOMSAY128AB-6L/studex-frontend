@@ -109,7 +109,31 @@
 						.hideDelay(3000)
                 );
 			});
-		}
+		};
+
+		$scope.deleteSection = function () {
+			$http({
+				method: 'DELETE',
+				url: config.protocol + config.backend_url + '/class/' + $scope.section.id,
+				withCredentials: true
+			}).then(
+			function (response) {
+				$scope.form = 'default';
+				getClasses();
+				$mdToast.show(
+					$mdToast.simple()
+						.textContent('Successfully deleted class!')
+						.hideDelay(1000)
+                );
+			},
+			function (response) {
+				$mdToast.show(
+					$mdToast.simple()
+						.textContent(response.data.errors[0].message)
+						.hideDelay(3000)
+                );
+			});
+		};
 
 		$scope.editStudent = function(index) {
 		  	$scope.flag[index] = true;
@@ -159,7 +183,6 @@
 			$scope.f = file;
 			$scope.errFile = errFiles && errFiles[0];
 			if (file) {
-				console.log(file);
 				let formData = new FormData();
 				formData.append("csv", file);
 				file.upload = uploadService.uploadFileToUrl(file, 'http://' + config.backend_url + '/class/csv');
@@ -206,23 +229,27 @@
 			$scope.title = "ADD CLASS";
 		}
 
-		$http({
-			method: 'GET',
-			url: config.protocol + config.backend_url + '/classes',
-			withCredentials:true
-		}).then(success, error);
+		function getClasses () {
+			$http({
+				method: 'GET',
+				url: config.protocol + config.backend_url + '/classes',
+				withCredentials:true
+			}).then(success, error);
 
-		function success (response) {
-			$scope.classes = response.data.data.items;
+			function success (response) {
+				$scope.classes = response.data.data.items;
+			};
+
+			function error (response) {
+				$mdToast.show(
+					$mdToast.simple()
+						.textContent(response.data.errors[0].message)
+						.hideDelay(1000)
+								);
+			}
 		};
 
-		function error (response) {
-			$mdToast.show(
-				$mdToast.simple()
-					.textContent(response.data.errors[0].message)
-					.hideDelay(1000)
-							);
-		}
+		getClasses();
 
 		$scope.add_class = function () {
 			$http({
