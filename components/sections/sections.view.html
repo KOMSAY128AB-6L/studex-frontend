@@ -74,6 +74,7 @@
           </md-button>
           <md-button ng-hide="check" class="md-icon-button md-raised" aria-label="Edit" ng-click="deleteSection()">
             <md-icon md-svg-icon="../../assets/icons/ic_clear_black_24px.svg"></md-icon>
+          </md-button>
         </div>
       </div>
       <div layout="row">
@@ -153,6 +154,9 @@
                   <div flex class="icons" layout="column" layout-align="center end">
                     <md-button class="md-icon-button md-raised" aria-label="Edit" ng-click="editStudent($index)">
                       <md-icon md-svg-icon="../../assets/icons/ic_edit_black_24px.svg"></md-icon>
+                    </md-button>
+                    <md-button ng-hide="check" class="md-icon-button md-raised" aria-label="Edit" ng-click="deleteStudent($index)">
+                      <md-icon md-svg-icon="../../assets/icons/ic_clear_black_24px.svg"></md-icon>
                     </md-button>
                   </div>
                   <span class="md-subhead">{{ student.first_name }} {{ student.middle_initial }}</span>

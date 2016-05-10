@@ -56,6 +56,7 @@
 
 			$scope.section.className = section.class_name;
 			$scope.section.section   = section.section;
+			$scope.section.class_id  = section.class_id;
 			$scope.section.id        = section.class_id.toString();
 
 			$scope.student.class_id  = section.class_id;
@@ -168,7 +169,32 @@
                 );
 			});
 
-		}
+		};
+
+		$scope.deleteStudent = function (index) {
+			var id = $scope.class[index].student_id;
+
+			$http({
+				method: 'DELETE',
+				url: config.protocol + config.backend_url + '/student/' + id,
+				withCredentials: true
+			}).then(
+			function (response) {
+				$scope.viewSection($scope.section);
+				$mdToast.show(
+					$mdToast.simple()
+						.textContent('Successfully deleted student!')
+						.hideDelay(1000)
+                );
+			},
+			function (response) {
+				$mdToast.show(
+					$mdToast.simple()
+						.textContent(response.data.errors[0].message)
+						.hideDelay(3000)
+                );
+			});
+		};
 
 		$scope.uploadSection = function () {
 			$scope.isHidden = !$scope.isHidden;
