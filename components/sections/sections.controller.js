@@ -30,6 +30,8 @@
 				withCredentials:true
 			}).then(
 			function (response) {
+				$scope.form = 'viewSection';
+				$scope.viewSection($scope.section);
 				$mdToast.show(
  				$mdToast.simple()
 						.textContent('Student successfully added!')
