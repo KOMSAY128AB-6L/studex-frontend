@@ -215,7 +215,7 @@
 			$scope.f = file;
 			$scope.errFile = errFiles && errFiles[0];
 			if (file) {
-				let formData = new FormData();
+				var formData = new FormData();
 				formData.append("csv", file);
 				file.upload = uploadService.uploadFileToUrl(file, config.protocol + config.backend_url + '/class/csv');
 
