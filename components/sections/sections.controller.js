@@ -123,6 +123,7 @@
 				withCredentials: true
 			}).then(
 			function (response) {
+				$scope.title = 'SECTIONS';
 				getClasses(function () {
 					$scope.form = 'default';
 				});
@@ -291,19 +292,25 @@
 				url: config.protocol + config.backend_url + '/class',
 				data: $scope.class,
 				withCredentials: true
-			}).then(success, error);
-
-			function success (response) {
-				$location.path('/student');
-			};
-
-			function error (response) {
+			}).then(
+			function (response) {
+				$scope.title = 'SECTIONS';
+				getClasses(function () {
+					$scope.form = 'default';
+				});
 				$mdToast.show(
-				$mdToast.simple()
-						.textContent(response.data.errors[0].message)
+					$mdToast.simple()
+						.textContent('Successfully added class!')
 						.hideDelay(1000)
-	          	);
-			}
+                );
+			},
+			function (response) {
+				$mdToast.show(
+					$mdToast.simple()
+						.textContent(response.data.errors[0].message)
+						.hideDelay(3000)
+                );
+			});
 		};
 
 
