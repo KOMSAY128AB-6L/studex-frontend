@@ -38,6 +38,10 @@
 						.textContent(response.data.errors[0].message)
 						.hideDelay(1750)
                 );
+				if (response.status === 403) {
+					authService.destroy();
+					$location.path('/');
+				}
 			};
 		};
 
@@ -65,6 +69,10 @@
 						.textContent(response.data.errors[0].message)
 						.hideDelay(1750)
                 );
+				if (response.status === 403) {
+					authService.destroy();
+					$location.path('/');
+				}
 			};
 		};
 

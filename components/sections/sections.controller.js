@@ -274,13 +274,18 @@
 			};
 
 			function error (response) {
-				$scope.classes = {};
-				callback();
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent(response.data.errors[0].message)
 						.hideDelay(1000)
-								);
+				);
+				if (response.status === 403) {
+					authService.destroy();
+					$location.path('/');
+				} else {
+					$scope.classes = {};
+					callback();
+				}
 			}
 		};
 

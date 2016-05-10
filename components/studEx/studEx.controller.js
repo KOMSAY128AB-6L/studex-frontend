@@ -77,16 +77,37 @@
 					authService.setSession(response.data, function () {$location.path('/home')});
 				},
 				function (response) {
-
+					$mdToast.show(
+						$mdToast.simple()
+							.textContent(response.data.errors[0].message)
+							.hideDelay(1750)
+               		);
 				});
 			};
 
 			function error (response) {
+				if (response.data.errors[0].message === 'Already logged in') {
+					$http({
+						method: 'GET',
+						url: config.protocol + config.backend_url + '/teacher' ,
+						withCredentials:true
+					}).then(
+					function (response) {
+						authService.setSession(response.data, function () {$location.path('/home')});
+					},
+					function (response) {
+						$mdToast.show(
+							$mdToast.simple()
+								.textContent(response.data.errors[0].message)
+								.hideDelay(1750)
+	               		);
+					});
+				}
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent(response.data.errors[0].message)
 						.hideDelay(1750)
-                );
+	            );
 			}
 		};
 
