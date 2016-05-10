@@ -54,10 +54,11 @@
 			$scope.title = section.class_name + section.section;
 			$scope.form = 'viewSection';
 
-			$scope.section.className = section.class_name;
-			$scope.section.section   = section.section;
-			$scope.section.class_id  = section.class_id;
-			$scope.section.id        = section.class_id.toString();
+			$scope.section.class_name = section.class_name;
+			$scope.section.className  = section.class_name;
+			$scope.section.section    = section.section;
+			$scope.section.class_id   = section.class_id;
+			$scope.section.id         = section.class_id.toString();
 
 			$scope.student.class_id  = section.class_id;
 
@@ -71,6 +72,7 @@
 		  		$scope.flag = [];
 			},
 			function (response) {
+				$scope.class = {};
 				$mdToast.show(
 			  		$mdToast.simple()
 			  			.textContent("No students")
