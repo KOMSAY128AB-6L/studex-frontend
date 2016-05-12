@@ -11,8 +11,8 @@
 		authService.auth();
 
 		$scope.title = 'HISTORY';
-
 		$scope.navigation = navbarService.navigation();
+		$scope.config = config;
 
 		$scope.volunteer_log = function () {
 			$scope.title = 'VOLUNTEERED STUDENTS';

@@ -61,9 +61,8 @@
 					url: config.protocol + config.backend_url + '/change_password',
 					data: $scope.pwForm,
 					withCredentials:true
-				}).then(success, error);
-
-				function success (response) {
+				}).then(
+				function (response) {
 					$mdToast.show(
 						$mdToast.simple()
 							.textContent('Successfully updated password!')
@@ -71,15 +70,14 @@
 	                );
 						$scope.title = 'MY ACCOUNT';
 						$scope.accountView = 'home';
-				};
-
-				function error (response) {
+				},
+				function (response) {
 					$mdToast.show(
 						$mdToast.simple()
 							.textContent(response.data.errors[0].message)
 							.hideDelay(3000)
 	                );
-				}
+				});
 			}
 		};
 
