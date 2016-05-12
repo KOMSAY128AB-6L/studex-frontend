@@ -41,7 +41,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent("Successfully uploaded")
-						.hideDelay(1000)
+						.hideDelay(3000)
 				);
 			})
 
@@ -49,7 +49,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent("Error in uploading file")
-						.hideDelay(1000)
+						.hideDelay(3000)
 				);
 			});
 		}
@@ -68,7 +68,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent("Successfully uploaded")
-						.hideDelay(1000)
+						.hideDelay(3000)
 				);
 				callback();
 			})
@@ -77,7 +77,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent("Error in uploading file")
-						.hideDelay(1000)
+						.hideDelay(3000)
 				);
 			});
 		}

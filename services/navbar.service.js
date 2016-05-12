@@ -49,7 +49,7 @@
 					$mdToast.show(
 						$mdToast.simple()
 							.textContent(response.data.errors[0].message)
-							.hideDelay(1750)
+							.hideDelay(3000)
 	                );
 				}
 			};

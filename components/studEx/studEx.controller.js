@@ -29,7 +29,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent("Passwords do not match")
-						.hideDelay(1750)
+						.hideDelay(3000)
 				);
 				return;
 			}
@@ -45,7 +45,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent('Successfully registered!')
-						.hideDelay(1750)
+						.hideDelay(3000)
                 );
                 $scope.login();
 			};
@@ -54,7 +54,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent(response.data.errors[0].message)
-						.hideDelay(1750)
+						.hideDelay(3000)
                 );
 			}
 		};
@@ -80,7 +80,7 @@
 					$mdToast.show(
 						$mdToast.simple()
 							.textContent(response.data.errors[0].message)
-							.hideDelay(1750)
+							.hideDelay(3000)
                		);
 				});
 			};
@@ -99,14 +99,14 @@
 						$mdToast.show(
 							$mdToast.simple()
 								.textContent(response.data.errors[0].message)
-								.hideDelay(1750)
+								.hideDelay(3000)
 	               		);
 					});
 				}
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent(response.data.errors[0].message)
-						.hideDelay(1750)
+						.hideDelay(3000)
 	            );
 			}
 		};
@@ -115,9 +115,9 @@
 			$mdToast.show(
 				$mdToast.simple()
 					.textContent('Processing forgot password request.')
-					.hideDelay(5000)
+					.hideDelay(3000)
             );
-            
+
 			$http({
 				method: 'POST',
 				url: config.protocol + config.backend_url + '/reset',
@@ -130,7 +130,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent('Please check your email for the password reset key.')
-						.hideDelay(5000)
+						.hideDelay(3000)
                 );
 			};
 
@@ -138,7 +138,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent(response.data.errors[0].message)
-						.hideDelay(1750)
+						.hideDelay(3000)
                 );
 			}
 		};
@@ -155,7 +155,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent('Successful password reset!')
-						.hideDelay(5000)
+						.hideDelay(3000)
                 );
 			};
 
@@ -163,7 +163,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent(response.data.errors[0].message)
-						.hideDelay(5000)
+						.hideDelay(3000)
                 );
 			}
 		};
