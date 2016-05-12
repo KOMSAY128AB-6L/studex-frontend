@@ -30,6 +30,9 @@
 				'templateUrl': './components/home/home.view.html',
 				'controller' : 'homeCtrl'
 			})
+			.when('/404', {
+				'templateUrl': 'page_404.html'
+			})
 			.otherwise({'redirectTo': '/'})
 
 	}
