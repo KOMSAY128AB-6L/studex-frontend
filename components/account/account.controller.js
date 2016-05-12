@@ -49,7 +49,6 @@
 		};
 
 		$scope.savePass = function() {
-			console.log($scope.pwForm);
 			if($scope.pwForm.new_password != $scope.pwForm.confirm_password) {
 				$mdToast.show(
 					$mdToast.simple()
