@@ -36,7 +36,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent(response.data.errors[0].message)
-						.hideDelay(1750)
+						.hideDelay(3000)
                 );
 				if (response.status === 403) {
 					authService.destroy();
@@ -67,7 +67,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent(response.data.errors[0].message)
-						.hideDelay(1750)
+						.hideDelay(3000)
                 );
 				if (response.status === 403) {
 					authService.destroy();

@@ -42,22 +42,26 @@
     </div>
   </div>
 
-  <div id="addClassDiv" layout="row" ng-switch-when="addClassSection">
-    <form ng-submit="add_class()">
-      <div class="add_class_child" layout="row">
-        <div layout="column">
-          <p>Class Name:</p>
-          <p>Class Section:</p>
-        </div>
-      <div layout="column">
-          <input flex type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="class.class_name">
-          <input flex type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="class.section">
-        </div>
-        </div>
-        <div id="buttonAdd" layout="row">
-          <md-button id="btn-add" ng-click="addClass()" type="submit">SAVE</md-button>
-      </div>
-    </form>
+  <div flex layout="column" ng-switch-when="addClassSection">
+    <span flex></span>
+    <div id="circle" class="circle-container">
+      <span class="form-header">ADD CLASS</span>
+      <form id="white-form" ng-submit="add_class()" class="form-2">
+          <md-input-container>
+            <label class="md-primary md-hue-2">Class Name</label>
+            <input type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="class.class_name" required>
+          </md-input-container>
+          <md-input-container>
+            <label>Section</label>
+            <input type="text" class="ng-pristine ng-valid md-input ng-touched" ng-model="class.section" required>
+          </md-input-container>
+          <md-button id="white" class="md-fab" type="submit">
+            <span>&gt;</span>
+            <div class="md-ripple-container"></div>
+          </md-button>
+      </form>
+    </div>
+    <span flex></span>
   </div>
 
   <div ng-switch-when="viewSection">

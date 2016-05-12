@@ -7,10 +7,10 @@
     <div id="picContainer" layout-align="center center">
     </div>
 
-    <div flex="5"></div>
+    <div flex></div>
 
     <div layout-align="center center" ng-switch on="form">
-    	
+
       <div id="circle" class="circle-container-home" ng-switch-default>
         <span class="form-header">SELECT SECTION/S</span>
 		    <form id="checkBox-form" class="form-2">
@@ -27,7 +27,7 @@
           </md-button>
           </div>
         </form>
-      </div>		
+      </div>
 
       <div id="circle" class="circle-container-home" ng-switch-when="random">
         <span class="form-header"># OF VOLUNTEERS</span>
@@ -74,12 +74,12 @@
         <span class="form-header">OPTIONS</span>
         <form id="checkBox-form" class="form-2">
           <div id="checkBox-2" flex-xs flex="100">
-            
+
             <md-radio-group ng-model="data.randomize">
               <md-radio-button value="chance">BY CHANCE</md-radio-button>
               <md-radio-button value="count"> BY COUNT </md-radio-button>
               <md-radio-button value="default"> DEFAULT </md-radio-button>
-            </md-radio-group>  
+            </md-radio-group>
 
             <md-checkbox ng-model="data.settings.unique" aria-label="Checkbox 2">
               NO REPEAT
@@ -103,7 +103,7 @@
           <span id="temptemptemptemp" ng-repeat="student in students">
             {{student.first_name + ' ' + student.middle_initial + ' ' + student.last_name}}
             <br/>
-          </span>      
+          </span>
         </div>
         <form id="checkBox-form" class="form-2">
           <div flex-xs flex="100">
@@ -119,6 +119,8 @@
         </form>
       </div>
     </div>
+
+    <div flex></div>
 
 </div>
 <div ng-include="'components/shared/templates/nav.html'">

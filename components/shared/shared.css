@@ -67,4 +67,12 @@ md-toolbar #navbar {
 
 .transparent {
 	background: transparent;
-} 
+}
+
+md-toast {
+  bottom: 40px;
+}
+
+md-toast * {
+  font-family: quicksand;
+}

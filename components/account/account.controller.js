@@ -117,7 +117,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent('Successfully updated profile!')
-						.hideDelay(1750)
+						.hideDelay(3000)
                 );
 				authService.setSession($scope.temp, function (){});
 				$scope.form = 'home';
@@ -128,7 +128,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent(response.data.errors[0].message)
-						.hideDelay(1750)
+						.hideDelay(3000)
                 );
 			}
 		}
@@ -144,7 +144,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent('Successfully deactivated profile!')
-						.hideDelay(1750)
+						.hideDelay(3000)
                 );
 				$http({
 					method: 'POST',
@@ -164,7 +164,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent(response.data.errors[0].message)
-						.hideDelay(1750)
+						.hideDelay(3000)
                 );
 			}
 		}

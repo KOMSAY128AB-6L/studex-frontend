@@ -127,46 +127,31 @@
       </div>
     </div>
 
-    <span flex="15"></span>
-    <form flex id="changePass" ng-submit="savePass()">
-    <div layout="row">
-      <span flex="5"></span>
-      <div flex layout="column">
-        <div flex="33" layout="row">
-          <div flex="50" layout="column" layout-align="center end" class="label">
-            <p>CURRENT PASSWORD:</p>
-          </div>
-          <div flex layout="row" layout-align="center end">
-			      <input flex type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="pwForm.old_password" required>
-          </div>
-        </div>
-        <div flex="33" layout="row">
-          <div flex="50" layout="column" layout-align="center end" class="label">
-            <p>NEW PASSWORD:</p>
-          </div>
-          <div flex layout="row" layout-align="center end">
-            <input flex type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="pwForm.new_password" required>
-          </div>
-        </div>
-        <div flex="33" layout="row">
-          <div flex="50" layout="column" layout-align="start end" class="label">
-            <p>REPEAT NEW PASSWORD:</p>
-          </div>
-          <div flex layout="row" layout-align="center end">
-            <input flex type="password" class="ng-pristine ng-valid md-input ng-touched" ng-model="pwForm.confirm_password" required>
-          </div>
-        </div>
-      </div>
-      <span flex="5"></span>
+    <span flex></span>
+
+    <div id="circle" class="circle-container">
+      <span class="form-header">CHANGE PASSWORD</span>
+      <form id="white-form" class="form-3" ng-submit="savePass()">
+        <md-input-container>
+          <label>Current Password</label>
+          <input class="ng-pristine ng-valid md-input ng-touched" type="password" ng-model="pwForm.old_password" required>
+        </md-input-container>
+        <md-input-container>
+          <label>New Password</label>
+          <input class="ng-pristine ng-valid md-input ng-touched" type="password" ng-model="pwForm.new_password" required>
+        </md-input-container>
+        <md-input-container>
+          <label>Old Password</label>
+          <input class="ng-pristine ng-valid md-input ng-touched" type="password" ng-model="pwForm.confirm_password" required>
+        </md-input-container>
+        <md-button id="white-2" class="md-fab" type="submit">
+          <span>&gt;&gt;</span>
+          <div class="md-ripple-container"></div>
+        </md-button>
+      </form>
     </div>
-    <div flex layout="row" style="margin-top: 30px;">
-      <span flex="15"></span>
-      <div flex layout-align="start center">
-        <md-button id="btn-lrg" class="md-raised" type="submit"><span>SAVE</span></md-button>
-      </div>
-      <span flex="15"></span>
-    </div>
-  </form>
+
+    <span flex></span>
   </div>
 </div>
 <div ng-include="'components/shared/templates/nav.html'">

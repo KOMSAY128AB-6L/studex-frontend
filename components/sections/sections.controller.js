@@ -35,14 +35,14 @@
 				$mdToast.show(
  				$mdToast.simple()
 						.textContent('Student successfully added!')
-						.hideDelay(1000)
+						.hideDelay(3000)
                 );
 			},
 			function (response) {
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent(response.data.errors[0].message)
-						.hideDelay(1000)
+						.hideDelay(3000)
                 );
 			});
 		}
@@ -104,7 +104,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent('Successfully updated class!')
-						.hideDelay(1000)
+						.hideDelay(3000)
                 );
 			},
 			function (response) {
@@ -130,7 +130,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent('Successfully deleted class!')
-						.hideDelay(1000)
+						.hideDelay(3000)
                 );
 			},
 			function (response) {
@@ -164,7 +164,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent('Successfully updated student!')
-						.hideDelay(1000)
+						.hideDelay(3000)
                 );
 			},
 			function (response) {
@@ -190,7 +190,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent('Successfully deleted student!')
-						.hideDelay(1000)
+						.hideDelay(3000)
                 );
 			},
 			function (response) {
@@ -237,7 +237,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent('Successfully printed csv file!')
-						.hideDelay(1000)
+						.hideDelay(3000)
         );
 				$scope.form = 'home';
 				$scope.title = 'MY ACCOUNT';
@@ -248,7 +248,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent(response.data.errors[0].message)
-						.hideDelay(1000)
+						.hideDelay(3000)
         );
 			};
 		}
@@ -277,7 +277,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent(response.data.errors[0].message)
-						.hideDelay(1000)
+						.hideDelay(3000)
 				);
 				if (response.status === 403) {
 					authService.destroy();
@@ -306,7 +306,7 @@
 				$mdToast.show(
 					$mdToast.simple()
 						.textContent('Successfully added class!')
-						.hideDelay(1000)
+						.hideDelay(3000)
                 );
 			},
 			function (response) {
