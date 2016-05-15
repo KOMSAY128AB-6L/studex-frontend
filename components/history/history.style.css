@@ -1,4 +1,4 @@
-#main-history, #main-history #slantedContainer,#history-buttonContainer {
+#main-history, #transaction, #volunteer, #main-history #slantedContainer,#history-buttonContainer {
 	height:100%;
 }
 
@@ -18,7 +18,7 @@
 	padding:7px;
 }
 
-#transaction p, #volunteer p  {
+#main-history p  {
 	font-size: 12px;
 }
 
