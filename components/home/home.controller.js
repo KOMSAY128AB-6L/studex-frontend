@@ -99,6 +99,14 @@
 		}
 
 		$scope.getVolunteers = function () {
+			if ($scope.data.settings.numberOfVolunteers < $scope.data.student_list.length) {
+				return $mdToast.show(
+						$mdToast.simple()
+							.textContent('Number of volunteers less than available students')
+							.hideDelay(3000)
+				);
+			}
+
 			$scope.data.settings.byChance = false;
 			$scope.data.settings.byCount = false;
 
@@ -117,13 +125,14 @@
 			}).then(
 			function (response) {
 				$scope.students = response.data.data.items;
+				$scope.form='vols';
 			}, 
 			function (response) {
 				$mdToast.show(
-				$mdToast.simple()
-					.textContent(response.data.errors[0].message)
-					.hideDelay(3000)
-				);
+					$mdToast.simple()
+						.textContent(response.data.errors[0].message)
+						.hideDelay(3000)
+					);
 			});
 		}
 

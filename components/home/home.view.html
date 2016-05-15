@@ -18,10 +18,7 @@
              <md-checkbox ng-model="class.selected" ng-repeat="class in classes">
               {{ class.class_name + class.section }}
             </md-checkbox>
-            <md-checkbox ng-model="data.no_called">
-              NO CALLED STUDENTS
-            </md-checkbox>
-            <md-button id="white-1" class="md-fab" v ng-click="$parent.form='random'; selectClass()">
+            <md-button id="white-1" class="md-fab" v ng-click="$parent.form='chance'">
             <span>&gt;&gt;</span>
             <div class="md-ripple-container"></div>
           </md-button>
@@ -31,12 +28,12 @@
 
       <div id="circle" class="circle-container-home" ng-switch-when="random">
         <span class="form-header"># OF VOLUNTEERS</span>
-        <form id="white-form" class="form-2" ng-submit="$parent.form='tags'">
+        <form id="white-form" class="form-2" ng-submit="getVolunteers()">
           <md-input-container id="inputVol">
             <input type="number" class="ng-pristine ng-valid md-input ng-touched" ng-model="data.settings.numberOfVolunteers" aria-label ="random" required>
           </md-input-container>
 
-          <md-button id="white-2l" class="md-fab" v ng-click="$parent.form='form'">
+          <md-button id="white-2l" class="md-fab" v ng-click="$parent.form='tags'">
             <span>&lt;&lt;</span>
             <div class="md-ripple-container"></div>
           </md-button>
@@ -58,12 +55,12 @@
            <md-checkbox id="atleast-checkbox" ng-model="data.settings.andAllTags">
               CONSIDER ALL TAGS
             </md-checkbox>
-          <md-button id="white-2l" class="md-fab" v ng-click="$parent.form='random'">
+          <md-button id="white-2l" class="md-fab" v ng-click="$parent.form='chance'">
             <span>&lt;&lt;</span>
             <div class="md-ripple-container"></div>
           </md-button>
 
-          <md-button id="white-2r" class="md-fab" v ng-click="$parent.form='chance'; inputTags()">
+          <md-button id="white-2r" class="md-fab" v ng-click="$parent.form='random'; inputTags()">
             <span>&gt;&gt;</span>
             <div class="md-ripple-container"></div>
           </md-button>
@@ -84,11 +81,15 @@
             <md-checkbox ng-model="data.settings.unique" aria-label="Checkbox 2">
               NO REPEAT
             </md-checkbox>
-            <md-button id="white-3l" class="md-fab" v ng-click="$parent.form='tags'">
+
+            <md-checkbox ng-model="data.no_called">
+              NO CALLED STUDENTS
+            </md-checkbox>
+            <md-button id="white-3l" class="md-fab" v ng-click="$parent.form='form'">
               <span>&lt;&lt;</span>
               <div class="md-ripple-container"></div>
             </md-button>
-            <md-button id="white-3r" class="md-fab" v ng-click="$parent.form='vols'; getVolunteers()" type="submit">
+            <md-button id="white-3r" class="md-fab" v ng-click="$parent.form='tags'; selectClass()" type="submit">
               <span>&gt;</span>
               <div class="md-ripple-container"></div>
             </md-button>
