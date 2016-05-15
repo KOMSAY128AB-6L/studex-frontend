@@ -147,6 +147,16 @@
 		};
 
 		$scope.saveStudent = function(index) {
+			var email = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			
+			if (!email.test($scope.class[index].email)) {
+				return $mdToast.show(
+					$mdToast.simple()
+						.textContent('Email invalid!')
+						.hideDelay(3000)
+                );
+			}
+
 			$scope.flag[index] = false;
 
 			var data = $scope.class[index];

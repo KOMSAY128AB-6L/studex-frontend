@@ -104,6 +104,16 @@
 		};
 
 		$scope.saveProfile = function() {
+			var email = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			
+			if (!email.test($scope.temp.email)) {
+				return $mdToast.show(
+					$mdToast.simple()
+						.textContent('Email invalid!')
+						.hideDelay(3000)
+                );
+			}
+
 			$http({
 				method: 'PUT',
 				url: config.protocol + config.backend_url + '/teacher',
