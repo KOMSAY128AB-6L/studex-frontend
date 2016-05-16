@@ -99,13 +99,6 @@
 		}
 
 		$scope.getVolunteers = function () {
-			if ($scope.data.settings.numberOfVolunteers < $scope.data.student_list.length) {
-				return $mdToast.show(
-						$mdToast.simple()
-							.textContent('Number of volunteers less than available students')
-							.hideDelay(3000)
-				);
-			}
 
 			$scope.data.settings.byChance = false;
 			$scope.data.settings.byCount = false;
