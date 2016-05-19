@@ -34,6 +34,15 @@
 				return;
 			}
 
+			if (/[^\s@]+@[^\s@]+\.[^\s@]+/.test($scope.user.email)) {
+				$mdToast.show(
+					$mdToast.simple()
+						.textContent("Invalid email format")
+						.hideDelay(3000)
+        );
+				return;
+			}
+
 			$http({
 				method: 'POST',
 				url: config.protocol + config.backend_url + '/user',

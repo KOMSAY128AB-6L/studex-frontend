@@ -107,37 +107,38 @@
 
 		$scope.saveProfile = function() {
 			if (/[^\s@]+@[^\s@]+\.[^\s@]+/.test($scope.temp.email)) {
-				$http({
-					method: 'PUT',
-					url: config.protocol + config.backend_url + '/teacher',
-					data: $scope.temp,
-					withCredentials:true
-				}).then(success, error);
-
-				function success (response) {
-					$mdToast.show(
-						$mdToast.simple()
-							.textContent('Successfully updated profile!')
-							.hideDelay(3000)
-	                );
-					authService.setSession($scope.temp, function (){});
-					$scope.form = 'home';
-					$scope.title = 'MY ACCOUNT';
-				};
-
-				function error (response) {
-					$mdToast.show(
-						$mdToast.simple()
-							.textContent(response.data.errors[0].message)
-							.hideDelay(3000)
-	                );
-				}
-			} else {
 				$mdToast.show(
 					$mdToast.simple()
-						.textContent('Invalid email format')
+						.textContent("Invalid email format")
 						.hideDelay(3000)
-				);
+        );
+				return;
+			}
+			
+			$http({
+				method: 'PUT',
+				url: config.protocol + config.backend_url + '/teacher',
+				data: $scope.temp,
+				withCredentials:true
+			}).then(success, error);
+
+			function success (response) {
+				$mdToast.show(
+					$mdToast.simple()
+						.textContent('Successfully updated profile!')
+						.hideDelay(3000)
+                );
+				authService.setSession($scope.temp, function (){});
+				$scope.form = 'home';
+				$scope.title = 'MY ACCOUNT';
+			};
+
+			function error (response) {
+				$mdToast.show(
+					$mdToast.simple()
+						.textContent(response.data.errors[0].message)
+						.hideDelay(3000)
+                );
 			}
 		}
 
